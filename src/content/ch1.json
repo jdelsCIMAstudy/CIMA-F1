@@ -1,0 +1,1573 @@
+{
+ "id": "ch1",
+ "n": 1,
+ "area": "C · Tax",
+ "title": "Features of taxation",
+ "lo": [
+  "C1a",
+  "C1b",
+  "C2a",
+  "C3b"
+ ],
+ "items": [
+  {
+   "id": "c1-c01",
+   "t": "c",
+   "lo": [
+    "C2a"
+   ],
+   "title": "What makes a good tax",
+   "rule": "<p><b>Adam Smith's four canons:</b> a good tax is <b>fair</b> (linked to ability to pay), <b>certain</b> (amount and timing clear, not arbitrary), <b>convenient</b> (easy to pay) and <b>efficient</b> (cheap to collect).</p><p><b>Three principles of tax policy:</b> equity (burden shared fairly), efficiency (low collection cost, e.g. PAYE) and economic effects (how collection affects behaviour).</p>",
+   "body": "<p>Governments tax to fund spending and service debt, and to steer behaviour (capital allowances encourage investment; duties on tobacco discourage it).</p><p><span class=\"mute\">The AICPA extends the list to ten: equity, transparency, certainty, economy in collection, convenience, simplicity, appropriate revenues, minimum tax gap, neutrality, growth. No real system meets all ten.</span></p>",
+   "trap": "\"Progressive\" is not one of Smith's canons. Fairness is, and progressivity is only one way to deliver it."
+  },
+  {
+   "id": "c1-q01",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C2a"
+   ],
+   "src": "Practice",
+   "q": "Which of the following is NOT one of Adam Smith's canons of a good tax?",
+   "opts": [
+    "Fairness, linked to the ability to pay",
+    "Certainty of amount and timing",
+    "Convenience of payment",
+    "Progressive rates as income rises"
+   ],
+   "a": 3,
+   "sol": [
+    "Smith's four canons are fair, certain, convenient and efficient.",
+    "Progressive rates are one design choice for achieving fairness, not a canon in their own right."
+   ],
+   "trap": "Picking \"fairness\" because it sounds political. It is a canon.",
+   "alt": [
+    {
+     "q": "Which of the following IS one of Adam Smith's canons of a good tax?",
+     "opts": [
+      "Hypothecation of revenue",
+      "Efficiency: cheap to collect",
+      "Neutrality between industries",
+      "Progressive rates as income rises"
+     ],
+     "a": 1,
+     "sol": [
+      "The canons are fair, certain, convenient and efficient.",
+      "Neutrality is an AICPA principle, not one of Smith's four. Hypothecation is ring-fencing, not a canon."
+     ],
+     "trap": "Neutrality appears on the AICPA list of ten, which is easy to confuse with Smith's four."
+    }
+   ]
+  },
+  {
+   "id": "c1-c02",
+   "t": "c",
+   "lo": [
+    "C1a"
+   ],
+   "title": "Direct v indirect taxes",
+   "rule": "<p><b>Direct</b>: charged on the person who bears it, based on income, profits or gains. They pay the authority themselves.</p><p><b>Indirect</b>: charged at one point in the supply chain on spending, and intended to be passed on to the final consumer.</p>",
+   "body": "<table><tr><th class=\"\">Type</th><th class=\"\">Examples</th></tr><tr><td class=\"\">Direct</td><td class=\"\">Income tax, corporate income tax, capital gains tax, inheritance tax, property tax</td></tr><tr><td class=\"\">Indirect</td><td class=\"\">VAT / sales tax, excise duties, customs duties</td></tr></table>",
+   "trap": "Employee income tax collected through PAYE is still <b>direct</b>. The employer only collects it; the employee bears it."
+  },
+  {
+   "id": "c1-c03",
+   "t": "c",
+   "lo": [
+    "C1b"
+   ],
+   "title": "Corporate v personal taxes",
+   "rule": "<p><b>Corporate</b> taxes fall on the entity: corporate income tax on taxable profit, with company gains usually taxed inside it.</p><p><b>Personal</b> taxes fall on individuals: income tax on earnings (salary, bonus, benefits in kind), personal capital gains tax and social security contributions.</p>",
+   "body": "<p>The same profit can be taxed twice: once in the company, then again when it reaches a shareholder as a dividend. Chapter 2 covers the four systems countries use to deal with that.</p><p>The company is still involved in personal tax: it withholds employees' income tax through PAYE and pays employer social security.</p>",
+   "trap": "A tax the company <i>pays over</i> is not necessarily a <i>corporate</i> tax. PAYE is personal tax collected by the company."
+  },
+  {
+   "id": "b009",
+   "t": "q",
+   "type": "mcq",
+   "fixed": true,
+   "lo": [
+    "C1a"
+   ],
+   "src": "Bank 009",
+   "q": "Consider (i) duty on fuel, (ii) employee income tax collected through payroll, (iii) corporate income tax and (iv) general sales tax. Which are direct taxes?",
+   "opts": [
+    "(i) and (ii)",
+    "(i) and (iv)",
+    "(ii) and (iii)",
+    "(ii) and (iv)"
+   ],
+   "a": 2,
+   "sol": [
+    "Direct = charged on the income or profit of the person who bears it.",
+    "Employee income tax (ii) and corporate income tax (iii) are direct.",
+    "Fuel duty (i) and sales tax (iv) are on spending and passed on, so they are indirect."
+   ],
+   "trap": "Thinking payroll tax is indirect because the employer pays it over. The employee bears it, so it is direct.",
+   "alt": [
+    {
+     "q": "Consider (i) duty on fuel, (ii) employee income tax collected through payroll, (iii) corporate income tax and (iv) general sales tax. Which are indirect taxes?",
+     "a": 1,
+     "sol": [
+      "Indirect = charged on spending and passed on to the consumer.",
+      "Fuel duty (i) and general sales tax (iv) are indirect.",
+      "Income tax (ii) and corporate income tax (iii) are direct."
+     ],
+     "trap": "Treating PAYE as indirect because the employer collects it."
+    }
+   ]
+  },
+  {
+   "id": "b010",
+   "t": "q",
+   "type": "multi",
+   "lo": [
+    "C1a"
+   ],
+   "src": "Bank 010",
+   "q": "Which TWO of these are direct taxes?",
+   "opts": [
+    "General sales tax",
+    "Inheritance tax",
+    "Customs duty",
+    "A local property tax"
+   ],
+   "a": [
+    1,
+    3
+   ],
+   "sol": [
+    "Inheritance tax is on capital/wealth passing on death, borne by the estate: direct.",
+    "A property tax is charged on the owner by reference to the property's value: direct.",
+    "Sales tax and customs duty are on spending or imports and passed on: indirect."
+   ],
+   "alt": [
+    {
+     "q": "Which TWO of these are indirect taxes?",
+     "a": [
+      0,
+      2
+     ],
+     "sol": [
+      "Sales tax and customs duty are charged on spending or imports and passed on: indirect.",
+      "Inheritance tax and property tax are charged on the person who bears them: direct."
+     ]
+    }
+   ],
+   "flag": "The kit shows single-choice buttons here but accepts both B and D. It is set up as select-two in this app so either answer is not marked wrong."
+  },
+  {
+   "id": "b011",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C1a"
+   ],
+   "src": "Bank 011",
+   "q": "Which is an example of an indirect tax?",
+   "opts": [
+    "A company pays tax on its taxable profits",
+    "A diner pays a restaurant bill that includes sales tax",
+    "An employee's pay has income tax deducted",
+    "An investor pays tax on a gain from selling shares"
+   ],
+   "a": 1,
+   "sol": [
+    "Sales tax is built into the price and borne by the customer: indirect.",
+    "Corporate tax, employee income tax and capital gains tax are all direct."
+   ],
+   "alt": [
+    {
+     "q": "Which is an example of a direct tax?",
+     "opts": [
+      "A shopper pays a price that includes VAT",
+      "A diner pays a restaurant bill that includes sales tax",
+      "An investor pays tax on a gain from selling shares",
+      "A driver pays a price for petrol that includes fuel duty"
+     ],
+     "a": 2,
+     "sol": [
+      "Tax on a gain is charged on the person who made the gain: direct.",
+      "VAT, sales tax and fuel duty are passed on in the price: indirect."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "c1-c04",
+   "t": "c",
+   "lo": [
+    "C1a"
+   ],
+   "title": "Tax base",
+   "rule": "<p>The <b>tax base</b> is the thing being taxed. Three broad bases:</p><ul><li><b>Income / profits</b>: income tax, corporate income tax</li><li><b>Capital / wealth</b>: capital gains tax, inheritance tax, wealth tax</li><li><b>Consumption</b>: VAT, sales tax, excise duties</li></ul>",
+   "body": "<p>Different tiers of government lean on different bases. In the US: federal mostly income, states a mix of income and consumption, local mostly property.</p>"
+  },
+  {
+   "id": "c1-c05",
+   "t": "c",
+   "lo": [
+    "C1a"
+   ],
+   "title": "Incidence: formal v effective",
+   "rule": "<p><b>Formal incidence</b>: who is legally required to pay the tax over to the authority.</p><p><b>Effective (actual) incidence</b>: who ends up bearing the economic cost.</p>",
+   "body": "<table><tr><th class=\"\">Tax</th><th class=\"\">Formal</th><th class=\"\">Effective</th></tr><tr><td class=\"\">VAT</td><td class=\"\">Retailer</td><td class=\"\">Customer</td></tr><tr><td class=\"\">PAYE</td><td class=\"\">Employer</td><td class=\"\">Employee</td></tr></table>",
+   "ex": {
+    "title": "Read the viewpoint",
+    "given": "A café adds 20% sales tax to a $6 sandwich and pays it to the authority.",
+    "steps": [
+     "From the café's side: it pays the tax over, so it has the <b>formal</b> incidence.",
+     "From the customer's side: the tax is in the price, so they bear the <b>effective</b> incidence.",
+     "Either way, sales tax is <b>indirect</b>."
+    ]
+   },
+   "trap": "Exam questions say \"from the shopper's point of view\". Read whose viewpoint is asked before picking formal or effective."
+  },
+  {
+   "id": "b005",
+   "t": "q",
+   "type": "mcq",
+   "fixed": true,
+   "lo": [
+    "C1a"
+   ],
+   "src": "Bank 005",
+   "p": {
+    "price": 240
+   },
+   "v": {
+    "price": [
+     60,
+     600,
+     12
+    ]
+   },
+   "q": "A shopper pays ${price} for a coat, including sales tax. From the shopper's point of view, the sales tax is:",
+   "opts": [
+    "a direct tax with formal incidence",
+    "an indirect tax with formal incidence",
+    "a direct tax with effective incidence",
+    "an indirect tax with effective incidence"
+   ],
+   "a": 3,
+   "sol": [
+    "Sales tax is charged on spending and passed on: indirect.",
+    "The shopper doesn't pay it to the authority (the shop does) but bears the cost: effective incidence."
+   ],
+   "trap": "Choosing formal because the shopper \"pays\" it. They pay the shop, not the tax authority.",
+   "alt": [
+    {
+     "q": "A shop sells a coat for $240 including sales tax and pays the tax it collects to the tax authority. From the shop's point of view, the sales tax is:",
+     "a": 1,
+     "sol": [
+      "Sales tax is indirect.",
+      "The shop is legally responsible for paying it over, so from its side the incidence is formal."
+     ],
+     "trap": "Choosing effective. The shop passes the cost on, so it does not bear it."
+    }
+   ]
+  },
+  {
+   "id": "b006",
+   "t": "q",
+   "type": "mcq",
+   "fixed": true,
+   "lo": [
+    "C1a"
+   ],
+   "src": "Bank 006",
+   "q": "A bookshop adds sales tax to its prices and pays the tax it collects over to the tax authority. From the bookshop's point of view, the tax has:",
+   "opts": [
+    "formal incidence",
+    "effective incidence",
+    "informal incidence",
+    "ineffective incidence"
+   ],
+   "a": 0,
+   "sol": [
+    "The bookshop has the legal duty to pay the tax over: formal incidence.",
+    "The customer bears the cost: effective incidence. \"Informal\" and \"ineffective\" are not terms used."
+   ],
+   "alt": [
+    {
+     "q": "A bookshop adds sales tax to its prices and pays the tax it collects over to the tax authority. From the customer's point of view, the tax has:",
+     "a": 1,
+     "sol": [
+      "The customer bears the cost in the price: effective incidence.",
+      "The bookshop has the formal incidence."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "c1-c06",
+   "t": "c",
+   "lo": [
+    "C2a"
+   ],
+   "title": "Four terms the exam uses",
+   "rule": "<table><tr><th class=\"\">Term</th><th class=\"\">Meaning</th></tr><tr><td class=\"\">Taxable person</td><td class=\"\">The individual or entity accountable for paying the tax.</td></tr><tr><td class=\"\">Competent jurisdiction</td><td class=\"\">The authority with legal power to assess and collect the tax (UK: HMRC). Its laws can be enforced against you.</td></tr><tr><td class=\"\">Hypothecation</td><td class=\"\">Ring-fencing a tax's revenue for one purpose, e.g. London congestion charge → transport.</td></tr><tr><td class=\"\">Tax gap</td><td class=\"\">Tax that should in theory be collected minus tax actually collected.</td></tr></table>",
+   "trap": "Competent jurisdiction is about whose laws can be <b>enforced</b>, not where the office is or where customers are."
+  },
+  {
+   "id": "b012",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C2a"
+   ],
+   "src": "Bank 012",
+   "q": "\"Hypothecation\" means:",
+   "opts": [
+    "tax law must be renewed each year for taxes to be collectable",
+    "the gap between tax due and tax actually collected",
+    "tax is withheld before income reaches the recipient",
+    "revenue from particular taxes is reserved for particular areas of spending"
+   ],
+   "a": 3,
+   "sol": [
+    "Hypothecation = ring-fencing revenue from a tax for a specific purpose.",
+    "B is the tax gap; C is deduction at source (withholding)."
+   ],
+   "alt": [
+    {
+     "q": "The \"tax gap\" means:",
+     "opts": [
+      "tax law must be renewed each year for taxes to be collectable",
+      "the gap between tax that should be collected and tax actually collected",
+      "tax is withheld before income reaches the recipient",
+      "revenue from particular taxes is reserved for particular areas of spending"
+     ],
+     "a": 1,
+     "sol": [
+      "Tax gap = theoretical tax due − tax collected.",
+      "D describes hypothecation."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "c1-t2",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C2a"
+   ],
+   "src": "Chapter TYU 1 Q2",
+   "q": "An entity is taxed in a \"competent jurisdiction\". This means the country:",
+   "opts": [
+    "where its registered office building is located",
+    "whose tax laws can be enforced against the entity",
+    "where most of its customers are based",
+    "where most of its directors live"
+   ],
+   "a": 1,
+   "sol": [
+    "A competent jurisdiction is the authority with legal power to assess and collect tax from the entity.",
+    "The test is enforceability of its laws, not the location of buildings, customers or people."
+   ]
+  },
+  {
+   "id": "c1-c07",
+   "t": "c",
+   "lo": [
+    "C1a",
+    "C1b"
+   ],
+   "title": "Progressive, proportional, regressive",
+   "rule": "<p>Define the <b>effective rate</b> r(Y) = T / Y, tax as a fraction of income.</p><span class=\"eq\">progressive:   r rises as Y rises\nproportional:  r constant\nregressive:    r falls as Y rises</span>",
+   "svg": "<svg viewBox=\"0 0 320 190\" role=\"img\" aria-label=\"Effective tax rate against income for the three structures\">\n<line x1=\"40\" y1=\"160\" x2=\"305\" y2=\"160\" stroke=\"currentColor\" stroke-width=\"1.2\"/><line x1=\"40\" y1=\"160\" x2=\"40\" y2=\"15\" stroke=\"currentColor\" stroke-width=\"1.2\"/>\n<text x=\"172\" y=\"182\" font-size=\"11\" text-anchor=\"middle\">Income Y</text>\n<text x=\"14\" y=\"90\" font-size=\"11\" text-anchor=\"middle\" transform=\"rotate(-90 14 90)\">Effective rate T/Y</text>\n<path d=\"M45 135 C120 110 200 70 300 35\" fill=\"none\" stroke=\"#1f7a4d\" stroke-width=\"2.5\"/><text x=\"300\" y=\"30\" font-size=\"11\" text-anchor=\"end\">Progressive ↑</text>\n<line x1=\"45\" y1=\"100\" x2=\"300\" y2=\"100\" stroke=\"#1f5fbf\" stroke-width=\"2.5\" stroke-dasharray=\"7 4\"/><text x=\"300\" y=\"94\" font-size=\"11\" text-anchor=\"end\">Proportional →</text>\n<path d=\"M45 65 C120 90 200 120 300 140\" fill=\"none\" stroke=\"#b42318\" stroke-width=\"2.5\" stroke-dasharray=\"2 4\"/><text x=\"300\" y=\"154\" font-size=\"11\" text-anchor=\"end\">Regressive ↓</text>\n</svg>",
+   "ex": {
+    "title": "Classify it",
+    "given": "A earns $40,000 and pays $4,000. B earns $80,000 and pays $6,400.",
+    "steps": [
+     "r(A) = 4,000 ÷ 40,000 = 10%",
+     "r(B) = 6,400 ÷ 80,000 = 8%",
+     "Rate falls as income rises → <b>regressive</b>, even though B pays more dollars."
+    ]
+   },
+   "trap": "Comparing dollar amounts. A regressive tax can still take more dollars from the richer person; only the % matters.",
+   "upd": "UK 2026/27: income tax 20% / 40% / 45% (additional rate above £125,140). Employee NI 8% then 2% above £50,270, so NI has a regressive element. Exams give you the rates."
+  },
+  {
+   "id": "b007",
+   "t": "q",
+   "type": "mcq",
+   "fixed": true,
+   "lo": [
+    "C1a",
+    "C1b"
+   ],
+   "src": "Bank 007",
+   "p": {
+    "y1": 90000,
+    "r1": 0.25,
+    "y2": 30000,
+    "r2": 0.15
+   },
+   "v": {
+    "y1": [
+     80000,
+     160000,
+     10000
+    ],
+    "r1": [
+     [
+      0.1,
+      0.15,
+      0.2,
+      0.25,
+      0.3
+     ]
+    ],
+    "y2": [
+     20000,
+     50000,
+     5000
+    ],
+    "r2": [
+     [
+      0.1,
+      0.15,
+      0.2,
+      0.25,
+      0.3
+     ]
+    ]
+   },
+   "d": {
+    "t1": "y1*r1",
+    "t2": "y2*r2"
+   },
+   "c": "abs(r1-r2)>0.01",
+   "q": "In Country P, Ash earns ${y1} and pays tax of ${t1}, and Birch earns ${y2} and pays ${t2}. The tax is:",
+   "opts": [
+    "regressive",
+    "proportional",
+    "progressive",
+    "a flat-rate tax"
+   ],
+   "a": "r1>r2 ? 2 : 0",
+   "sol": [
+    "Ash: {t1} ÷ {y1} = {r1%}",
+    "Birch: {t2} ÷ {y2} = {r2%}",
+    "{?r1>r2|The higher earner pays a higher % → progressive.|The higher earner pays a lower % → regressive.}"
+   ],
+   "trap": "Ash pays more dollars whatever the structure. Compare % rates, not amounts."
+  },
+  {
+   "id": "b008",
+   "t": "q",
+   "type": "mcq",
+   "fixed": true,
+   "lo": [
+    "C1a",
+    "C1b"
+   ],
+   "src": "Bank 008",
+   "p": {
+    "y1": 120000,
+    "r1": 0.2,
+    "y2": 50000,
+    "r2": 0.2
+   },
+   "v": {
+    "y1": [
+     80000,
+     200000,
+     10000
+    ],
+    "r1": [
+     [
+      0.1,
+      0.15,
+      0.2,
+      0.25
+     ]
+    ],
+    "y2": [
+     20000,
+     60000,
+     5000
+    ],
+    "r2": [
+     [
+      0.1,
+      0.15,
+      0.2,
+      0.25
+     ]
+    ]
+   },
+   "d": {
+    "t1": "y1*r1",
+    "t2": "y2*r2"
+   },
+   "q": "In Country Q, Cedar earns ${y1} and pays tax of ${t1}, and Dale earns ${y2} and pays ${t2}. The tax is:",
+   "opts": [
+    "regressive",
+    "proportional",
+    "progressive",
+    "a lump-sum tax"
+   ],
+   "a": "abs(r1-r2)<1e-9 ? 1 : (r1>r2 ? 2 : 0)",
+   "sol": [
+    "Cedar: {t1} ÷ {y1} = {r1%}",
+    "Dale: {t2} ÷ {y2} = {r2%}",
+    "{?abs(r1-r2)<1e-9|Same % at both incomes → proportional.|{?r1>r2|Higher earner, higher % → progressive.|Higher earner, lower % → regressive.}}"
+   ],
+   "trap": "Seeing a bigger dollar bill for the richer person and calling it progressive."
+  },
+  {
+   "id": "c1-t3",
+   "t": "q",
+   "type": "mcq",
+   "fixed": true,
+   "lo": [
+    "C1a"
+   ],
+   "src": "Chapter TYU 1 Q3",
+   "p": {
+    "y1": 40000,
+    "t1": 4000,
+    "y2": 80000,
+    "t2": 12000
+   },
+   "v": {
+    "y1": [
+     20000,
+     60000,
+     5000
+    ],
+    "t1": [
+     1000,
+     9000,
+     500
+    ],
+    "y2": [
+     70000,
+     150000,
+     10000
+    ],
+    "t2": [
+     5000,
+     40000,
+     1000
+    ]
+   },
+   "c": "t1/y1<0.5 && t2/y2<0.5 && abs(t1/y1-t2/y2)>0.005",
+   "q": "In the same country, Fenn earns taxable profit of ${y1} and pays tax of ${t1}. Garr earns ${y2} and pays ${t2}. The tax is best described as:",
+   "opts": [
+    "progressive",
+    "regressive",
+    "proportional",
+    "indirect"
+   ],
+   "a": "abs(t1/y1-t2/y2)<1e-9 ? 2 : (t2/y2>t1/y1 ? 0 : 1)",
+   "sol": [
+    "Fenn: {t1} ÷ {y1} = {=t1/y1%}",
+    "Garr: {t2} ÷ {y2} = {=t2/y2%}",
+    "{?t2/y2>t1/y1|The effective rate rises with profit → progressive.|The effective rate falls as profit rises → regressive.}"
+   ],
+   "trap": "Tax on profit is direct, so \"indirect\" is never the answer here."
+  },
+  {
+   "id": "c1-c08",
+   "t": "c",
+   "lo": [
+    "C2a"
+   ],
+   "title": "Sources of tax rules",
+   "rule": "<ul><li><b>Legislation</b>: e.g. the annual UK Finance Acts</li><li><b>Precedent and authority guidance</b>: case law plus the authority's published practice (HMRC statements of practice)</li><li><b>Directives from international bodies</b>: e.g. EU VAT directives</li><li><b>Agreements between countries</b>: double tax treaties</li></ul>",
+   "trap": "\"International law\" in general, or a <b>foreign</b> court's judgment, is not a source of a country's own tax rules. Specific treaties and directives are.",
+   "upd": "Since 2024 many countries apply the OECD \"Pillar Two\" 15% global minimum tax for groups with revenue of €750m+. Chapter 3 has the detail."
+  },
+  {
+   "id": "c1-t1",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C2a"
+   ],
+   "src": "Chapter TYU 1 Q1",
+   "q": "Which of the following would NOT normally be a source of a country's own tax rules?",
+   "opts": [
+    "Tax statutes passed by the national parliament",
+    "Tax treaties the country has signed with other states",
+    "Published practice notes issued by the national tax authority",
+    "Judgments of the courts of a foreign country"
+   ],
+   "a": 3,
+   "sol": [
+    "Domestic legislation, treaties and the authority's published practice are all sources.",
+    "A foreign court's judgment is not binding on another country."
+   ],
+   "alt": [
+    {
+     "q": "Which of the following IS normally a source of a country's own tax rules?",
+     "opts": [
+      "Judgments of the courts of a foreign country",
+      "International law in general",
+      "A double tax treaty the country has signed",
+      "Opinions published by tax advisers"
+     ],
+     "a": 2,
+     "sol": [
+      "Treaties the country has signed are a source of its tax rules.",
+      "Foreign judgments, \"international law\" in general and adviser opinions are not."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "c1-c09",
+   "t": "c",
+   "lo": [
+    "C1a"
+   ],
+   "title": "Unit v ad valorem; excise duty",
+   "rule": "<table><tr><th class=\"\">Type</th><th class=\"\">Based on</th><th class=\"\">Example</th></tr><tr><td class=\"\">Unit tax</td><td class=\"\">Quantity: number, weight, volume. Price doesn't matter.</td><td class=\"\">Excise duty: $X per litre</td></tr><tr><td class=\"\">Ad valorem</td><td class=\"\">Value: a % of the price</td><td class=\"\">Sales tax, VAT</td></tr></table>",
+   "body": "<p><b>Excise duties</b> sit on alcohol, tobacco, fuel and vehicles: to discourage harmful consumption, cover the public costs it causes, and tax luxuries.</p><p>Best-suited goods: few large producers (easy to collect), <b>inelastic demand</b> with no close substitutes, high volumes, easy to define.</p>",
+   "trap": "Excise works on goods people keep buying when the price rises. Putting it on price-sensitive (elastic) goods would kill the revenue."
+  },
+  {
+   "id": "c1-t4",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C1a"
+   ],
+   "src": "Chapter TYU 1 Q4",
+   "p": {
+    "rate": 0.8
+   },
+   "v": {
+    "rate": [
+     0.2,
+     2,
+     0.1
+    ]
+   },
+   "q": "A government charges ${rate#2} on every kilogram of sugar used in soft drinks, whatever the drink's selling price. This is:",
+   "opts": [
+    "an ad valorem tax",
+    "a unit tax",
+    "a direct tax",
+    "a value added tax"
+   ],
+   "a": 1,
+   "sol": [
+    "The tax depends on quantity (kilograms), not price → unit tax.",
+    "It is an excise-type duty: indirect, not direct."
+   ],
+   "alt": [
+    {
+     "q": "A government charges 12% of the selling price on every soft drink sold, whatever its sugar content. This is:",
+     "a": 0,
+     "sol": [
+      "A % of value → ad valorem.",
+      "It is a single sales charge, not a multi-stage VAT, and it is indirect."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "b013",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C1a"
+   ],
+   "src": "Bank 013",
+   "q": "Which is NOT a reason for putting a specific excise duty on a category of goods?",
+   "opts": [
+    "To raise revenue from luxuries that people buy whatever the price",
+    "To discourage consumption of harmful goods such as cigarettes",
+    "To help fund the health costs that harmful goods cause",
+    "To raise revenue from goods whose demand is very price-sensitive"
+   ],
+   "a": 3,
+   "sol": [
+    "Excise suits goods with inelastic demand: buyers keep buying, so revenue holds up.",
+    "Price-sensitive (elastic) demand would collapse when the duty is added, so D is not a reason."
+   ],
+   "trap": "Reading \"raise revenue\" in D and ticking it as a valid reason. The elastic part is what makes it wrong.",
+   "alt": [
+    {
+     "q": "Which of the following goods is BEST suited to a specific excise duty?",
+     "opts": [
+      "A product with many small producers and close substitutes",
+      "A product with inelastic demand made by a few large producers",
+      "A product whose demand is very price-sensitive",
+      "A product that is hard to define or measure"
+     ],
+     "a": 1,
+     "sol": [
+      "Ideal excise goods: inelastic demand, few large producers, high volumes, easy to define.",
+      "Each other option undermines collection or revenue."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "c1-c10",
+   "t": "c",
+   "lo": [
+    "C1a"
+   ],
+   "title": "Property, wealth and consumption taxes",
+   "rule": "<ul><li><b>Property taxes</b>: on capital or rental value, e.g. UK Stamp Duty Land Tax.</li><li><b>Wealth taxes</b>: on total wealth (pensions, artworks…). Few countries use them.</li><li><b>Single-stage</b> consumption tax: charged at one level only (manufacturing, wholesale or retail). US sales tax is retail-level.</li><li><b>Multi-stage</b>: charged every time the product changes hands. Two forms: <b>cascade</b> (no refunds, so tax compounds and becomes a cost) and <b>VAT</b> (businesses reclaim input tax).</li></ul>",
+   "note": "",
+   "trap": "Cascade tax won't be calculated in the exam, but you must know it differs from VAT: no reclaim, so it compounds."
+  },
+  {
+   "id": "b004",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C1a"
+   ],
+   "src": "Bank 004",
+   "q": "Which is a feature of a multi-stage sales tax?",
+   "opts": [
+    "The rate rises as profits rise",
+    "Tax is charged at every stage of the production and distribution chain",
+    "Tax is charged only at the final retail sale",
+    "Tax applies only to luxury items"
+   ],
+   "a": 1,
+   "sol": [
+    "Multi-stage = charged each time the product is sold along the chain (cascade or VAT).",
+    "C describes a single-stage retail tax."
+   ],
+   "alt": [
+    {
+     "q": "Which is a feature of a single-stage sales tax?",
+     "opts": [
+      "The rate rises as profits rise",
+      "Tax is charged at every stage of the production and distribution chain",
+      "Tax is charged at only one level of the chain, such as the final retail sale",
+      "Businesses reclaim the tax they pay on purchases"
+     ],
+     "a": 2,
+     "sol": [
+      "Single-stage = one level of the chain only, e.g. US retail sales tax.",
+      "B describes multi-stage; D describes VAT."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "c1-c11",
+   "t": "c",
+   "lo": [
+    "C1a"
+   ],
+   "title": "VAT: output minus input",
+   "rule": "<span class=\"eq\">VAT payable = output tax − input tax</span><p><b>Output tax</b>: VAT charged on sales. <b>Input tax</b>: VAT paid on purchases.</p><p>Sum over the chain: each business pays r × (its value added), so total VAT = r × final consumer price. The whole burden lands on the consumer.</p>",
+   "svg": "<svg viewBox=\"0 0 320 170\" role=\"img\" aria-label=\"VAT paid at each stage adds up to VAT on the final price\">\n<text x=\"160\" y=\"14\" font-size=\"11\" text-anchor=\"middle\">VAT paid over at each stage (20%)</text>\n<rect x=\"30\" y=\"120\" width=\"60\" height=\"20\" fill=\"#1f5fbf\"/><text x=\"60\" y=\"155\" font-size=\"10\" text-anchor=\"middle\">Grower</text><text x=\"60\" y=\"114\" font-size=\"10\" text-anchor=\"middle\">200</text>\n<rect x=\"120\" y=\"120\" width=\"60\" height=\"20\" fill=\"#1f5fbf\" opacity=\".35\"/><rect x=\"120\" y=\"90\" width=\"60\" height=\"30\" fill=\"#1f5fbf\"/><text x=\"150\" y=\"155\" font-size=\"10\" text-anchor=\"middle\">Miller</text><text x=\"150\" y=\"84\" font-size=\"10\" text-anchor=\"middle\">500 − 200 = 300</text>\n<rect x=\"210\" y=\"90\" width=\"60\" height=\"50\" fill=\"#1f5fbf\" opacity=\".35\"/><rect x=\"210\" y=\"60\" width=\"60\" height=\"30\" fill=\"#1f5fbf\"/><text x=\"240\" y=\"155\" font-size=\"10\" text-anchor=\"middle\">Baker</text><text x=\"240\" y=\"54\" font-size=\"10\" text-anchor=\"middle\">800 − 500 = 300</text>\n<text x=\"160\" y=\"32\" font-size=\"11\" text-anchor=\"middle\" font-weight=\"600\">200 + 300 + 300 = 800 = 20% × 4,000</text>\n</svg>",
+   "ex": {
+    "title": "Supply chain at 20%",
+    "given": "Grower sells to miller for 1,000 net; miller sells to baker for 2,500; baker sells to consumers for 4,000.",
+    "steps": [
+     "Grower: output 200, input 0 → pays 200",
+     "Miller: output 500, input (200) → pays 300",
+     "Baker: output 800, input (500) → pays 300",
+     "Total 800 = 20% × 4,000. Each business paid only on its own value added."
+    ]
+   }
+  },
+  {
+   "id": "c1-q02",
+   "t": "q",
+   "type": "num",
+   "lo": [
+    "C1a"
+   ],
+   "src": "Practice",
+   "p": {
+    "r": 0.2,
+    "s1": 1000,
+    "s2": 2500,
+    "s3": 4000
+   },
+   "v": {
+    "r": [
+     [
+      0.1,
+      0.15,
+      0.2,
+      0.25
+     ]
+    ],
+    "s1": [
+     500,
+     3000,
+     100
+    ],
+    "s2": [
+     3500,
+     8000,
+     100
+    ],
+    "s3": [
+     9000,
+     15000,
+     500
+    ]
+   },
+   "q": "VAT is charged at {r%}. A grower sells wheat to a miller for ${s1} (net of VAT). The miller sells flour to a baker for ${s2} (net). The baker sells bread to consumers for ${s3} (net). How much VAT does the <b>miller</b> pay to the tax authority?",
+   "ans": "s2*r - s1*r",
+   "sol": [
+    "Miller output tax = {s2} × {r%} = {=s2*r}",
+    "Miller input tax = {s1} × {r%} = {=s1*r}",
+    "Payable = {=s2*r} − {=s1*r} = {=s2*r-s1*r}"
+   ],
+   "trap": "Paying VAT on the whole sale price ({=s2*r}) and forgetting to deduct the input tax already paid to the grower."
+  },
+  {
+   "id": "c1-c12",
+   "t": "c",
+   "lo": [
+    "C1a"
+   ],
+   "title": "Zero-rated v exempt",
+   "rule": "<table><tr><th class=\"\">Supply</th><th class=\"\">VAT on sale</th><th class=\"\">Reclaim input VAT?</th></tr><tr><td class=\"\">Standard / higher rated</td><td class=\"\">Standard or higher rate</td><td class=\"\">Yes</td></tr><tr><td class=\"\">Zero rated</td><td class=\"r\">0%</td><td class=\"\">Yes</td></tr><tr><td class=\"\">Exempt</td><td class=\"\">None: outside VAT</td><td class=\"\">No</td></tr></table>",
+   "body": "<p>Zero-rated is still a <b>taxable</b> supply at 0%, so input VAT is reclaimable. Exempt is outside the system, so input VAT becomes a real cost.</p><p><span class=\"mute\">UK examples: zero-rated = basic food, children's clothes, exports. Exempt = finance, insurance. The exam tells you the category.</span></p>",
+   "trap": "Both charge no VAT on the sale, so they look identical. The difference is entirely on the input side."
+  },
+  {
+   "id": "c1-q03",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C1a"
+   ],
+   "src": "Practice",
+   "q": "Which statement about a business making only zero-rated supplies is correct?",
+   "opts": [
+    "It charges no VAT and cannot reclaim input VAT",
+    "It charges no VAT but can reclaim input VAT on its purchases",
+    "It charges VAT at the standard rate and reclaims input VAT",
+    "It is outside the VAT system and need not register"
+   ],
+   "a": 1,
+   "sol": [
+    "Zero-rated supplies are taxable at 0%.",
+    "Because they are taxable, input VAT is recoverable, and the business often gets repayments."
+   ],
+   "trap": "Treating zero-rated like exempt. A is the exempt position.",
+   "alt": [
+    {
+     "q": "Which statement about a business making only exempt supplies is correct?",
+     "opts": [
+      "It charges no VAT and cannot reclaim input VAT",
+      "It charges no VAT but can reclaim input VAT on its purchases",
+      "It charges VAT at 0% and gets repayments",
+      "It must register for VAT and file quarterly returns"
+     ],
+     "a": 0,
+     "sol": [
+      "Exempt supplies are outside VAT: no output tax.",
+      "Input VAT on purchases can't be reclaimed, so it becomes part of the business's costs."
+     ],
+     "trap": "Answering B, which is the zero-rated position."
+    }
+   ]
+  },
+  {
+   "id": "b014",
+   "t": "q",
+   "type": "num",
+   "lo": [
+    "C1a"
+   ],
+   "src": "Bank 014",
+   "p": {
+    "std": 40000,
+    "zero": 20000,
+    "ex": 15000,
+    "pstd": 18000,
+    "pzero": 9600,
+    "pex": 6000,
+    "r": 0.2
+   },
+   "v": {
+    "std": [
+     20000,
+     80000,
+     1000
+    ],
+    "zero": [
+     5000,
+     40000,
+     1000
+    ],
+    "ex": [
+     5000,
+     30000,
+     1000
+    ],
+    "pstd": [
+     6000,
+     30000,
+     600
+    ],
+    "pzero": [
+     2400,
+     15000,
+     600
+    ],
+    "pex": [
+     1200,
+     12000,
+     600
+    ]
+   },
+   "c": "std*r-(pstd+pzero)*r/(1+r)>200",
+   "q": "For the quarter, sales excluding tax are: standard-rated ${std}, zero-rated ${zero}, exempt ${ex}. Purchases <b>including</b> tax are: for standard-rated sales ${pstd}; for zero-rated sales ${pzero}; for exempt sales ${pex}. Sales tax is {r%}. How much sales tax is due for the quarter? Give your answer to the nearest $.",
+   "ans": "rd(std*r - pstd*r/(1+r) - pzero*r/(1+r))",
+   "sol": [
+    "Output tax: only standard-rated sales carry tax. {std} × {r%} = {=std*r}",
+    "Input tax on standard-rated purchases: {pstd} × {r%}/(1 + {r%}) = {=pstd*r/(1+r)}",
+    "Input tax on zero-rated purchases: {pzero} × 20/120 = {=pzero*r/(1+r)}. Zero-rated is taxable, so this is reclaimable.",
+    "Exempt-related purchases: no reclaim.",
+    "Due = {=std*r} − {=pstd*r/(1+r)} − {=pzero*r/(1+r)} = <b>{=rd(std*r - pstd*r/(1+r) - pzero*r/(1+r))}</b>"
+   ],
+   "trap": "Two traps: taking 20% of the tax-inclusive purchase figures (use 20/120), and reclaiming input tax on exempt-related purchases."
+  },
+  {
+   "id": "c1-c13",
+   "t": "c",
+   "lo": [
+    "C1a"
+   ],
+   "title": "VAT from a gross price",
+   "rule": "<span class=\"eq\">net price given:   VAT = net × r\ngross price given: VAT = gross × r/(1 + r)\n                   at 20%: gross × 20/120 = gross ÷ 6</span>",
+   "body": "<p>Dimensional check: gross = net × (1 + r), so net = gross/(1 + r) and VAT = gross − net = gross × r/(1 + r).</p>",
+   "ex": {
+    "given": "A price of $124 includes VAT at 20%.",
+    "steps": [
+     "VAT = 124 × 20/120",
+     "= 124 ÷ 6 = <b>$20.67</b> (net $103.33)"
+    ]
+   },
+   "trap": "124 × 20% = 24.80 is wrong: that taxes the tax. (Your book's margin note shows 20.66; it should round to 20.67.)"
+  },
+  {
+   "id": "c1-q04",
+   "t": "q",
+   "type": "num",
+   "lo": [
+    "C1a"
+   ],
+   "src": "Practice",
+   "tol": 0.01,
+   "p": {
+    "g": 270,
+    "r": 0.2
+   },
+   "v": {
+    "g": [
+     60,
+     900,
+     6
+    ],
+    "r": [
+     [
+      0.05,
+      0.1,
+      0.15,
+      0.2,
+      0.25
+     ]
+    ]
+   },
+   "q": "A customer pays ${g} for a jacket, including VAT at {r%}. How much of the price is VAT? Give your answer to 2 decimal places.",
+   "ans": "rd(g*r/(1+r),2)",
+   "dp": 2,
+   "sol": [
+    "The price is gross, so VAT = gross × r/(1 + r).",
+    "{g} × {r%} ÷ (1 + {r%}) = <b>{=rd(g*r/(1+r),2)#2}</b>"
+   ],
+   "trap": "Taking {r%} of the gross price ({=g*r#2}) taxes the VAT itself."
+  },
+  {
+   "id": "b015",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C1a"
+   ],
+   "src": "Bank 015",
+   "p": {
+    "out": 56400,
+    "inp": 41200,
+    "r": 0.2
+   },
+   "v": {
+    "out": [
+     20000,
+     90000,
+     200
+    ],
+    "inp": [
+     10000,
+     90000,
+     200
+    ]
+   },
+   "c": "abs(out-inp)>2000",
+   "q": "In a quarter a trader's taxable outputs are ${out} and taxable inputs are ${inp}, both <b>net</b> of sales tax at {r%}. The position with the tax authority is:",
+   "opts": [
+    "${=abs(out-inp)*r} recoverable",
+    "${=abs(out-inp)*r} payable",
+    "${=abs(out-inp)*r/(1+r)#2} payable",
+    "${=abs(out-inp)*r/(1+r)#2} recoverable"
+   ],
+   "a": "out>inp ? 1 : 0",
+   "sol": [
+    "Figures are net, so multiply by {r%} directly.",
+    "Output tax {=out*r}; input tax {=inp*r}.",
+    "{?out>inp|Output exceeds input: {=(out-inp)*r} payable.|Input exceeds output: {=(inp-out)*r} recoverable (a repayment).}"
+   ],
+   "trap": "Using r/(1 + r) on net figures. That fraction is only for tax-inclusive amounts."
+  },
+  {
+   "id": "c1-c14",
+   "t": "c",
+   "lo": [
+    "C1a",
+    "C2a"
+   ],
+   "title": "VAT registration and administration",
+   "rule": "<p>A taxable person making taxable supplies (standard, higher or zero-rated) must register once taxable turnover passes the threshold.</p><p>Once registered: issue VAT invoices, keep records, charge VAT, reclaim input VAT on purchases used for taxable supplies, file returns (UK: quarterly) and pay.</p>",
+   "body": "<p><b>Blocked input VAT</b> (UK): cars (unless bought for resale, e.g. by a dealer) and business entertaining (unless for staff).</p>",
+   "upd": "UK registration threshold £90,000 since 1 April 2024 (deregistration £88,000). Rates 20% / 5% / 0%."
+  },
+  {
+   "id": "c1-q05",
+   "t": "q",
+   "type": "multi",
+   "lo": [
+    "C1a"
+   ],
+   "src": "Practice",
+   "q": "Under the UK-style rules in your study text, input VAT on which TWO of the following purchases by a VAT-registered manufacturer is blocked (not recoverable)?",
+   "opts": [
+    "A company car for the sales director",
+    "Raw materials used in production",
+    "A dinner to entertain key customers",
+    "A staff summer party"
+   ],
+   "a": [
+    0,
+    2
+   ],
+   "sol": [
+    "Cars are blocked unless bought for resale. A manufacturer isn't a car dealer.",
+    "Customer entertaining is blocked; staff entertaining is not.",
+    "Raw materials for taxable supplies: fully recoverable."
+   ]
+  },
+  {
+   "id": "c1-c15",
+   "t": "c",
+   "lo": [
+    "C1b"
+   ],
+   "title": "Employee tax and PAYE",
+   "rule": "<p>Employees are taxed on earnings: salary, bonus, commission and <b>benefits in kind</b> (company car, accommodation, cheap loans, medical insurance), less allowable expenses and allowances.</p><p><b>Why collect at source (PAYE)?</b></p><ul><li>Less risk of default: tax is taken before the employee gets paid</li><li>Regular receipts help the government budget its cash flow</li><li>The authority deals with one employer, not many employees</li><li>The employer bears most of the admin cost</li></ul>",
+   "body": "<p>Basis of assessment varies: France taxes last year's earnings, Switzerland the average of two years, the UK the current year's receipts. You won't compute employee tax in F1.</p>",
+   "trap": "PAYE does not reduce the employee's total tax. It changes when and how it is collected, not how much."
+  },
+  {
+   "id": "b001",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C1b"
+   ],
+   "src": "Bank 001",
+   "q": "Which of the following is NOT a benefit of collecting employee income tax through PAYE?",
+   "opts": [
+    "Employees pay in small amounts through the year rather than one large bill",
+    "Government can predict its tax receipts more easily",
+    "It reduces the total amount of tax the employee has to pay",
+    "Government receives the cash sooner"
+   ],
+   "a": 2,
+   "sol": [
+    "PAYE changes timing and collection, not the liability.",
+    "A, B and D are genuine benefits."
+   ],
+   "alt": [
+    {
+     "q": "Which of the following IS a benefit to government of collecting employee income tax through PAYE?",
+     "opts": [
+      "It reduces the total amount of tax the employee has to pay",
+      "It removes the need for any tax records",
+      "Tax is collected before the employee receives the pay, reducing default",
+      "Employees choose when they pay"
+     ],
+     "a": 2,
+     "sol": [
+      "Deduction at source cuts default risk and gives regular receipts.",
+      "PAYE doesn't change the liability or remove record-keeping."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "b002",
+   "t": "q",
+   "type": "mcq",
+   "fixed": true,
+   "lo": [
+    "C1b"
+   ],
+   "src": "Bank 002",
+   "q": "Statements about PAYE: (i) employers carry most of the administration cost; (ii) some employers hold on to deducted tax or never pay it over; (iii) employers may make mistakes in what they deduct; (iv) fewer late payments and defaults mean government collects more of the tax due. Which two would government NOT see as advantages?",
+   "opts": [
+    "(i) and (ii)",
+    "(ii) and (iii)",
+    "(ii) and (iv)",
+    "(iii) and (iv)"
+   ],
+   "a": 1,
+   "sol": [
+    "(i) is an advantage to government: someone else carries the admin cost.",
+    "(iv) is an advantage: less default.",
+    "(ii) withheld-but-unpaid tax and (iii) deduction errors are drawbacks."
+   ],
+   "trap": "Ticking (i) as a disadvantage. It's bad for employers, but the question asks from government's viewpoint.",
+   "alt": [
+    {
+     "q": "Statements about PAYE: (i) employers carry most of the administration cost; (ii) some employers hold on to deducted tax or never pay it over; (iii) employers may make mistakes in what they deduct; (iv) fewer late payments and defaults mean government collects more of the tax due. Which two WOULD government see as advantages?",
+     "opts": [
+      "(i) and (ii)",
+      "(ii) and (iii)",
+      "(i) and (iv)",
+      "(iii) and (iv)"
+     ],
+     "a": 2,
+     "sol": [
+      "(i): the admin cost sits with employers, not government.",
+      "(iv): fewer defaults.",
+      "(ii) and (iii) are drawbacks."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "b003",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C1b",
+    "C2a"
+   ],
+   "src": "Bank 003",
+   "q": "Which is NOT an advantage to the tax authority of deducting tax at source?",
+   "opts": [
+    "It is easier to work out each taxpayer's total liability for the period",
+    "The tax arrives sooner",
+    "The paying organisation bears the administration cost",
+    "Tax is taken before the recipient receives the money"
+   ],
+   "a": 0,
+   "sol": [
+    "Deduction at source collects tax early and shifts admin to the payer.",
+    "It does not make the total liability easier to compute: the taxpayer may have other income, so a year-end calculation is still needed."
+   ],
+   "trap": "A sounds plausible because tax is \"already sorted\". Withholding is collection, not assessment.",
+   "alt": [
+    {
+     "q": "Which IS an advantage to the tax authority of deducting tax at source?",
+     "opts": [
+      "It makes each taxpayer's total liability easier to compute",
+      "The tax arrives sooner and default is less likely",
+      "The tax authority bears the administration cost",
+      "The recipient can choose when to pay"
+     ],
+     "a": 1,
+     "sol": [
+      "Deduction at source brings cash in early and cuts default.",
+      "The payer, not the authority, carries the admin cost; total liability still needs working out."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "c1-c16",
+   "t": "c",
+   "lo": [
+    "C2a"
+   ],
+   "title": "Administration: records, deadlines, powers",
+   "rule": "<p><b>Records</b>: corporate tax (accounts + tax workings), VAT (invoices, day books, VAT account), overseas subsidiaries (transfer-pricing documentation), employee tax (deductions, year-end returns, employee statements). UK retention: 6 years.</p><p><b>Assessment</b>: either the authority assesses, or the taxpayer self-assesses (UK, USA) and the authority checks.</p><p><b>Powers</b>: query returns, demand special reports, examine earlier years' records (US: up to 20 years), enter premises and seize documents, share information with foreign authorities.</p>",
+   "body": "<p><b>Why set deadlines?</b> Taxpayers know when to pay; the authority can forecast receipts; there's a clear trigger for penalties; employers can't use PAYE deductions as free working capital.</p>",
+   "trap": "Power of <b>arrest</b> or detention is the power a tax authority is least likely to have. That belongs to the police."
+  },
+  {
+   "id": "c1-t5",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C2a"
+   ],
+   "src": "Chapter TYU 1 Q5",
+   "q": "Which power is a tax authority LEAST likely to have?",
+   "opts": [
+    "Power to detain a taxpayer in custody",
+    "Power to inspect a business's accounting records",
+    "Power to enter premises and search for documents",
+    "Power to exchange information with overseas tax authorities"
+   ],
+   "a": 0,
+   "sol": [
+    "Inspection, search and information-sharing are standard tax-authority powers.",
+    "Detention is a police or court power."
+   ],
+   "alt": [
+    {
+     "q": "Which power is a tax authority MOST likely to have?",
+     "opts": [
+      "Power to detain a taxpayer in custody",
+      "Power to sentence a taxpayer to prison",
+      "Power to examine records from previous years",
+      "Power to arrest a company director"
+     ],
+     "a": 2,
+     "sol": [
+      "Examining earlier years' records is a standard power (US: up to 20 years back).",
+      "Detention, arrest and sentencing are police or court powers."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "c1-t6",
+   "t": "q",
+   "type": "multi",
+   "lo": [
+    "C2a"
+   ],
+   "src": "Chapter TYU 1 Q6",
+   "q": "Which THREE of the following are reasons why a tax system benefits from fixed due dates for filing returns and paying tax?",
+   "opts": [
+    "Taxpayers know exactly when payment is due",
+    "The authority can forecast its cash receipts",
+    "Deadlines reduce the amount of tax payable",
+    "They give a clear trigger for late-payment penalties and interest",
+    "They let employers keep PAYE deductions as working capital for longer"
+   ],
+   "a": [
+    0,
+    1,
+    3
+   ],
+   "sol": [
+    "A, B and D are the standard reasons.",
+    "Deadlines don't change the liability (C).",
+    "E is the opposite: deadlines stop employers using deducted tax as free finance."
+   ]
+  },
+  {
+   "id": "c1-q06",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C2a"
+   ],
+   "src": "Practice",
+   "q": "Under a self-assessment system:",
+   "opts": [
+    "the tax authority calculates each taxpayer's liability and issues a bill",
+    "the taxpayer calculates and reports their own liability, and the authority checks it",
+    "no returns are filed because tax is deducted at source",
+    "tax is only payable once the authority has audited the return"
+   ],
+   "a": 1,
+   "sol": [
+    "Self-assessment (UK, USA): the taxpayer works out and declares the liability.",
+    "The authority then reviews and can query or investigate."
+   ]
+  },
+  {
+   "id": "c1-c17",
+   "t": "c",
+   "lo": [
+    "C3b"
+   ],
+   "title": "Tax avoidance v tax evasion",
+   "rule": "<table><tr><th class=\"\"></th><th class=\"\">What it is</th><th class=\"\">Main risk</th></tr><tr><td class=\"\">Avoidance</td><td class=\"\">Legal: arranging affairs within the law to pay less</td><td class=\"\">Reputational (\"not paying a fair share\")</td></tr><tr><td class=\"\">Evasion</td><td class=\"\">Illegal: deliberately breaking the law</td><td class=\"\">Prosecution, fines, penalties</td></tr></table>",
+   "body": "<p><b>How authorities fight both:</b> deduct at source and use third-party reporting; simplify (fewer reliefs to exploit); audit more; communicate well; build a system seen as fair; review penalties.</p>",
+   "ex": {
+    "title": "Classify",
+    "steps": [
+     "Setting up a subsidiary in a low-tax country → <b>avoidance</b> (legal, but reputational risk).",
+     "Leaving cash sales off the return → <b>evasion</b>.",
+     "Claiming an expense you know is not deductible → <b>evasion</b>."
+    ]
+   },
+   "trap": "Avoidance being legal doesn't make it risk-free. Exam answers on its risk point to reputation, not prosecution."
+  },
+  {
+   "id": "c1-q07",
+   "t": "q",
+   "type": "match",
+   "lo": [
+    "C3b"
+   ],
+   "src": "Practice",
+   "q": "Classify each action as tax avoidance or tax evasion.",
+   "items": [
+    "Under-declaring takings from cash sales",
+    "Locating a subsidiary in a low-tax country to cut the group's tax bill",
+    "Claiming fictitious expenses",
+    "Timing a capital purchase to claim a 100% first-year allowance"
+   ],
+   "choices": [
+    "Avoidance",
+    "Evasion"
+   ],
+   "a": [
+    1,
+    0,
+    1,
+    0
+   ],
+   "sol": [
+    "Evasion = deliberately breaking the law: under-declaring income, fictitious expenses.",
+    "Avoidance = legal arrangements: low-tax subsidiary, timing purchases to use allowances the law offers."
+   ],
+   "trap": "Calling the low-tax subsidiary \"evasion\" because it feels wrong. It's legal (avoidance); the risk is reputational."
+  },
+  {
+   "id": "c1-q08",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C3b"
+   ],
+   "src": "Practice",
+   "q": "A large retailer is criticised in the press for routing profits through a low-tax country, entirely within the law. The MAIN risk it faces is:",
+   "opts": [
+    "criminal prosecution for tax evasion",
+    "reputational damage and loss of customers",
+    "automatic penalties from its home tax authority",
+    "loss of its competent jurisdiction"
+   ],
+   "a": 1,
+   "sol": [
+    "The arrangement is legal, so it is avoidance, not evasion: no prosecution.",
+    "The risk is reputational: being seen as not paying a fair share."
+   ]
+  },
+  {
+   "id": "c1-q09",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C3b"
+   ],
+   "src": "Practice",
+   "q": "Which of the following measures mainly reduces the OPPORTUNITY for tax evasion?",
+   "opts": [
+    "Deducting tax at source and third-party reporting",
+    "Running advertising about the fairness of the system",
+    "Increasing the number of reliefs and allowances",
+    "Raising tax rates"
+   ],
+   "a": 0,
+   "sol": [
+    "If tax is taken before income reaches the taxpayer, or a third party reports the income, there is little left to hide.",
+    "More reliefs (C) increase complexity and exploitation; B works on attitudes, not opportunity."
+   ],
+   "alt": [
+    {
+     "q": "Which measure mainly works by changing SOCIAL ATTITUDES to paying tax?",
+     "opts": [
+      "Deducting tax at source",
+      "Third-party reporting of income",
+      "Making the system honest, simple and seen as fair",
+      "Auditing more returns"
+     ],
+     "a": 2,
+     "sol": [
+      "A system seen as fair builds commitment to paying.",
+      "A and B reduce opportunity; D increases detection."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "c1-c18",
+   "t": "c",
+   "lo": [
+    "C2a",
+    "C2b"
+   ],
+   "title": "Direct tax on trading income: the identity",
+   "rule": "<span class=\"eq\">Taxable profit = Accounting profit\n  − exempt / other-rules income\n  + disallowable expenses\n  + accounting depreciation\n  − tax depreciation</span><p>Then tax = taxable profit × rate. The question always gives the country's rules.</p>",
+   "ex": {
+    "title": "Delta Co",
+    "given": "PBT $450,000 includes $25,000 exempt dividends and $8,000 client entertaining (disallowable). Accounting depreciation $60,000; tax depreciation $72,000. Rate 25%.",
+    "steps": [
+     "450,000 − 25,000 = 425,000",
+     "+ 8,000 entertaining = 433,000",
+     "+ 60,000 depreciation − 72,000 tax depreciation = 421,000",
+     "Tax = 421,000 × 25% = <b>105,250</b>"
+    ]
+   },
+   "trap": "Depreciation is <i>swapped</i>, not netted against anything else: add back the book figure, deduct the tax authority's figure."
+  },
+  {
+   "id": "c1-q10",
+   "t": "q",
+   "type": "num",
+   "lo": [
+    "C2b",
+    "C2c"
+   ],
+   "src": "Practice",
+   "p": {
+    "pbt": 450000,
+    "ex": 25000,
+    "ent": 8000,
+    "dep": 60000,
+    "tdep": 72000,
+    "r": 0.25
+   },
+   "v": {
+    "pbt": [
+     200000,
+     900000,
+     10000
+    ],
+    "ex": [
+     5000,
+     50000,
+     1000
+    ],
+    "ent": [
+     2000,
+     20000,
+     1000
+    ],
+    "dep": [
+     20000,
+     100000,
+     2000
+    ],
+    "tdep": [
+     20000,
+     120000,
+     2000
+    ],
+    "r": [
+     [
+      0.2,
+      0.22,
+      0.25,
+      0.28,
+      0.3
+     ]
+    ]
+   },
+   "q": "Delta Co reports profit before tax of ${pbt}. This includes ${ex} of dividend income, which is exempt, and ${ent} of client entertaining, which is disallowable. Accounting depreciation is ${dep} and tax depreciation is ${tdep}. The tax rate is {r%}. Calculate the tax payable.",
+   "ans": "(pbt-ex+ent+dep-tdep)*r",
+   "sol": [
+    "Taxable profit = {pbt} − {ex} + {ent} + {dep} − {tdep} = {=pbt-ex+ent+dep-tdep}",
+    "Tax = {=pbt-ex+ent+dep-tdep} × {r%} = <b>{=(pbt-ex+ent+dep-tdep)*r}</b>"
+   ],
+   "trap": "Adding the exempt income back instead of deducting it. It is already in PBT, so it has to come out."
+  },
+  {
+   "id": "c1-c19",
+   "t": "c",
+   "lo": [
+    "C2a",
+    "C2c"
+   ],
+   "title": "Capital taxes: the gain identity",
+   "rule": "<span class=\"eq\">Gain = (proceeds − selling costs)\n     − cost − buying costs − enhancement\n     − indexation (if allowed)</span>",
+   "body": "<p>Capital taxes hit gains on disposing of investments and non-current assets. Most countries use historical cost; a few index costs for inflation. Chapter 2 drills this.</p>",
+   "ex": {
+    "title": "Warehouse",
+    "given": "Sold for $900,000 with $18,000 agents' fees. Bought for $500,000 plus $12,000 legal costs; extension $80,000. Indexation factor 0.10 on all allowable costs.",
+    "steps": [
+     "Net proceeds 900,000 − 18,000 = 882,000",
+     "Allowable costs 500,000 + 12,000 + 80,000 = 592,000",
+     "Indexation 10% × 592,000 = 59,200",
+     "Gain = 882,000 − 592,000 − 59,200 = <b>230,800</b>"
+    ]
+   },
+   "upd": "UK company indexation was frozen at December 2017 and individuals' was abolished in 2008. Exam questions set in a hypothetical country can still give an indexation factor."
+  },
+  {
+   "id": "c1-q11",
+   "t": "q",
+   "type": "num",
+   "lo": [
+    "C2c"
+   ],
+   "src": "Practice",
+   "p": {
+    "pr": 900000,
+    "sc": 18000,
+    "cost": 500000,
+    "bc": 12000,
+    "enh": 80000,
+    "ix": 0.1
+   },
+   "v": {
+    "pr": [
+     700000,
+     1500000,
+     10000
+    ],
+    "sc": [
+     5000,
+     30000,
+     1000
+    ],
+    "cost": [
+     200000,
+     500000,
+     10000
+    ],
+    "bc": [
+     2000,
+     20000,
+     1000
+    ],
+    "enh": [
+     10000,
+     120000,
+     5000
+    ],
+    "ix": [
+     [
+      0.05,
+      0.1,
+      0.15,
+      0.2,
+      0.25
+     ]
+    ]
+   },
+   "q": "A company sells a warehouse for ${pr} and pays ${sc} in agents' fees. It bought the warehouse for ${cost} with ${bc} of legal costs, and later spent ${enh} on an extension. The indexation factor on all allowable costs is {ix%}. Calculate the chargeable gain.",
+   "ans": "pr-sc-(cost+bc+enh)*(1+ix)",
+   "sol": [
+    "Net proceeds = {pr} − {sc} = {=pr-sc}",
+    "Allowable costs = {cost} + {bc} + {enh} = {=cost+bc+enh}",
+    "Indexation = {ix%} × {=cost+bc+enh} = {=(cost+bc+enh)*ix}",
+    "Gain = {=pr-sc} − {=cost+bc+enh} − {=(cost+bc+enh)*ix} = <b>{=pr-sc-(cost+bc+enh)*(1+ix)}</b>"
+   ],
+   "trap": "Indexing only the purchase price. Here the factor applies to every allowable cost, including legal fees and the extension."
+  }
+ ]
+}

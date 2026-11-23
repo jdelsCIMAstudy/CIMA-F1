@@ -1,0 +1,3378 @@
+{
+ "id": "ch2",
+ "n": 2,
+ "area": "C · Tax",
+ "title": "Corporate income tax and capital tax computations",
+ "lo": [
+  "C2b",
+  "C2c"
+ ],
+ "items": [
+  {
+   "id": "c2-c01",
+   "t": "c",
+   "lo": [
+    "C2b"
+   ],
+   "title": "Accounting profit → taxable profit",
+   "rule": "<span class=\"eq\">TP = PBT − E + D + Dep − TDep\n\nE    exempt / other-rules income\nD    disallowable expenses\nDep  accounting depreciation\nTDep tax depreciation (capital allowances)\n\nTax = TP × rate</span>",
+   "body": "<p>Each sign follows from one question: is this item already in PBT, and does the tax authority accept it? If it's in PBT but taxable elsewhere or not at all, take it out. If it's charged in PBT but not allowed, put it back.</p>",
+   "trap": "Every question gives its own country's rules. Read what is disallowed rather than relying on UK memory."
+  },
+  {
+   "id": "c2-c02",
+   "t": "c",
+   "lo": [
+    "C2b"
+   ],
+   "title": "What each adjustment means",
+   "rule": "<table><tr><th class=\"\">Item</th><th class=\"\">Do</th><th class=\"\">Why</th></tr><tr><td class=\"\">Exempt / other income</td><td class=\"\">Deduct</td><td class=\"\">Rental, dividends or interest received: taxed separately or not at all</td></tr><tr><td class=\"\">Disallowable expenses</td><td class=\"\">Add back</td><td class=\"\">Customer entertaining, political donations, gifts to customers</td></tr><tr><td class=\"\">Accounting depreciation (and amortisation if disallowed)</td><td class=\"\">Add back</td><td class=\"\">Subjective: management picks method and life</td></tr><tr><td class=\"\">Tax depreciation</td><td class=\"\">Deduct</td><td class=\"\">Standard rates set by the regime</td></tr></table>",
+   "trap": "<b>Dividends paid</b> aren't an expense. They never went through PBT, so there is nothing to adjust. Adding or deducting them is the classic wrong option."
+  },
+  {
+   "id": "c2-t1",
+   "t": "q",
+   "type": "num",
+   "lo": [
+    "C2b",
+    "C2c"
+   ],
+   "src": "Chapter TYU 1",
+   "p": {
+    "ap": 120000,
+    "ent": 6000,
+    "ex": 9000,
+    "r": 0.25
+   },
+   "v": {
+    "ap": [
+     50000,
+     300000,
+     1000
+    ],
+    "ent": [
+     1000,
+     15000,
+     500
+    ],
+    "ex": [
+     1000,
+     20000,
+     500
+    ],
+    "r": [
+     [
+      0.2,
+      0.25,
+      0.3
+     ]
+    ]
+   },
+   "q": "Heron's accounting profit for the year ended 31/03/X5 is ${ap}. This includes ${ent} of customer entertaining (not allowable for tax) and ${ex} of income that is exempt from tax. Heron has no capital items. The tax rate is {r%}. Calculate the tax payable.",
+   "ans": "(ap-ex+ent)*r",
+   "sol": [
+    "Taxable profit = {ap} − {ex} + {ent} = {=ap-ex+ent}",
+    "Tax = {=ap-ex+ent} × {r%} = <b>{=(ap-ex+ent)*r}</b>"
+   ],
+   "trap": "Getting the signs backwards: exempt income comes out, disallowable entertaining goes back in."
+  },
+  {
+   "id": "b016",
+   "t": "q",
+   "type": "num",
+   "lo": [
+    "C2b",
+    "C2c"
+   ],
+   "src": "Bank 016",
+   "p": {
+    "pbt": 240000,
+    "dis": 15000,
+    "nti": 30000,
+    "dep": 10000,
+    "tdep": 12000,
+    "r": 0.25
+   },
+   "v": {
+    "pbt": [
+     100000,
+     500000,
+     5000
+    ],
+    "dis": [
+     2000,
+     30000,
+     1000
+    ],
+    "nti": [
+     5000,
+     50000,
+     1000
+    ],
+    "dep": [
+     5000,
+     40000,
+     1000
+    ],
+    "tdep": [
+     5000,
+     40000,
+     1000
+    ],
+    "r": [
+     [
+      0.2,
+      0.25,
+      0.3
+     ]
+    ]
+   },
+   "q": "Profit before tax ${pbt}; disallowable expenses ${dis}; non-trading income ${nti}; depreciation ${dep}; tax depreciation ${tdep}. Tax rate {r%}. Calculate the corporate income tax on trading profits, to the nearest $.",
+   "ans": "rd((pbt+dis-nti+dep-tdep)*r)",
+   "sol": [
+    "Trading profit = {pbt} + {dis} − {nti} + {dep} − {tdep} = {=pbt+dis-nti+dep-tdep}",
+    "Tax = {=pbt+dis-nti+dep-tdep} × {r%} = <b>{=rd((pbt+dis-nti+dep-tdep)*r)}</b>"
+   ],
+   "trap": "Leaving non-trading income in. The question asks for tax on <i>trading</i> profits only."
+  },
+  {
+   "id": "b018",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C2b",
+    "C2c"
+   ],
+   "src": "Bank 018",
+   "p": {
+    "pbt": 1900000,
+    "dep": 250000,
+    "tdep": 300000,
+    "dis": 90000,
+    "div": 40000,
+    "r": 0.25
+   },
+   "v": {
+    "pbt": [
+     800000,
+     3000000,
+     50000
+    ],
+    "dep": [
+     100000,
+     400000,
+     10000
+    ],
+    "tdep": [
+     100000,
+     450000,
+     10000
+    ],
+    "dis": [
+     20000,
+     150000,
+     5000
+    ],
+    "div": [
+     20000,
+     100000,
+     5000
+    ]
+   },
+   "q": "Profit before tax is ${pbt}, after depreciation of ${dep}. Tax depreciation is ${tdep}. ${dis} of expenses are disallowable, and the ${div} of dividends paid are not deductible either. Tax rate {r%}. The current tax charge is:",
+   "opts": [
+    "${=(pbt+dep-tdep+dis+div)*r}",
+    "${=pbt*r}",
+    "${=(pbt+dep-tdep)*r}",
+    "${=(pbt+dep-tdep+dis)*r}"
+   ],
+   "a": 3,
+   "sol": [
+    "Taxable = {pbt} + {dep} − {tdep} + {dis} = {=pbt+dep-tdep+dis}",
+    "Tax = × {r%} = <b>{=(pbt+dep-tdep+dis)*r}</b>",
+    "Dividends paid were never deducted in PBT, so there's nothing to add back."
+   ],
+   "trap": "Option A adds back the dividends. \"Not deductible\" is true but irrelevant: they aren't in PBT to begin with."
+  },
+  {
+   "id": "b019",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C2b",
+    "C2c"
+   ],
+   "src": "Bank 019",
+   "p": {
+    "ap": 500000,
+    "dep": 30000,
+    "am": 10000,
+    "tdep": 36000,
+    "r": 0.25
+   },
+   "v": {
+    "ap": [
+     200000,
+     900000,
+     10000
+    ],
+    "dep": [
+     10000,
+     60000,
+     2000
+    ],
+    "am": [
+     4000,
+     20000,
+     1000
+    ],
+    "tdep": [
+     10000,
+     70000,
+     2000
+    ]
+   },
+   "q": "Accounting profit is ${ap}, after depreciation of ${dep} and amortisation of development costs of ${am}, both disallowable. Tax depreciation is ${tdep}. Tax rate {r%}. Tax payable is:",
+   "opts": [
+    "${=(ap-dep)*r}",
+    "${=(ap-am)*r}",
+    "${=(ap+tdep-dep-am)*r}",
+    "${=(ap+dep+am-tdep)*r}"
+   ],
+   "a": 3,
+   "sol": [
+    "Add back both disallowable charges: {ap} + {dep} + {am} = {=ap+dep+am}",
+    "Deduct tax depreciation: − {tdep} = {=ap+dep+am-tdep}",
+    "Tax at {r%} = <b>{=(ap+dep+am-tdep)*r}</b>"
+   ],
+   "trap": "Option C flips every sign: book depreciation goes back IN, tax depreciation comes OUT."
+  },
+  {
+   "id": "b020",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C2b",
+    "C2c"
+   ],
+   "src": "Bank 020",
+   "p": {
+    "ap": 400000,
+    "dep": 20000,
+    "am": 8000,
+    "tdep": 24000,
+    "div": 15000,
+    "r": 0.25
+   },
+   "v": {
+    "ap": [
+     150000,
+     800000,
+     10000
+    ],
+    "dep": [
+     8000,
+     50000,
+     1000
+    ],
+    "am": [
+     2000,
+     15000,
+     1000
+    ],
+    "tdep": [
+     8000,
+     60000,
+     1000
+    ],
+    "div": [
+     5000,
+     40000,
+     1000
+    ]
+   },
+   "q": "Accounting profit is ${ap}, after depreciation of ${dep} and disallowable amortisation of ${am}. Tax depreciation is ${tdep}, and a dividend of ${div} was paid. Tax rate {r%}. Tax payable is:",
+   "opts": [
+    "${=(ap+dep+am-tdep+div)*r}",
+    "${=(ap+dep-tdep)*r}",
+    "${=ap*r}",
+    "${=(ap+dep+am-tdep)*r}"
+   ],
+   "a": 3,
+   "sol": [
+    "{ap} + {dep} + {am} − {tdep} = {=ap+dep+am-tdep}",
+    "Tax at {r%} = <b>{=(ap+dep+am-tdep)*r}</b>",
+    "The dividend paid has no effect."
+   ],
+   "trap": "Adding the dividend back (option A)."
+  },
+  {
+   "id": "c2-t18",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C2b",
+    "C2c"
+   ],
+   "src": "Chapter TYU 18",
+   "p": {
+    "ap": 600000,
+    "dep": 40000,
+    "am": 10000,
+    "tdep": 35000,
+    "r": 0.25
+   },
+   "v": {
+    "ap": [
+     200000,
+     900000,
+     10000
+    ],
+    "dep": [
+     10000,
+     80000,
+     5000
+    ],
+    "am": [
+     2000,
+     30000,
+     1000
+    ],
+    "tdep": [
+     10000,
+     80000,
+     5000
+    ]
+   },
+   "q": "Corvid's accounting profit is ${ap} after charging depreciation of ${dep} and amortisation of ${am}, neither of which is allowable. Tax depreciation is ${tdep}. Tax is {r%}. Tax payable is:",
+   "opts": [
+    "${=(ap-tdep)*r}",
+    "${=ap*r}",
+    "${=(ap+dep-tdep)*r}",
+    "${=(ap+dep+am-tdep)*r}"
+   ],
+   "a": 3,
+   "sol": [
+    "{ap} + {dep} + {am} − {tdep} = {=ap+dep+am-tdep}",
+    "× {r%} = <b>{=(ap+dep+am-tdep)*r}</b>"
+   ],
+   "trap": "Forgetting the amortisation (option C). Anything non-allowable that was charged goes back."
+  },
+  {
+   "id": "c2-c03",
+   "t": "c",
+   "lo": [
+    "C2b"
+   ],
+   "title": "\"Taxable total profits\" (UK-style)",
+   "rule": "<span class=\"eq\">TTP = trading profit (after capital allowances)\n    + rental income + interest receivable\n    + chargeable gains\n    − qualifying charitable donations\n\nDividends received: excluded</span>",
+   "body": "<p>Some kit questions use the UK idea of one total figure. Non-trade income is taken <i>out</i> of trading profit, but then added back in its own box. Dividends from other companies stay out entirely.</p>",
+   "trap": "Including dividends received. They're the one income line excluded from taxable total profits."
+  },
+  {
+   "id": "b023",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C2b",
+    "C2c"
+   ],
+   "src": "Bank 023",
+   "p": {
+    "tp": 200000,
+    "ca": 18000,
+    "rent": 22000,
+    "int": 5000,
+    "div": 9000,
+    "don": 3000
+   },
+   "v": {
+    "tp": [
+     100000,
+     400000,
+     5000
+    ],
+    "ca": [
+     5000,
+     40000,
+     1000
+    ],
+    "rent": [
+     5000,
+     40000,
+     1000
+    ],
+    "int": [
+     1000,
+     10000,
+     500
+    ],
+    "div": [
+     2000,
+     20000,
+     1000
+    ],
+    "don": [
+     1000,
+     8000,
+     500
+    ]
+   },
+   "q": "Results for the year: adjusted trading profit before capital allowances ${tp}; capital allowances ${ca}; rental income ${rent}; bank interest receivable ${int}; dividends received ${div}; qualifying charitable donation ${don}. What are the taxable total profits?",
+   "opts": [
+    "${=tp-ca+rent+int+div-don}",
+    "${=tp-ca+rent+int}",
+    "${=tp-ca+rent+int-don}",
+    "${=tp-ca-don}"
+   ],
+   "a": 2,
+   "sol": [
+    "Trading profit = {tp} − {ca} = {=tp-ca}",
+    "+ rental {rent} + interest {int} = {=tp-ca+rent+int}",
+    "− qualifying donation {don} = <b>{=tp-ca+rent+int-don}</b>",
+    "Dividends received are excluded."
+   ],
+   "trap": "Adding the dividends received (option A).",
+   "flag": "The kit's own answer to this question leaves out rental and bank interest, which contradicts its answer to \"which is excluded from taxable total profits\" (dividends only). This app follows the consistent rule. If the real exam shows only a trading-only figure, that is the kit's version."
+  },
+  {
+   "id": "b024",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C2b"
+   ],
+   "src": "Bank 024",
+   "q": "Which is excluded from a company's taxable total profits?",
+   "opts": [
+    "Rental income",
+    "Bank interest receivable",
+    "Dividends received",
+    "Chargeable gains"
+   ],
+   "a": 2,
+   "sol": [
+    "Dividends received from other companies are excluded.",
+    "Rental income, interest and gains are all included."
+   ],
+   "alt": [
+    {
+     "q": "Which is included in a company's taxable total profits?",
+     "opts": [
+      "Dividends received from another company",
+      "Chargeable gains",
+      "Dividends paid to shareholders",
+      "Accounting depreciation"
+     ],
+     "a": 1,
+     "sol": [
+      "Chargeable gains are included.",
+      "Dividends received are excluded; dividends paid and depreciation are not income at all."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "c2-c04",
+   "t": "c",
+   "lo": [
+    "C2b"
+   ],
+   "title": "Tax depreciation rules",
+   "rule": "<ul><li>Usually <b>reducing balance</b> on the tax written-down value: TWDVₙ = C(1 − r)ⁿ</li><li><b>Full year</b> if owned at the year end: no time-apportioning for part-year purchases</li><li><b>First-year allowance</b> (FYA): up to 100% in the year of purchase</li><li>Buildings: often low-rate straight line on cost. Land: nothing.</li></ul>",
+   "svg": "<svg viewBox=\"0 0 320 190\" role=\"img\" aria-label=\"Tax written down value under 25% reducing balance compared with straight line\">\n<line x1=\"40\" y1=\"160\" x2=\"305\" y2=\"160\" stroke=\"currentColor\"/><line x1=\"40\" y1=\"160\" x2=\"40\" y2=\"15\" stroke=\"currentColor\"/>\n<text x=\"172\" y=\"182\" font-size=\"11\" text-anchor=\"middle\">Years owned</text><text x=\"14\" y=\"90\" font-size=\"11\" text-anchor=\"middle\" transform=\"rotate(-90 14 90)\">Written-down value</text>\n<polyline fill=\"none\" stroke=\"#1f5fbf\" stroke-width=\"2.5\" points=\"40,20 80,55 120,81.25 160,100.94 200,115.7 240,126.78 280,135.09\"/>\n<polyline fill=\"none\" stroke=\"#b42318\" stroke-width=\"2.5\" stroke-dasharray=\"6 4\" points=\"40,20 80,37.5 120,55 160,72.5 200,90 240,107.5 280,125\"/>\n<text x=\"285\" y=\"140\" font-size=\"10\">RB 25%: C(1−r)ⁿ</text><text x=\"250\" y=\"102\" font-size=\"10\" text-anchor=\"end\">SL 12.5%: C(1−nr)</text>\n<text x=\"44\" y=\"16\" font-size=\"10\">Cost C</text></svg>",
+   "body": "<p>Why replace book depreciation? Management chooses its method and life, so the authority sets standard rates and treats every business the same.</p>",
+   "upd": "UK: corporation tax 25% (19% small profits rate, marginal relief between). Full expensing gives 100% FYA on new main-rate plant; AIA gives 100% on the first £1m. The main-pool rate is reported as 14% from April 2026. Exams give the rate."
+  },
+  {
+   "id": "c2-t22a",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C2b"
+   ],
+   "src": "Chapter TYU 22 Q1",
+   "q": "Tax authorities replace accounting depreciation with tax depreciation mainly:",
+   "opts": [
+    "to give companies smaller deductions",
+    "to give companies larger deductions",
+    "so that all businesses claim at the same set rates",
+    "so that directors can choose their own rates"
+   ],
+   "a": 2,
+   "sol": [
+    "Accounting depreciation depends on management's choices.",
+    "Tax depreciation applies standard rates set by the regime, so every business is treated alike."
+   ],
+   "trap": "A or B: tax depreciation can be bigger or smaller in any one year. The point is consistency, not size."
+  },
+  {
+   "id": "c2-c05",
+   "t": "c",
+   "lo": [
+    "C2b",
+    "C2c"
+   ],
+   "title": "Worked: trading profit with tax depreciation",
+   "ex": {
+    "title": "Orbit Co, year 2",
+    "given": "Machinery bought March 20X1 for $80,000. Accounts: 12.5% straight line. Tax: 25% reducing balance. 20X2 PBT $240,000 includes $12,000 exempt interest and $6,000 political donations. Rate 25%.",
+    "steps": [
+     "20X1 allowance: 25% × 80,000 = 20,000 (full year despite the March purchase). TWDV 60,000.",
+     "20X2 allowance: 25% × 60,000 = 15,000. TWDV 45,000.",
+     "Book depreciation 20X2: 80,000 × 12.5% = 10,000.",
+     "TP = 240,000 − 12,000 + 6,000 + 10,000 − 15,000 = 229,000",
+     "Tax = 229,000 × 25% = <b>57,250</b>"
+    ]
+   },
+   "trap": "Applying the 25% to cost in year 2. Reducing balance applies to the TWDV brought forward."
+  },
+  {
+   "id": "c2-t2",
+   "t": "q",
+   "type": "num",
+   "lo": [
+    "C2b"
+   ],
+   "src": "Chapter TYU 2",
+   "p": {
+    "pbt": 90000,
+    "pol": 3000,
+    "divi": 5000,
+    "p1": 20000,
+    "p2": 8000,
+    "adr": 0.1,
+    "wda": 0.25,
+    "b": 200000,
+    "bdr": 0.02,
+    "btr": 0.03,
+    "r": 0.28
+   },
+   "v": {
+    "pbt": [
+     60000,
+     150000,
+     1000
+    ],
+    "pol": [
+     1000,
+     8000,
+     500
+    ],
+    "divi": [
+     1000,
+     10000,
+     500
+    ],
+    "p1": [
+     12000,
+     40000,
+     1000
+    ],
+    "p2": [
+     4000,
+     16000,
+     1000
+    ],
+    "b": [
+     100000,
+     300000,
+     10000
+    ],
+    "r": [
+     [
+      0.2,
+      0.25,
+      0.28,
+      0.3
+     ]
+    ]
+   },
+   "d": {
+    "adep": "(p1+p2)*adr + b*bdr",
+    "tdep": "p1*(1-wda)*wda + p2 + b*btr",
+    "tp": "pbt - divi + pol + (p1+p2)*adr + b*bdr - (p1*(1-wda)*wda + p2 + b*btr)"
+   },
+   "q": "Kestrel's accounting profit for the year ended 31/12/X3 is ${pbt}. It includes a ${pol} political donation (not allowable) and ${divi} of exempt dividend income. Plant and machinery: bought on 1/1/X2 for ${p1}, plus a new machine on 1/1/X3 costing ${p2} that qualifies for a 100% first-year allowance. The accounts depreciate plant at {adr%} of cost; tax depreciation on plant is {wda%} reducing balance. Building: cost ${b} on 1/1/X2. The accounts depreciate it at {bdr%} straight line; tax depreciation is {btr%} straight line. <b>(a) Calculate the total accounting depreciation for X3.</b>",
+   "ans": "adep",
+   "sol": [
+    "Plant: ({p1} + {p2}) × {adr%} = {=(p1+p2)*adr}",
+    "Building: {b} × {bdr%} = {=b*bdr}",
+    "Total = <b>{adep}</b>"
+   ],
+   "trap": "Leaving out the new machine. The accounts depreciate it like any other plant; the 100% FYA is a tax rule only."
+  },
+  {
+   "id": "c2-t3",
+   "t": "q",
+   "type": "num",
+   "lo": [
+    "C2b"
+   ],
+   "src": "Chapter TYU 3",
+   "p": {
+    "pbt": 90000,
+    "pol": 3000,
+    "divi": 5000,
+    "p1": 20000,
+    "p2": 8000,
+    "adr": 0.1,
+    "wda": 0.25,
+    "b": 200000,
+    "bdr": 0.02,
+    "btr": 0.03,
+    "r": 0.28
+   },
+   "v": {
+    "pbt": [
+     60000,
+     150000,
+     1000
+    ],
+    "pol": [
+     1000,
+     8000,
+     500
+    ],
+    "divi": [
+     1000,
+     10000,
+     500
+    ],
+    "p1": [
+     12000,
+     40000,
+     1000
+    ],
+    "p2": [
+     4000,
+     16000,
+     1000
+    ],
+    "b": [
+     100000,
+     300000,
+     10000
+    ],
+    "r": [
+     [
+      0.2,
+      0.25,
+      0.28,
+      0.3
+     ]
+    ]
+   },
+   "d": {
+    "adep": "(p1+p2)*adr + b*bdr",
+    "tdep": "p1*(1-wda)*wda + p2 + b*btr",
+    "tp": "pbt - divi + pol + (p1+p2)*adr + b*bdr - (p1*(1-wda)*wda + p2 + b*btr)"
+   },
+   "q": "Kestrel's accounting profit for the year ended 31/12/X3 is ${pbt}. It includes a ${pol} political donation (not allowable) and ${divi} of exempt dividend income. Plant and machinery: bought on 1/1/X2 for ${p1}, plus a new machine on 1/1/X3 costing ${p2} that qualifies for a 100% first-year allowance. The accounts depreciate plant at {adr%} of cost; tax depreciation on plant is {wda%} reducing balance. Building: cost ${b} on 1/1/X2. The accounts depreciate it at {bdr%} straight line; tax depreciation is {btr%} straight line. <b>(b) Calculate the total tax depreciation for X3.</b>",
+   "ans": "tdep",
+   "sol": [
+    "Old plant: X2 allowance {=p1*wda} leaves TWDV {=p1*(1-wda)}. X3: × {wda%} = {=p1*(1-wda)*wda}",
+    "New machine: 100% FYA = {p2}",
+    "Building: {b} × {btr%} = {=b*btr} (straight line on cost)",
+    "Total = <b>{tdep}</b>"
+   ],
+   "trap": "Applying {wda%} to the old plant's original cost instead of the TWDV after X2."
+  },
+  {
+   "id": "c2-t4",
+   "t": "q",
+   "type": "num",
+   "lo": [
+    "C2b"
+   ],
+   "src": "Chapter TYU 4",
+   "p": {
+    "pbt": 90000,
+    "pol": 3000,
+    "divi": 5000,
+    "p1": 20000,
+    "p2": 8000,
+    "adr": 0.1,
+    "wda": 0.25,
+    "b": 200000,
+    "bdr": 0.02,
+    "btr": 0.03,
+    "r": 0.28
+   },
+   "v": {
+    "pbt": [
+     60000,
+     150000,
+     1000
+    ],
+    "pol": [
+     1000,
+     8000,
+     500
+    ],
+    "divi": [
+     1000,
+     10000,
+     500
+    ],
+    "p1": [
+     12000,
+     40000,
+     1000
+    ],
+    "p2": [
+     4000,
+     16000,
+     1000
+    ],
+    "b": [
+     100000,
+     300000,
+     10000
+    ],
+    "r": [
+     [
+      0.2,
+      0.25,
+      0.28,
+      0.3
+     ]
+    ]
+   },
+   "d": {
+    "adep": "(p1+p2)*adr + b*bdr",
+    "tdep": "p1*(1-wda)*wda + p2 + b*btr",
+    "tp": "pbt - divi + pol + (p1+p2)*adr + b*bdr - (p1*(1-wda)*wda + p2 + b*btr)"
+   },
+   "q": "Kestrel's accounting profit for the year ended 31/12/X3 is ${pbt}. It includes a ${pol} political donation (not allowable) and ${divi} of exempt dividend income. Plant and machinery: bought on 1/1/X2 for ${p1}, plus a new machine on 1/1/X3 costing ${p2} that qualifies for a 100% first-year allowance. The accounts depreciate plant at {adr%} of cost; tax depreciation on plant is {wda%} reducing balance. Building: cost ${b} on 1/1/X2. The accounts depreciate it at {bdr%} straight line; tax depreciation is {btr%} straight line. <b>(c) Calculate taxable profit for X3.</b>",
+   "ans": "tp",
+   "sol": [
+    "Accounting depreciation {adep}; tax depreciation {tdep} (see parts a and b).",
+    "TP = {pbt} − {divi} + {pol} + {adep} − {tdep}",
+    "= <b>{tp}</b>"
+   ],
+   "trap": "Netting the depreciation figures in the wrong direction."
+  },
+  {
+   "id": "c2-t5",
+   "t": "q",
+   "type": "num",
+   "lo": [
+    "C2c"
+   ],
+   "src": "Chapter TYU 5",
+   "p": {
+    "pbt": 90000,
+    "pol": 3000,
+    "divi": 5000,
+    "p1": 20000,
+    "p2": 8000,
+    "adr": 0.1,
+    "wda": 0.25,
+    "b": 200000,
+    "bdr": 0.02,
+    "btr": 0.03,
+    "r": 0.28
+   },
+   "v": {
+    "pbt": [
+     60000,
+     150000,
+     1000
+    ],
+    "pol": [
+     1000,
+     8000,
+     500
+    ],
+    "divi": [
+     1000,
+     10000,
+     500
+    ],
+    "p1": [
+     12000,
+     40000,
+     1000
+    ],
+    "p2": [
+     4000,
+     16000,
+     1000
+    ],
+    "b": [
+     100000,
+     300000,
+     10000
+    ],
+    "r": [
+     [
+      0.2,
+      0.25,
+      0.28,
+      0.3
+     ]
+    ]
+   },
+   "d": {
+    "adep": "(p1+p2)*adr + b*bdr",
+    "tdep": "p1*(1-wda)*wda + p2 + b*btr",
+    "tp": "pbt - divi + pol + (p1+p2)*adr + b*bdr - (p1*(1-wda)*wda + p2 + b*btr)"
+   },
+   "q": "Kestrel's accounting profit for the year ended 31/12/X3 is ${pbt}. It includes a ${pol} political donation (not allowable) and ${divi} of exempt dividend income. Plant and machinery: bought on 1/1/X2 for ${p1}, plus a new machine on 1/1/X3 costing ${p2} that qualifies for a 100% first-year allowance. The accounts depreciate plant at {adr%} of cost; tax depreciation on plant is {wda%} reducing balance. Building: cost ${b} on 1/1/X2. The accounts depreciate it at {bdr%} straight line; tax depreciation is {btr%} straight line. <b>(d) Calculate the tax payable if the rate is {r%}.</b>",
+   "ans": "tp*r",
+   "sol": [
+    "Taxable profit = {pbt} − {divi} + {pol} + {adep} − {tdep} = {tp}",
+    "Tax = {tp} × {r%} = <b>{=tp*r}</b>"
+   ]
+  },
+  {
+   "id": "b021",
+   "t": "q",
+   "type": "num",
+   "lo": [
+    "C2b",
+    "C2c"
+   ],
+   "src": "Bank 021",
+   "p": {
+    "pbt": 180000,
+    "pol": 8000,
+    "ent": 6000,
+    "c1": 200000,
+    "c2": 120000,
+    "adr": 0.1,
+    "fya": 0.5,
+    "wda": 0.25,
+    "r": 0.25
+   },
+   "v": {
+    "pbt": [
+     80000,
+     400000,
+     5000
+    ],
+    "pol": [
+     1000,
+     15000,
+     500
+    ],
+    "ent": [
+     1000,
+     15000,
+     500
+    ],
+    "c1": [
+     80000,
+     300000,
+     10000
+    ],
+    "c2": [
+     40000,
+     200000,
+     10000
+    ],
+    "fya": [
+     [
+      0.4,
+      0.5,
+      1
+     ]
+    ],
+    "r": [
+     [
+      0.2,
+      0.25,
+      0.3
+     ]
+    ]
+   },
+   "d": {
+    "adep": "(c1+c2)*adr",
+    "tdep": "c1*(1-fya)*wda + c2*fya",
+    "tp": "pbt+pol+ent+(c1+c2)*adr-(c1*(1-fya)*wda + c2*fya)"
+   },
+   "c": "tp>5000",
+   "q": "For the year ended 30 June 20X2, profit before tax is ${pbt}. It includes political donations of ${pol} and entertaining of ${ent}, both disallowable. Plant cost ${c1} on 1 July 20X0, and machinery cost ${c2} on 1 July 20X1. The accounts depreciate all P&M at {adr%} straight line. Tax depreciation is {fya%} of additions in the year of purchase, then {wda%} reducing balance. Tax rate {r%}. Calculate the tax payable, rounded down to the nearest $.",
+   "ans": "rdn(tp*r)",
+   "sol": [
+    "Book depreciation: ({c1} + {c2}) × {adr%} = {adep}",
+    "Plant (bought last year): FYA {=c1*fya} last year leaves {=c1*(1-fya)}; this year × {wda%} = {=c1*(1-fya)*wda}",
+    "Machinery (bought this year): {fya%} × {c2} = {=c2*fya}",
+    "Tax depreciation = {tdep}",
+    "TP = {pbt} + {pol} + {ent} + {adep} − {tdep} = {tp}",
+    "Tax = {tp} × {r%} = {=tp*r#2} → rounded down <b>{=rdn(tp*r)}</b>"
+   ],
+   "trap": "Giving the plant the first-year rate again this year. The FYA is only for the year of purchase; after that it's reducing balance on the TWDV."
+  },
+  {
+   "id": "b022",
+   "t": "q",
+   "type": "num",
+   "lo": [
+    "C2b",
+    "C2c"
+   ],
+   "src": "Bank 022",
+   "p": {
+    "pbt": 600000,
+    "dep": 90000,
+    "ent": 20000,
+    "pol": 15000,
+    "div": 40000,
+    "ex": 25000,
+    "tdep": 70000,
+    "r": 0.3
+   },
+   "v": {
+    "pbt": [
+     200000,
+     900000,
+     10000
+    ],
+    "dep": [
+     20000,
+     120000,
+     5000
+    ],
+    "ent": [
+     5000,
+     30000,
+     1000
+    ],
+    "pol": [
+     2000,
+     20000,
+     1000
+    ],
+    "div": [
+     10000,
+     80000,
+     5000
+    ],
+    "ex": [
+     5000,
+     40000,
+     1000
+    ],
+    "tdep": [
+     20000,
+     120000,
+     5000
+    ],
+    "r": [
+     [
+      0.2,
+      0.25,
+      0.28,
+      0.3
+     ]
+    ]
+   },
+   "q": "Profit before tax for the year is ${pbt}. That is after depreciation of ${dep}, client entertaining of ${ent} and political donations of ${pol}, all disallowable. An interim dividend of ${div} was paid, and a final dividend is proposed. ${ex} of income is exempt. Tax depreciation is ${tdep}, and the tax rate is {r%}. No tax has yet been paid for the year. What current tax liability goes in the statement of financial position?",
+   "ans": "(pbt+dep+ent+pol-ex-tdep)*r",
+   "sol": [
+    "TP = {pbt} + {dep} + {ent} + {pol} − {ex} − {tdep} = {=pbt+dep+ent+pol-ex-tdep}",
+    "Tax = × {r%} = <b>{=(pbt+dep+ent+pol-ex-tdep)*r}</b>",
+    "Neither dividend affects taxable profit: dividends are appropriations, not expenses."
+   ],
+   "trap": "Adding back the interim dividend, or deducting the proposed final one.",
+   "flag": "The bank wording doesn't say whether any tax was paid during the year. The kit answer assumes none, so this version states it."
+  },
+  {
+   "id": "c2-c06",
+   "t": "c",
+   "lo": [
+    "C2c"
+   ],
+   "title": "Tax rate changes mid-year",
+   "rule": "<span class=\"eq\">Tax = TP × (m₁/12 × r₁ + m₂/12 × r₂)\nm₁ + m₂ = 12, counted on the company's own year</span>",
+   "body": "<p>Assume profits accrue evenly and time-apportion. The tax year's change date rarely matches the company year end, so count months from the company's start date.</p>",
+   "ex": {
+    "given": "Year ended 30 September 20X2, TP $600,000. Rate 20% up to 31 March 20X2, 22% from 1 April 20X2.",
+    "steps": [
+     "Oct–Mar = 6 months at 20%: 600,000 × 6/12 × 20% = 60,000",
+     "Apr–Sep = 6 months at 22%: 600,000 × 6/12 × 22% = 66,000",
+     "Total = <b>126,000</b>"
+    ]
+   },
+   "trap": "Counting months from 1 January. Start from the first month of the company's accounting period."
+  },
+  {
+   "id": "c2-t6",
+   "t": "q",
+   "type": "num",
+   "lo": [
+    "C2c"
+   ],
+   "src": "Chapter TYU 6",
+   "p": {
+    "tp": 600000,
+    "r1": 0.2,
+    "r2": 0.22,
+    "E": 9
+   },
+   "v": {
+    "tp": [
+     200000,
+     1200000,
+     10000
+    ],
+    "r1": [
+     [
+      0.18,
+      0.19,
+      0.2,
+      0.21
+     ]
+    ],
+    "r2": [
+     [
+      0.22,
+      0.23,
+      0.25
+     ]
+    ],
+    "E": [
+     [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+     ]
+    ]
+   },
+   "d": {
+    "m1": "15-E",
+    "mon": "['','January','February','March','April','May','June','July','August','September','October','November','December'][E]",
+    "dd": "[0,31,28,31,30,31,30,31,31,30,31,30,31][E]"
+   },
+   "q": "Plover's accounting year ends on {dd} {mon} X5, with taxable profit of ${tp}. The tax rate is {r1%} up to 31/3/X5 and {r2%} from 1/4/X5. Calculate the tax payable.",
+   "ans": "tp*m1/12*r1 + tp*(12-m1)/12*r2",
+   "sol": [
+    "The year runs to {dd} {mon} X5, so {m1} months fall before 1 April and {=12-m1} after.",
+    "{tp} × {m1}/12 × {r1%} = {=tp*m1/12*r1}",
+    "{tp} × {=12-m1}/12 × {r2%} = {=tp*(12-m1)/12*r2}",
+    "Total = <b>{=tp*m1/12*r1 + tp*(12-m1)/12*r2}</b>"
+   ],
+   "trap": "Splitting 6/6 by habit. Count the months from the start of the company's year to 31 March."
+  },
+  {
+   "id": "b017",
+   "t": "q",
+   "type": "num",
+   "lo": [
+    "C2b",
+    "C2c"
+   ],
+   "src": "Bank 017",
+   "p": {
+    "ap": 600000,
+    "dis": 30000,
+    "tdep": 20000,
+    "r1": 0.25,
+    "r2": 0.26,
+    "E": 6
+   },
+   "v": {
+    "ap": [
+     200000,
+     900000,
+     10000
+    ],
+    "dis": [
+     5000,
+     50000,
+     1000
+    ],
+    "tdep": [
+     5000,
+     50000,
+     1000
+    ],
+    "r1": [
+     [
+      0.24,
+      0.25
+     ]
+    ],
+    "r2": [
+     [
+      0.26,
+      0.27,
+      0.28
+     ]
+    ],
+    "E": [
+     [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+     ]
+    ]
+   },
+   "d": {
+    "m1": "15-E",
+    "mon": "['','January','February','March','April','May','June','July','August','September','October','November','December'][E]",
+    "dd": "[0,31,28,31,30,31,30,31,31,30,31,30,31][E]",
+    "tp": "ap+dis-tdep"
+   },
+   "q": "Fern Ltd's accounting profit for the year ended {dd} {mon} 20X8 is ${ap}. It includes ${dis} of expenses that are disallowed for tax, and tax depreciation is ${tdep}. The rate is {r1%} up to 31 March 20X8 and {r2%} from 1 April 20X8. Calculate the tax payable, to the nearest $.",
+   "ans": "rd(tp*m1/12*r1 + tp*(12-m1)/12*r2)",
+   "sol": [
+    "TP = {ap} + {dis} − {tdep} = {tp}",
+    "{m1} months to 31 March at {r1%}: {tp} × {m1}/12 × {r1%} = {=tp*m1/12*r1#2}",
+    "{=12-m1} months at {r2%}: {tp} × {=12-m1}/12 × {r2%} = {=tp*(12-m1)/12*r2#2}",
+    "Total = <b>{=rd(tp*m1/12*r1 + tp*(12-m1)/12*r2)}</b>"
+   ],
+   "trap": "Applying the rates to accounting profit before the adjustments. Adjust first, then split."
+  },
+  {
+   "id": "c2-c07",
+   "t": "c",
+   "lo": [
+    "C2b"
+   ],
+   "title": "Disposals: balancing allowance or charge",
+   "rule": "<span class=\"eq\">Accounting: P/L on disposal = proceeds − carrying amount  → reverse it\nTax:        proceeds − TWDV\n            > 0  balancing charge (add)\n            < 0  balancing allowance (deduct)</span>",
+   "body": "<p>No normal writing-down allowance in the year of sale; the balancing adjustment replaces it.</p><p><b>Lifetime identity:</b> Σ allowances − BC (+ BA) = cost − proceeds. Tax relief equals the real economic cost; only the timing moves.</p>",
+   "trap": "Comparing proceeds with the accounting carrying amount for the tax figure. Tax uses TWDV."
+  },
+  {
+   "id": "c2-c08",
+   "t": "c",
+   "lo": [
+    "C2b",
+    "C2c"
+   ],
+   "title": "Expanded pro-forma and a shortcut",
+   "rule": "<span class=\"eq\">TP = PBT − E + D + Dep − TDep\n     + accounting loss on disposal\n     − accounting profit on disposal\n     + balancing charge − balancing allowance</span>",
+   "body": "<p>Shortcut for a disposal-year question with no other items: the proceeds cancel out.</p><span class=\"eq\">−(proceeds − CA) + (proceeds − TWDV) = CA − TWDV\n⇒ TP = PBT + CA − TWDV</span>",
+   "ex": {
+    "title": "Orbit Co sells the machine",
+    "given": "Cost 80,000; two years' book depreciation of 10,000 each; TWDV 45,000. Sold 1 Jan 20X3 for 50,000. 20X3 accounting profit 200,000 after the disposal.",
+    "steps": [
+     "CA = 80,000 − 20,000 = 60,000. Accounting loss = 50,000 − 60,000 = (10,000): add back.",
+     "Balancing charge = 50,000 − 45,000 = 5,000: add.",
+     "TP = 200,000 + 10,000 + 5,000 = <b>215,000</b>. Shortcut: 200,000 + 60,000 − 45,000 = 215,000 ✓",
+     "Check: relief 20,000 + 15,000 − 5,000 = 30,000 = cost − proceeds ✓"
+    ]
+   }
+  },
+  {
+   "id": "b028",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C2b"
+   ],
+   "src": "Bank 028",
+   "p": {
+    "cost": 200000,
+    "w": 0.2,
+    "n": 3,
+    "pr": 120000
+   },
+   "v": {
+    "cost": [
+     50000,
+     400000,
+     10000
+    ],
+    "w": [
+     [
+      0.2,
+      0.25
+     ]
+    ],
+    "n": [
+     [
+      2,
+      3,
+      4
+     ]
+    ],
+    "pr": [
+     10000,
+     300000,
+     2000
+    ]
+   },
+   "d": {
+    "tw": "cost*(1-w)**n"
+   },
+   "c": "pr<cost && abs(pr-tw)>500",
+   "q": "An asset cost ${cost} on 1 January X4 and attracts {w%} reducing balance tax depreciation (year end 31 December). It was sold on 1 January X{=4+n} for ${pr}. The tax adjustment on disposal is:",
+   "opts": [
+    "${=abs(pr-tw)} balancing charge",
+    "${=abs(pr-tw)} balancing allowance",
+    "${=cost*w} balancing charge",
+    "${=cost*w} balancing allowance"
+   ],
+   "a": "pr>tw ? 0 : 1",
+   "sol": [
+    "{n} full years of allowances: TWDV = {cost} × (1 − {w%})^{n} = {tw}",
+    "Proceeds {pr} vs TWDV {tw}",
+    "{?pr>tw|Proceeds exceed TWDV: balancing charge of {=pr-tw} (too much relief was given).|Proceeds below TWDV: balancing allowance of {=tw-pr} (relief still owed).}"
+   ],
+   "trap": "Getting the direction backwards: proceeds above TWDV means too much relief so far, so it is a charge."
+  },
+  {
+   "id": "b029",
+   "t": "q",
+   "type": "multi",
+   "fixed": true,
+   "lo": [
+    "C2b"
+   ],
+   "src": "Bank 029",
+   "p": {
+    "cost": 80000,
+    "w": 0.2,
+    "pr": 35000
+   },
+   "v": {
+    "cost": [
+     40000,
+     200000,
+     5000
+    ],
+    "w": [
+     [
+      0.2,
+      0.25
+     ]
+    ],
+    "pr": [
+     5000,
+     120000,
+     1000
+    ]
+   },
+   "d": {
+    "tw": "cost*(1-w)**2"
+   },
+   "c": "pr<cost && abs(pr-tw)>500 && abs(cost-pr-abs(tw-pr))>500 && abs(abs(tw-pr)*w-abs(tw-pr))>1",
+   "q": "An asset cost ${cost} on 1 April 20X1 and is written down at {w%} a year reducing balance. The year end is 31 March. It is sold on 31 March 20X4 for ${pr}, and no writing-down allowance is given in the year of disposal. Select TWO: what arises, and the amount.",
+   "opts": [
+    "Balancing charge",
+    "Balancing allowance",
+    "${=abs(tw-pr)}",
+    "${=cost-pr}",
+    "${=abs(tw-pr)*w}"
+   ],
+   "a": "pr>tw ? [0,2] : [1,2]",
+   "sol": [
+    "Allowances for years to 31 March X2 and X3 only (none in the disposal year X4).",
+    "TWDV = {cost} × (1 − {w%})² = {tw}",
+    "{?pr>tw|Proceeds {pr} > TWDV: balancing charge {=pr-tw}|Proceeds {pr} < TWDV: balancing allowance {=tw-pr}}"
+   ],
+   "trap": "Giving a third year of allowance. The disposal year gets the balancing adjustment instead."
+  },
+  {
+   "id": "c2-t7",
+   "t": "q",
+   "type": "num",
+   "neg": true,
+   "lo": [
+    "C2b"
+   ],
+   "src": "Chapter TYU 7",
+   "p": {
+    "cost": 16000,
+    "adr": 0.125,
+    "wda": 0.25,
+    "pr": 6000,
+    "ap": 70000
+   },
+   "v": {
+    "cost": [
+     8000,
+     40000,
+     1000
+    ],
+    "adr": [
+     [
+      0.1,
+      0.125,
+      0.2
+     ]
+    ],
+    "wda": [
+     [
+      0.2,
+      0.25
+     ]
+    ],
+    "pr": [
+     1000,
+     20000,
+     500
+    ],
+    "ap": [
+     40000,
+     120000,
+     500
+    ]
+   },
+   "d": {
+    "ca": "cost*(1-3*adr)",
+    "tw": "cost*(1-wda)**3"
+   },
+   "c": "abs(pr-ca)>100 && pr<cost",
+   "q": "An asset cost ${cost} on the first day of year 1. The accounts depreciate it at {adr%} straight line; tax depreciation is {wda%} reducing balance, with a full allowance in each of years 1 to 3. It is sold on the first day of year 4 for ${pr}, so no allowance is given in year 4. <b>(a) What is the accounting profit or loss on disposal?</b> Enter a loss as a negative number.",
+   "ans": "pr-ca",
+   "sol": [
+    "Carrying amount = {cost} − 3 × {=cost*adr} = {ca}",
+    "Proceeds {pr} − CA {ca} = <b>{=pr-ca}</b> ({?pr>ca|profit|loss})"
+   ],
+   "trap": "Using the tax written-down value. The accounting result uses the carrying amount."
+  },
+  {
+   "id": "c2-t8",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C2b"
+   ],
+   "src": "Chapter TYU 8",
+   "p": {
+    "cost": 16000,
+    "adr": 0.125,
+    "wda": 0.25,
+    "pr": 6000,
+    "ap": 70000
+   },
+   "v": {
+    "cost": [
+     8000,
+     40000,
+     1000
+    ],
+    "adr": [
+     [
+      0.1,
+      0.125,
+      0.2
+     ]
+    ],
+    "wda": [
+     [
+      0.2,
+      0.25
+     ]
+    ],
+    "pr": [
+     1000,
+     20000,
+     500
+    ],
+    "ap": [
+     40000,
+     120000,
+     500
+    ]
+   },
+   "d": {
+    "ca": "cost*(1-3*adr)",
+    "tw": "cost*(1-wda)**3"
+   },
+   "c": "abs(pr-tw)>100 && abs(abs(pr-tw)-abs(pr-ca))>100 && pr<cost",
+   "q": "An asset cost ${cost} on the first day of year 1. The accounts depreciate it at {adr%} straight line; tax depreciation is {wda%} reducing balance, with a full allowance in each of years 1 to 3. It is sold on the first day of year 4 for ${pr}, so no allowance is given in year 4. <b>(b) What is the balancing allowance or charge for tax?</b>",
+   "opts": [
+    "Balancing allowance ${=abs(pr-tw)}",
+    "Balancing charge ${=abs(pr-tw)}",
+    "Balancing allowance ${=abs(pr-ca)}",
+    "Balancing charge ${=abs(pr-ca)}"
+   ],
+   "a": "pr<tw ? 0 : 1",
+   "sol": [
+    "TWDV: {cost} → {=cost*(1-wda)} → {=cost*(1-wda)**2} → {tw}",
+    "Proceeds {pr} − TWDV {tw} = {=pr-tw}",
+    "{?pr<tw|Negative: balancing allowance {=tw-pr}.|Positive: balancing charge {=pr-tw}.}"
+   ],
+   "trap": "Options C/D use the accounting carrying amount ({ca}). Tax only compares proceeds with TWDV."
+  },
+  {
+   "id": "c2-t9",
+   "t": "q",
+   "type": "num",
+   "lo": [
+    "C2b"
+   ],
+   "src": "Chapter TYU 9",
+   "p": {
+    "cost": 16000,
+    "adr": 0.125,
+    "wda": 0.25,
+    "pr": 6000,
+    "ap": 70000
+   },
+   "v": {
+    "cost": [
+     8000,
+     40000,
+     1000
+    ],
+    "adr": [
+     [
+      0.1,
+      0.125,
+      0.2
+     ]
+    ],
+    "wda": [
+     [
+      0.2,
+      0.25
+     ]
+    ],
+    "pr": [
+     1000,
+     20000,
+     500
+    ],
+    "ap": [
+     40000,
+     120000,
+     500
+    ]
+   },
+   "d": {
+    "ca": "cost*(1-3*adr)",
+    "tw": "cost*(1-wda)**3"
+   },
+   "c": "pr<cost",
+   "q": "An asset cost ${cost} on the first day of year 1. The accounts depreciate it at {adr%} straight line; tax depreciation is {wda%} reducing balance, with a full allowance in each of years 1 to 3. It is sold on the first day of year 4 for ${pr}, so no allowance is given in year 4. <b>(c) Accounting profit for year 4, after the disposal result, is ${ap}. Other depreciation equals other tax depreciation. Calculate taxable profit.</b>",
+   "ans": "ap+ca-tw",
+   "sol": [
+    "Reverse the accounting result: {?pr<ca|add back loss {=ca-pr}|deduct profit {=pr-ca}}",
+    "Tax result: {?pr<tw|deduct balancing allowance {=tw-pr}|add balancing charge {=pr-tw}}",
+    "TP = <b>{=ap+ca-tw}</b>. Shortcut: {ap} + CA {ca} − TWDV {tw}."
+   ],
+   "trap": "Making only one of the two adjustments. Take out the accounting result AND put in the tax result."
+  },
+  {
+   "id": "c2-t10",
+   "t": "q",
+   "type": "num",
+   "lo": [
+    "C2b",
+    "C2c"
+   ],
+   "src": "Chapter TYU 10",
+   "p": {
+    "cost": 16000,
+    "adr": 0.125,
+    "wda": 0.25,
+    "pr": 11500,
+    "ap": 75500,
+    "r": 0.25
+   },
+   "v": {
+    "cost": [
+     8000,
+     40000,
+     1000
+    ],
+    "pr": [
+     5000,
+     30000,
+     500
+    ],
+    "ap": [
+     40000,
+     120000,
+     500
+    ],
+    "r": [
+     [
+      0.2,
+      0.25,
+      0.3
+     ]
+    ]
+   },
+   "d": {
+    "ca": "cost*(1-3*adr)",
+    "tw": "cost*(1-wda)**3"
+   },
+   "c": "pr<cost && pr>tw",
+   "q": "An asset cost ${cost} on the first day of year 1. The accounts depreciate it at {adr%} straight line; tax depreciation is {wda%} reducing balance, with a full allowance in each of years 1 to 3. It is sold on the first day of year 4 for ${pr}, so no allowance is given in year 4. <b>(d) Accounting profit for year 4, after the disposal result, is ${ap}. Other depreciation equals other tax depreciation. Tax is {r%}. Calculate the tax payable.</b>",
+   "ans": "(ap+ca-tw)*r",
+   "sol": [
+    "CA {ca}; TWDV {tw}",
+    "Accounting {?pr>ca|profit {=pr-ca}: deduct|loss {=ca-pr}: add back}. Balancing charge {=pr-tw}: add.",
+    "TP = {ap} + {ca} − {tw} = {=ap+ca-tw}",
+    "Tax = × {r%} = <b>{=(ap+ca-tw)*r}</b>"
+   ]
+  },
+  {
+   "id": "c2-t19",
+   "t": "q",
+   "type": "num",
+   "lo": [
+    "C2b",
+    "C2c"
+   ],
+   "src": "Chapter TYU 19",
+   "p": {
+    "pbt": 84000,
+    "db": 5000,
+    "dpl": 9000,
+    "df": 4000,
+    "g": 3000,
+    "bc": 250000,
+    "btr": 0.04,
+    "tw": 18000,
+    "pr": 12000,
+    "np": 40000,
+    "fya": 0.5,
+    "r": 0.22
+   },
+   "v": {
+    "pbt": [
+     40000,
+     200000,
+     1000
+    ],
+    "db": [
+     2000,
+     10000,
+     500
+    ],
+    "dpl": [
+     3000,
+     20000,
+     500
+    ],
+    "df": [
+     1000,
+     8000,
+     500
+    ],
+    "bc": [
+     100000,
+     400000,
+     10000
+    ],
+    "tw": [
+     8000,
+     30000,
+     1000
+    ],
+    "pr": [
+     4000,
+     30000,
+     1000
+    ],
+    "np": [
+     10000,
+     80000,
+     2000
+    ]
+   },
+   "d": {
+    "tp": "pbt+db+dpl+df-g-bc*btr-(tw-pr)-np*fya"
+   },
+   "c": "abs(tw-pr)>500 && tp>0",
+   "q": "Country L: tax 22%; accounting depreciation is not allowable. Tax depreciation: buildings 4% straight line; other plant 20% reducing balance; no allowances on fixtures or land. Lark's profit before tax is ${pbt}. That is after depreciation of buildings ${db}, plant ${dpl} and fixtures ${df}, and after an accounting gain of ${g} on selling old plant. The buildings cost ${bc}. The old plant had a tax written down value of ${tw} and was sold for ${pr}. New plant cost ${np} and gets a 50% first-year allowance. Calculate the tax payable, rounded down to the nearest $.",
+   "ans": "rdn(tp*r)",
+   "sol": [
+    "Add back all depreciation: {db} + {dpl} + {df} = {=db+dpl+df}",
+    "Deduct the accounting gain: − {g}",
+    "Buildings allowance 4% × {bc} = ({=bc*btr})",
+    "{?pr<tw|Balancing allowance {tw} − {pr} = ({=tw-pr})|Balancing charge {pr} − {tw} = +{=pr-tw}}",
+    "FYA 50% × {np} = ({=np*fya})",
+    "TP = {tp}; tax at 22% = {=tp*r#2} → <b>{=rdn(tp*r)}</b>"
+   ],
+   "trap": "Giving the fixtures an allowance. The rules say none. Their depreciation still gets added back."
+  },
+  {
+   "id": "c2-c09",
+   "t": "c",
+   "lo": [
+    "C2b"
+   ],
+   "title": "Trading losses",
+   "rule": "<p>Loss year: taxable profit = nil. Possible reliefs (the question gives the country's rules):</p><ul><li>carry forward against future profits of the same trade</li><li>carry back against earlier profits</li><li>surrender to group companies</li><li>set against capital gains of the same period</li></ul><p><b>Two rules every time:</b> (1) use the loss to the maximum in each year it touches, no partial claims; (2) go to the first available profit and keep going until it's used.</p>",
+   "svg": "<svg viewBox=\"0 0 320 120\" role=\"img\" aria-label=\"Loss in year 2 carried back to year 1 then forward to years 3 and 4\">\n<g font-size=\"11\" text-anchor=\"middle\"><rect x=\"20\" y=\"40\" width=\"60\" height=\"34\" rx=\"6\" fill=\"none\" stroke=\"currentColor\"/><text x=\"50\" y=\"61\">Y1 +30</text>\n<rect x=\"95\" y=\"40\" width=\"60\" height=\"34\" rx=\"6\" fill=\"#b42318\" fill-opacity=\".15\" stroke=\"#b42318\"/><text x=\"125\" y=\"61\">Y2 −70</text>\n<rect x=\"170\" y=\"40\" width=\"60\" height=\"34\" rx=\"6\" fill=\"none\" stroke=\"currentColor\"/><text x=\"200\" y=\"61\">Y3 +20</text>\n<rect x=\"245\" y=\"40\" width=\"60\" height=\"34\" rx=\"6\" fill=\"none\" stroke=\"currentColor\"/><text x=\"275\" y=\"61\">Y4 +50</text>\n<path d=\"M110 38 C100 18 70 18 58 36\" fill=\"none\" stroke=\"#b42318\" stroke-width=\"2\" marker-end=\"url(#ah)\"/><text x=\"85\" y=\"14\">① back 30</text>\n<path d=\"M140 76 C155 100 185 100 196 78\" fill=\"none\" stroke=\"#b42318\" stroke-width=\"2\" marker-end=\"url(#ah)\"/><text x=\"170\" y=\"112\">② fwd 20</text>\n<path d=\"M145 80 C180 118 250 118 270 78\" fill=\"none\" stroke=\"#b42318\" stroke-width=\"2\" marker-end=\"url(#ah)\"/><text x=\"265\" y=\"112\">③ fwd 20</text></g>\n<defs><marker id=\"ah\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto\"><path d=\"M0 0L10 5L0 10z\" fill=\"#b42318\"/></marker></defs></svg>",
+   "upd": "UK today: carry back 12 months against total profits; carry forward indefinitely against total profits, capped at £5m + 50% of profits above £5m. Terminal relief: 3-year carry back."
+  },
+  {
+   "id": "c2-c10",
+   "t": "c",
+   "lo": [
+    "C2b",
+    "C2c"
+   ],
+   "title": "Worked: back one year, then forward",
+   "ex": {
+    "given": "Rules: carry back one year, any balance forward. Y1 profit 30,000; Y2 loss (70,000); Y3 profit 20,000; Y4 profit 50,000.",
+    "steps": [
+     "Carry back 30,000 to Y1 → Y1 taxable 0. Left: 40,000.",
+     "Y3: use 20,000 → Y3 taxable 0. Left: 20,000.",
+     "Y4: use the last 20,000 → Y4 taxable <b>30,000</b>."
+    ]
+   },
+   "trap": "Keeping some of Y1's profit taxable to \"save\" the loss. Relief must take the whole year's profit."
+  },
+  {
+   "id": "c2-t11",
+   "t": "q",
+   "type": "num",
+   "lo": [
+    "C2b"
+   ],
+   "src": "Chapter TYU 11",
+   "p": {
+    "p1": 30000,
+    "L": 70000,
+    "p3": 25000,
+    "p4": 40000
+   },
+   "v": {
+    "p1": [
+     5000,
+     50000,
+     1000
+    ],
+    "L": [
+     20000,
+     120000,
+     1000
+    ],
+    "p3": [
+     5000,
+     50000,
+     1000
+    ],
+    "p4": [
+     20000,
+     90000,
+     1000
+    ]
+   },
+   "d": {
+    "rem": "L-p1",
+    "rem2": "max(0,L-p1-p3)"
+   },
+   "c": "L>p1 && L-p1>p3 && L-p1-p3<p4",
+   "q": "Trading results: Y1 profit ${p1}; Y2 loss ${L}; Y3 profit ${p3}; Y4 profit ${p4}. Losses are carried back one year first, in full, then forward against the first available profits. What is the taxable profit for Y4?",
+   "ans": "p4-rem2",
+   "sol": [
+    "Back to Y1: use {p1}, Y1 taxable nil. Left {rem}.",
+    "Forward to Y3: use {p3}, Y3 taxable nil. Left {rem2}.",
+    "Y4: {p4} − {rem2} = <b>{=p4-rem2}</b>"
+   ],
+   "trap": "Carrying forward first. Here the rules say back first."
+  },
+  {
+   "id": "b025",
+   "t": "q",
+   "type": "num",
+   "lo": [
+    "C2b"
+   ],
+   "src": "Bank 025",
+   "p": {
+    "p6": 12000,
+    "L": 30000,
+    "p8": 80000
+   },
+   "v": {
+    "p6": [
+     2000,
+     40000,
+     1000
+    ],
+    "L": [
+     10000,
+     90000,
+     1000
+    ],
+    "p8": [
+     30000,
+     150000,
+     1000
+    ]
+   },
+   "c": "L>p6 && L-p6<p8",
+   "q": "Taxable results: 20X6 profit ${p6}; 20X7 loss ${L}; 20X8 profit ${p8}. Losses are carried back one year, then forward. What is the taxable profit for 20X8?",
+   "ans": "p8-(L-p6)",
+   "sol": [
+    "Back to 20X6: use all {p6}. Left {=L-p6}.",
+    "20X8: {p8} − {=L-p6} = <b>{=p8-(L-p6)}</b>"
+   ],
+   "trap": "Forgetting the carry-back and deducting the full {L} from 20X8."
+  },
+  {
+   "id": "b026",
+   "t": "q",
+   "type": "mcq",
+   "fixed": true,
+   "lo": [
+    "C2b"
+   ],
+   "src": "Bank 026",
+   "q": "A long-profitable company makes a trading loss this year and will keep trading. Possible reliefs, in the order they would be applied: (a) forward only; (b) back, then current year, then forward; (c) current year, then back, then forward; (d) current year, then forward. Which are available?",
+   "opts": [
+    "(a) only",
+    "(a), (c) and (d)",
+    "(c) and (d)",
+    "(b) and (c)"
+   ],
+   "a": 1,
+   "sol": [
+    "A loss can simply be carried forward (a).",
+    "If a current-year claim is made, it comes before any carry-back: (c), or current then forward (d).",
+    "(b) puts carry-back before the current year, which isn't allowed."
+   ],
+   "trap": "Picking (b): the current year must be used before going back.",
+   "alt": [
+    {
+     "q": "A long-profitable company makes a trading loss this year and will keep trading. Which of these orders of loss relief is NOT available?",
+     "opts": [
+      "Forward only",
+      "Back, then current year, then forward",
+      "Current year, then back, then forward",
+      "Current year, then forward"
+     ],
+     "a": 1,
+     "sol": [
+      "Any current-year claim comes before a carry-back.",
+      "So \"back, then current year\" is not available. The other three are."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "c2-c11",
+   "t": "c",
+   "lo": [
+    "C2b"
+   ],
+   "title": "Terminal losses: carry back LIFO",
+   "rule": "<p>When a business ceases, the final loss can be carried back (UK: 3 years). Use the <b>most recent year first</b>, each in full, then move back. Anything left after the limit is lost.</p>",
+   "ex": {
+    "given": "20X1 40,000; 20X2 25,000; 20X3 15,000; 20X4 loss (60,000), trade ceases.",
+    "steps": [
+     "20X3 first: use 15,000 → 0. Left 45,000.",
+     "20X2: use 25,000 → 0. Left 20,000.",
+     "20X1: use 20,000 → revised <b>20,000</b>."
+    ]
+   },
+   "trap": "Starting with the oldest year (FIFO). Terminal relief is LIFO."
+  },
+  {
+   "id": "c2-t12",
+   "t": "q",
+   "type": "num",
+   "lo": [
+    "C2b"
+   ],
+   "src": "Chapter TYU 12",
+   "p": {
+    "L": 95000,
+    "p6": 80000,
+    "p7": 30000
+   },
+   "v": {
+    "L": [
+     30000,
+     150000,
+     1000
+    ],
+    "p6": [
+     20000,
+     120000,
+     1000
+    ],
+    "p7": [
+     5000,
+     60000,
+     1000
+    ]
+   },
+   "c": "L>p7 && L-p7<p6",
+   "q": "An entity stops trading in 20X8, making a loss of ${L}. Profits were ${p6} in 20X6 and ${p7} in 20X7. Terminal losses are carried back on a last-in, first-out basis. What is the revised taxable profit for 20X6?",
+   "ans": "p6-(L-p7)",
+   "sol": [
+    "LIFO: 20X7 first. Use {p7} → nil. Left {=L-p7}.",
+    "20X6: {p6} − {=L-p7} = <b>{=p6-(L-p7)}</b>"
+   ],
+   "trap": "Applying the loss to 20X6 first."
+  },
+  {
+   "id": "c2-q01",
+   "t": "q",
+   "type": "num",
+   "lo": [
+    "C2b"
+   ],
+   "src": "Practice",
+   "p": {
+    "a": 40000,
+    "b": 25000,
+    "c": 15000,
+    "L": 60000
+   },
+   "v": {
+    "a": [
+     10000,
+     60000,
+     1000
+    ],
+    "b": [
+     5000,
+     40000,
+     1000
+    ],
+    "c": [
+     5000,
+     40000,
+     1000
+    ],
+    "L": [
+     20000,
+     120000,
+     1000
+    ]
+   },
+   "c": "L>b+c && L-b-c<a",
+   "q": "A company ceases trading in 20X4 with a trading loss of ${L}. Taxable profits were: 20X1 ${a}; 20X2 ${b}; 20X3 ${c}. Terminal losses may be carried back three years on a last-in, first-out basis. What is the revised taxable profit for 20X1?",
+   "ans": "a-(L-b-c)",
+   "sol": [
+    "20X3 first: {c} → nil. Left {=L-c}.",
+    "20X2: {b} → nil. Left {=L-b-c}.",
+    "20X1: {a} − {=L-b-c} = <b>{=a-(L-b-c)}</b>"
+   ]
+  },
+  {
+   "id": "c2-c12",
+   "t": "c",
+   "lo": [
+    "C2c"
+   ],
+   "title": "Chargeable gain pro-forma",
+   "rule": "<span class=\"eq\">Gain = (proceeds − selling costs)\n     − cost − buying costs\n     − enhancement (capital improvements)\n     − indexation (if available)\nTax = gain × rate</span>",
+   "body": "<p>Allowable: costs of buying, selling or genuinely improving the asset, plus initial repairs needed to make it usable when bought.</p>",
+   "trap": "<b>Repairs</b> that restore the asset to its previous condition (storm-damaged roof, repainting) are NOT allowable."
+  },
+  {
+   "id": "c2-c13",
+   "t": "c",
+   "lo": [
+    "C2c"
+   ],
+   "title": "Indexation: index each cost from its own date",
+   "rule": "<span class=\"eq\">Indexation = Σ costᵢ × factor(from date of costᵢ to disposal)</span>",
+   "body": "<p>Indexation strips out the inflationary part of a gain, so only the real gain is taxed. Purchase costs share the purchase date's factor; an extension uses its own date's factor.</p>",
+   "ex": {
+    "title": "Delta Co building",
+    "given": "Cost 400,000 + legal 8,000. Extension 60,000. Storm repair 15,000. Sold 900,000 less agent 12,000. Factors: purchase→sale 25%; extension→sale 10%. Rate 25%.",
+    "steps": [
+     "Net proceeds = 888,000",
+     "Less cost and legal (408,000) and extension (60,000). Repair ignored.",
+     "Indexation: 408,000 × 25% = 102,000; 60,000 × 10% = 6,000",
+     "Gain = 888,000 − 468,000 − 108,000 = 312,000",
+     "Tax = <b>78,000</b>"
+    ]
+   },
+   "trap": "Indexing the purchase price but not the purchase legal fees.",
+   "upd": "UK companies: indexation frozen at December 2017. Individuals: abolished in 2008. The exam can still give a factor for a hypothetical country."
+  },
+  {
+   "id": "b038",
+   "t": "q",
+   "type": "multi",
+   "fixed": true,
+   "lo": [
+    "C2c"
+   ],
+   "src": "Bank 038",
+   "q": "Select THREE items that are allowable deductions in working out a chargeable gain.",
+   "opts": [
+    "Selling costs only (not buying costs)",
+    "Both buying and selling costs",
+    "Improvement (enhancement) expenditure",
+    "Buying costs only (not selling costs)",
+    "Initial repairs needed to make the asset usable when bought",
+    "Routine repairs while the asset is in use"
+   ],
+   "a": [
+    1,
+    2,
+    4
+   ],
+   "sol": [
+    "Both incidental costs of buying and selling are allowable (B).",
+    "Enhancement is allowable (C).",
+    "Initial repairs to make a newly bought asset usable count as part of its cost (E).",
+    "Routine repairs (F) are revenue items, not capital."
+   ],
+   "alt": [
+    {
+     "q": "Select THREE items that are NOT allowable deductions in working out a chargeable gain.",
+     "opts": [
+      "Routine repairs while the asset is in use",
+      "Legal fees on selling the asset",
+      "Repainting to restore the asset to its previous condition",
+      "An extension that improves the asset",
+      "Annual insurance on the asset",
+      "Surveyor's fees on buying the asset"
+     ],
+     "a": [
+      0,
+      2,
+      4
+     ],
+     "sol": [
+      "Allowable: buying and selling costs, enhancement.",
+      "Not allowable: routine repairs, restoring repairs, and running costs like insurance."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "b030",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C2c"
+   ],
+   "src": "Bank 030",
+   "p": {
+    "b": 150000,
+    "e": 30000,
+    "pr": 400000,
+    "i1": 0.7,
+    "i2": 0.4
+   },
+   "v": {
+    "b": [
+     80000,
+     300000,
+     10000
+    ],
+    "e": [
+     10000,
+     80000,
+     5000
+    ],
+    "pr": [
+     300000,
+     800000,
+     10000
+    ],
+    "i1": [
+     [
+      0.3,
+      0.5,
+      0.6,
+      0.7
+     ]
+    ],
+    "i2": [
+     [
+      0.1,
+      0.2,
+      0.25
+     ]
+    ]
+   },
+   "c": "pr-b-e-b*i1-e*i2>0",
+   "q": "A building bought for ${b} had a ${e} extension added later. It is sold for ${pr}. Indexation factors: {i1%} on the building, {i2%} on the extension. The chargeable gain is:",
+   "opts": [
+    "${=pr-(b+e)*(1+i1)}",
+    "${=pr-b-e}",
+    "${=pr-(b+e)*(1+i2)}",
+    "${=pr-b-e-b*i1-e*i2}"
+   ],
+   "a": 3,
+   "sol": [
+    "Unindexed gain = {pr} − {b} − {e} = {=pr-b-e}",
+    "Indexation: {b} × {i1%} = {=b*i1}; {e} × {i2%} = {=e*i2}",
+    "Gain = {=pr-b-e} − {=b*i1} − {=e*i2} = <b>{=pr-b-e-b*i1-e*i2}</b>"
+   ],
+   "trap": "Applying one factor to both costs (options A and C). Each cost is indexed from its own date."
+  },
+  {
+   "id": "b031",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C2c"
+   ],
+   "src": "Bank 031",
+   "p": {
+    "c": 60000,
+    "bc": 4000,
+    "pr": 130000,
+    "ix": 0.25,
+    "r": 0.2
+   },
+   "v": {
+    "c": [
+     30000,
+     150000,
+     5000
+    ],
+    "bc": [
+     1000,
+     8000,
+     500
+    ],
+    "pr": [
+     100000,
+     300000,
+     5000
+    ],
+    "ix": [
+     [
+      0.1,
+      0.2,
+      0.25,
+      0.3
+     ]
+    ],
+    "r": [
+     [
+      0.2,
+      0.25,
+      0.3
+     ]
+    ]
+   },
+   "c": "pr-(c+bc)*(1+ix)>0",
+   "q": "A non-depreciating asset cost ${c} plus ${bc} purchase costs, and is sold for ${pr}. Indexation is {ix%} and tax on gains is {r%}. Capital tax payable is:",
+   "opts": [
+    "${=(pr-(c+bc)*(1+ix))*r}",
+    "${=(pr-c-bc)*r}",
+    "${=pr-(c+bc)*(1+ix)}",
+    "${=pr-c-bc}"
+   ],
+   "a": 0,
+   "sol": [
+    "Allowable cost = {c} + {bc} = {=c+bc}",
+    "Indexation = {ix%} × {=c+bc} = {=(c+bc)*ix}",
+    "Gain = {pr} − {=c+bc} − {=(c+bc)*ix} = {=pr-(c+bc)*(1+ix)}",
+    "Tax at {r%} = <b>{=(pr-(c+bc)*(1+ix))*r}</b>"
+   ],
+   "trap": "Stopping at the gain (option C). The question asks for the tax."
+  },
+  {
+   "id": "b032",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C2c"
+   ],
+   "src": "Bank 032",
+   "p": {
+    "c": 40000,
+    "pr": 95000
+   },
+   "v": {
+    "c": [
+     10000,
+     100000,
+     1000
+    ],
+    "pr": [
+     30000,
+     250000,
+     1000
+    ]
+   },
+   "c": "pr>c*1.3",
+   "q": "An individual bought land for ${c} in 2004 and sold it for ${pr} in 2021. No indexation is available to individuals. The chargeable gain is:",
+   "opts": [
+    "${pr}",
+    "${c}",
+    "${=pr-c}",
+    "${=pr-c*1.2}"
+   ],
+   "a": 2,
+   "sol": [
+    "No indexation, so gain = proceeds − cost",
+    "{pr} − {c} = <b>{=pr-c}</b>"
+   ],
+   "trap": "Inventing an indexation deduction (option D). The question says none is available."
+  },
+  {
+   "id": "b033",
+   "t": "q",
+   "type": "num",
+   "lo": [
+    "C2c"
+   ],
+   "src": "Bank 033",
+   "p": {
+    "c": 420000,
+    "pc": 3000,
+    "pr": 500000,
+    "sc": 8000,
+    "r": 0.25
+   },
+   "v": {
+    "c": [
+     100000,
+     600000,
+     10000
+    ],
+    "pc": [
+     1000,
+     10000,
+     500
+    ],
+    "pr": [
+     150000,
+     900000,
+     10000
+    ],
+    "sc": [
+     2000,
+     20000,
+     1000
+    ],
+    "r": [
+     [
+      0.2,
+      0.25,
+      0.3
+     ]
+    ]
+   },
+   "c": "pr-sc-c-pc>1000",
+   "q": "An asset is bought for ${c} plus ${pc} legal fees and sold for ${pr} with ${sc} selling costs. There is no indexation, and tax is {r%}. Calculate the tax, rounded down to the nearest $.",
+   "ans": "rdn((pr-sc-c-pc)*r)",
+   "sol": [
+    "Net proceeds = {pr} − {sc} = {=pr-sc}",
+    "Cost incl. legal = {=c+pc}",
+    "Gain = {=pr-sc-c-pc}; tax at {r%} = <b>{=rdn((pr-sc-c-pc)*r)}</b>"
+   ]
+  },
+  {
+   "id": "b034",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C2c"
+   ],
+   "src": "Bank 034",
+   "p": {
+    "c": 250000,
+    "s": 5000,
+    "l": 7000,
+    "ren": 40000,
+    "ix": 0.4
+   },
+   "v": {
+    "c": [
+     100000,
+     500000,
+     10000
+    ],
+    "s": [
+     1000,
+     10000,
+     1000
+    ],
+    "l": [
+     2000,
+     15000,
+     1000
+    ],
+    "ren": [
+     10000,
+     80000,
+     5000
+    ],
+    "ix": [
+     [
+      0.2,
+      0.3,
+      0.4,
+      0.5
+     ]
+    ]
+   },
+   "q": "A property is bought for ${c}, with surveyor's fees of ${s} and legal fees of ${l}. Renovation before letting costs ${ren}, and all costs count as capital. The index rose {ix%} over the ownership period; assume all costs arose at purchase. The indexation allowance is:",
+   "opts": [
+    "${=ix*(c+s+l+ren)}",
+    "${=ix*(c+s+ren)}",
+    "${=(1+ix)*(c+s+l+ren)}",
+    "${=ix*(c+s+l)}"
+   ],
+   "a": 0,
+   "sol": [
+    "All capital costs are indexed: {c} + {s} + {l} + {ren} = {=c+s+l+ren}",
+    "Allowance = {ix%} × {=c+s+l+ren} = <b>{=ix*(c+s+l+ren)}</b>"
+   ],
+   "trap": "Option C is the indexed cost, costs × (1 + {ix%}), not the allowance."
+  },
+  {
+   "id": "b035",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C2c"
+   ],
+   "src": "Bank 035",
+   "p": {
+    "c": 400000,
+    "pc": 6000,
+    "pr": 900000,
+    "sc": 12000,
+    "ix": 0.5,
+    "r": 0.25
+   },
+   "v": {
+    "c": [
+     100000,
+     500000,
+     10000
+    ],
+    "pc": [
+     2000,
+     10000,
+     1000
+    ],
+    "pr": [
+     400000,
+     1200000,
+     10000
+    ],
+    "sc": [
+     5000,
+     20000,
+     1000
+    ],
+    "ix": [
+     [
+      0.2,
+      0.3,
+      0.4,
+      0.5
+     ]
+    ]
+   },
+   "c": "pr-sc-(c+pc)*(1+ix)>0",
+   "q": "An asset cost ${c} plus ${pc} purchase costs. It is sold for ${pr} with ${sc} selling costs. Indexation is {ix%}, all costs are allowable, and tax is {r%}. Tax due is:",
+   "opts": [
+    "${=(pr-sc-(c+pc)*(1+ix))*r}",
+    "${=(pr-sc-c*(1+ix)-pc)*r}",
+    "${=(pr-sc-c-pc)*r}",
+    "${=(pr-sc)*r}"
+   ],
+   "a": 0,
+   "sol": [
+    "Net proceeds {=pr-sc}",
+    "Cost {=c+pc}; indexation {ix%} × {=c+pc} = {=(c+pc)*ix}",
+    "Gain {=pr-sc-(c+pc)*(1+ix)}; tax at {r%} = <b>{=(pr-sc-(c+pc)*(1+ix))*r}</b>"
+   ],
+   "trap": "Indexing the cost but not the purchase costs (option B)."
+  },
+  {
+   "id": "b036",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C2c"
+   ],
+   "src": "Bank 036",
+   "p": {
+    "c": 180000,
+    "e": 30000,
+    "pr": 300000,
+    "dc": 2000,
+    "i1": 0.25,
+    "i2": 0.15,
+    "r": 0.2
+   },
+   "v": {
+    "c": [
+     80000,
+     250000,
+     5000
+    ],
+    "e": [
+     10000,
+     60000,
+     5000
+    ],
+    "pr": [
+     200000,
+     500000,
+     5000
+    ],
+    "dc": [
+     1000,
+     6000,
+     500
+    ],
+    "i1": [
+     [
+      0.2,
+      0.25,
+      0.3
+     ]
+    ],
+    "i2": [
+     [
+      0.05,
+      0.1,
+      0.15
+     ]
+    ]
+   },
+   "c": "pr-dc-c-e-c*i1-e*i2>0",
+   "q": "An asset bought for ${c} in January X1 had enhancement of ${e} in January X3. It is sold in December X7 for ${pr}, with disposal costs of ${dc}. Indexation: {i1%} from January X1 and {i2%} from January X3. Tax on gains is {r%}. Tax payable is:",
+   "opts": [
+    "${=(pr-dc-c-e-c*i1-e*i2)*r}",
+    "${=(pr-dc-c-e)*r}",
+    "${=(pr-dc-(c+e)*(1+i2))*r}",
+    "${=(pr-dc-(c+e)*(1+i1))*r}"
+   ],
+   "a": 0,
+   "sol": [
+    "Net proceeds = {=pr-dc}",
+    "Less cost {c} and enhancement {e}",
+    "Indexation: {c} × {i1%} = {=c*i1}; {e} × {i2%} = {=e*i2}",
+    "Gain = {=pr-dc-c-e-c*i1-e*i2}; tax at {r%} = <b>{=(pr-dc-c-e-c*i1-e*i2)*r}</b>"
+   ],
+   "trap": "Indexing the enhancement from X1 (option D). It wasn't spent until X3."
+  },
+  {
+   "id": "c2-t13",
+   "t": "q",
+   "type": "num",
+   "lo": [
+    "C2c"
+   ],
+   "src": "Chapter TYU 13",
+   "p": {
+    "pr": 400000,
+    "sc": 6000,
+    "c": 180000,
+    "lf": 4000,
+    "ext": 50000,
+    "rep": 3000
+   },
+   "v": {
+    "pr": [
+     250000,
+     700000,
+     5000
+    ],
+    "sc": [
+     2000,
+     15000,
+     500
+    ],
+    "c": [
+     80000,
+     250000,
+     5000
+    ],
+    "lf": [
+     1000,
+     10000,
+     500
+    ],
+    "ext": [
+     10000,
+     80000,
+     5000
+    ],
+    "rep": [
+     1000,
+     8000,
+     500
+    ]
+   },
+   "c": "pr-sc-c-lf-ext>1000",
+   "q": "A building is sold for ${pr} with selling costs of ${sc}. It cost ${c} plus ${lf} of legal fees on purchase. Later, an extension cost ${ext}, and repainting cost ${rep}. Calculate the gain before indexation.",
+   "ans": "pr-sc-c-lf-ext",
+   "sol": [
+    "Net proceeds = {=pr-sc}",
+    "Less cost {c}, legal {lf}, extension {ext}",
+    "Repainting is a repair: not allowable.",
+    "Gain = <b>{=pr-sc-c-lf-ext}</b>"
+   ],
+   "trap": "Deducting the {rep} repainting."
+  },
+  {
+   "id": "c2-t14",
+   "t": "q",
+   "type": "num",
+   "lo": [
+    "C2c"
+   ],
+   "src": "Chapter TYU 14",
+   "p": {
+    "c": 180000,
+    "lf": 4000,
+    "ext": 50000,
+    "i1": 0.25,
+    "i2": 0.1
+   },
+   "v": {
+    "c": [
+     80000,
+     250000,
+     5000
+    ],
+    "lf": [
+     1000,
+     10000,
+     500
+    ],
+    "ext": [
+     10000,
+     80000,
+     5000
+    ],
+    "i1": [
+     [
+      0.2,
+      0.25,
+      0.3,
+      0.4
+     ]
+    ],
+    "i2": [
+     [
+      0.05,
+      0.1,
+      0.15
+     ]
+    ]
+   },
+   "q": "A building cost ${c} plus ${lf} of legal fees on purchase. Later, an extension cost ${ext}, and repainting cost $3,000. Indexation is {i1%} on the original cost (from the purchase date) and {i2%} on the extension. Calculate the indexation allowance.",
+   "ans": "(c+lf)*i1+ext*i2",
+   "sol": [
+    "Purchase costs: ({c} + {lf}) × {i1%} = {=(c+lf)*i1}",
+    "Extension: {ext} × {i2%} = {=ext*i2}",
+    "Total = <b>{=(c+lf)*i1+ext*i2}</b>. Repainting isn't a cost, so it isn't indexed."
+   ],
+   "trap": "Indexing only the {c} and leaving out the legal fees."
+  },
+  {
+   "id": "c2-t15",
+   "t": "q",
+   "type": "num",
+   "lo": [
+    "C2c"
+   ],
+   "src": "Chapter TYU 15",
+   "p": {
+    "pr": 400000,
+    "sc": 6000,
+    "c": 180000,
+    "lf": 4000,
+    "ext": 50000,
+    "i1": 0.25,
+    "i2": 0.1,
+    "r": 0.2
+   },
+   "v": {
+    "pr": [
+     300000,
+     700000,
+     5000
+    ],
+    "c": [
+     80000,
+     220000,
+     5000
+    ],
+    "ext": [
+     10000,
+     60000,
+     5000
+    ],
+    "i1": [
+     [
+      0.2,
+      0.25,
+      0.3
+     ]
+    ],
+    "i2": [
+     [
+      0.05,
+      0.1
+     ]
+    ],
+    "r": [
+     [
+      0.2,
+      0.25
+     ]
+    ]
+   },
+   "c": "pr-sc-c-lf-ext-(c+lf)*i1-ext*i2>0",
+   "q": "A building is sold for ${pr} with selling costs of ${sc}. It cost ${c} plus ${lf} of legal fees on purchase. Later, an extension cost ${ext}, and repainting cost $3,000. Indexation is {i1%} on the original cost and {i2%} on the extension. Calculate the capital tax at {r%}.",
+   "ans": "(pr-sc-c-lf-ext-(c+lf)*i1-ext*i2)*r",
+   "sol": [
+    "Gain before indexation = {=pr-sc-c-lf-ext}",
+    "Indexation = {=(c+lf)*i1+ext*i2}",
+    "Indexed gain = {=pr-sc-c-lf-ext-(c+lf)*i1-ext*i2}",
+    "Tax at {r%} = <b>{=(pr-sc-c-lf-ext-(c+lf)*i1-ext*i2)*r}</b>"
+   ]
+  },
+  {
+   "id": "c2-t20",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C2c"
+   ],
+   "src": "Chapter TYU 20",
+   "p": {
+    "c": 150000,
+    "pc": 3000,
+    "pr": 280000,
+    "sc": 5000,
+    "ix": 0.4,
+    "r": 0.2
+   },
+   "v": {
+    "c": [
+     80000,
+     250000,
+     5000
+    ],
+    "pc": [
+     1000,
+     8000,
+     500
+    ],
+    "pr": [
+     200000,
+     500000,
+     5000
+    ],
+    "sc": [
+     2000,
+     10000,
+     500
+    ],
+    "ix": [
+     [
+      0.2,
+      0.3,
+      0.4
+     ]
+    ],
+    "r": [
+     [
+      0.2,
+      0.25
+     ]
+    ]
+   },
+   "c": "pr-sc-(c+pc)*(1+ix)>0",
+   "q": "An asset cost ${c} plus ${pc} of purchase costs. It is sold for ${pr} with ${sc} selling costs. Indexation for the period is {ix%} and tax is {r%}. All costs are allowable. Tax due on the disposal is:",
+   "opts": [
+    "${=(pr-sc-(c+pc)*(1+ix))*r}",
+    "${=(pr-sc-c-pc-c*ix)*r}",
+    "${=(pr-sc-c-pc)*r}",
+    "${=(pr-sc)*r}"
+   ],
+   "a": 0,
+   "sol": [
+    "Net proceeds {=pr-sc}",
+    "Cost incl. purchase costs {=c+pc}; indexation {=(c+pc)*ix}",
+    "Gain {=pr-sc-(c+pc)*(1+ix)} × {r%} = <b>{=(pr-sc-(c+pc)*(1+ix))*r}</b>"
+   ],
+   "trap": "Indexing the cost only (option B)."
+  },
+  {
+   "id": "c2-t21",
+   "t": "q",
+   "type": "num",
+   "lo": [
+    "C2c"
+   ],
+   "src": "Chapter TYU 21",
+   "p": {
+    "c": 1200000,
+    "lf": 18000,
+    "sf": 7000,
+    "dw": 30000,
+    "pr": 1600000,
+    "sc": 12000,
+    "r": 0.25
+   },
+   "v": {
+    "c": [
+     500000,
+     1500000,
+     50000
+    ],
+    "lf": [
+     5000,
+     25000,
+     1000
+    ],
+    "sf": [
+     2000,
+     10000,
+     1000
+    ],
+    "dw": [
+     10000,
+     60000,
+     5000
+    ],
+    "pr": [
+     700000,
+     2500000,
+     50000
+    ],
+    "sc": [
+     5000,
+     25000,
+     1000
+    ],
+    "r": [
+     [
+      0.2,
+      0.25,
+      0.3
+     ]
+    ]
+   },
+   "c": "pr-sc-c-lf-sf-dw>1000",
+   "q": "Land costs ${c}, plus legal fees ${lf}, survey fees ${sf} and drainage work ${dw} (all capital). It is sold for ${pr} with ${sc} selling costs. There is no indexation, and tax is {r%}. Calculate the capital tax, rounded down to the nearest $.",
+   "ans": "rdn((pr-sc-c-lf-sf-dw)*r)",
+   "sol": [
+    "Net proceeds = {=pr-sc}",
+    "Allowable costs = {c} + {lf} + {sf} + {dw} = {=c+lf+sf+dw}",
+    "Gain = {=pr-sc-c-lf-sf-dw}; tax = <b>{=rdn((pr-sc-c-lf-sf-dw)*r)}</b>"
+   ],
+   "trap": "Leaving out the drainage work. It improves the land, so it is capital."
+  },
+  {
+   "id": "c2-t17a",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C2c"
+   ],
+   "src": "Chapter TYU 17 (1)",
+   "q": "Why does an indexation allowance exist?",
+   "opts": [
+    "To remove the inflationary part of a gain so that only the real gain is taxed",
+    "To give relief for the cost of repairs",
+    "To spread the gain over the years the asset was owned",
+    "To reduce the tax rate on long-held assets"
+   ],
+   "a": 0,
+   "sol": [
+    "Part of a nominal gain is just inflation. Indexation increases the allowable cost by the rise in prices, so only the real gain is taxed."
+   ]
+  },
+  {
+   "id": "c2-t17b",
+   "t": "q",
+   "type": "num",
+   "lo": [
+    "C2b"
+   ],
+   "src": "Chapter TYU 17 (2)",
+   "p": {
+    "ap": 250000,
+    "ent": 12000,
+    "dep": 30000,
+    "tdep": 22000
+   },
+   "v": {
+    "ap": [
+     80000,
+     400000,
+     5000
+    ],
+    "ent": [
+     2000,
+     20000,
+     1000
+    ],
+    "dep": [
+     10000,
+     60000,
+     1000
+    ],
+    "tdep": [
+     10000,
+     60000,
+     1000
+    ]
+   },
+   "q": "An entity's accounting profit is ${ap} after charging ${ent} of disallowable entertaining and ${dep} depreciation. Tax depreciation is ${tdep}. Calculate taxable profit.",
+   "ans": "ap+ent+dep-tdep",
+   "sol": [
+    "{ap} + {ent} + {dep} − {tdep} = <b>{=ap+ent+dep-tdep}</b>"
+   ]
+  },
+  {
+   "id": "c2-t17c",
+   "t": "q",
+   "type": "num",
+   "lo": [
+    "C2c"
+   ],
+   "src": "Chapter TYU 17 (3)",
+   "p": {
+    "pr": 90000,
+    "sc": 3000,
+    "c": 40000,
+    "ix": 9000
+   },
+   "v": {
+    "pr": [
+     50000,
+     200000,
+     1000
+    ],
+    "sc": [
+     1000,
+     8000,
+     500
+    ],
+    "c": [
+     10000,
+     60000,
+     1000
+    ],
+    "ix": [
+     2000,
+     15000,
+     500
+    ]
+   },
+   "c": "pr-sc-c-ix>0",
+   "q": "An asset is sold for ${pr} with selling costs of ${sc}. It cost ${c} including buying costs. Indexation is ${ix}. Calculate the chargeable gain.",
+   "ans": "pr-sc-c-ix",
+   "sol": [
+    "{pr} − {sc} − {c} − {ix} = <b>{=pr-sc-c-ix}</b>"
+   ]
+  },
+  {
+   "id": "c2-t17d",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C2c"
+   ],
+   "src": "Chapter TYU 17 (4)",
+   "q": "Which statement correctly distinguishes a chargeable gain from capital tax?",
+   "opts": [
+    "The chargeable gain is the tax paid; capital tax is the profit on disposal",
+    "The chargeable gain is the taxable amount; capital tax is the tax charged on it",
+    "They are the same thing",
+    "Capital tax applies only to individuals; chargeable gains only to companies"
+   ],
+   "a": 1,
+   "sol": [
+    "Gain = the taxable profit on disposal. Capital tax = gain × rate."
+   ]
+  },
+  {
+   "id": "c2-t17e",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C2b"
+   ],
+   "src": "Chapter TYU 17 (5)",
+   "q": "True or false: a balancing charge increases taxable profit.",
+   "opts": [
+    "True",
+    "False"
+   ],
+   "a": 0,
+   "fixed": true,
+   "sol": [
+    "A balancing charge means too much tax depreciation was given over the asset's life. It is clawed back by adding it to taxable profit."
+   ],
+   "alt": [
+    {
+     "q": "True or false: a balancing allowance increases taxable profit.",
+     "a": 1,
+     "sol": [
+      "A balancing allowance is extra relief (proceeds below TWDV). It reduces taxable profit."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "c2-c14",
+   "t": "c",
+   "lo": [
+    "C2c"
+   ],
+   "title": "Capital losses",
+   "rule": "<p>Usually kept separate from trading. Possible reliefs: carry forward against future gains; carry back against earlier gains; offset against same-period trading income. <b>Most countries only allow carry forward against future gains.</b></p>",
+   "ex": {
+    "given": "Capital losses: same year or forward only. Y1 gain 10,000; Y2 loss (15,000); Y3 gain 6,000; Y4 gain 12,000.",
+    "steps": [
+     "Y1 is untouched (a later loss can't go back): taxable 10,000.",
+     "Y3: use 6,000 → 0. Left 9,000.",
+     "Y4: 12,000 − 9,000 = <b>3,000</b>."
+    ]
+   },
+   "trap": "Carrying a capital loss back by analogy with trading losses."
+  },
+  {
+   "id": "c2-t16a",
+   "t": "q",
+   "type": "num",
+   "lo": [
+    "C2c"
+   ],
+   "src": "Chapter TYU 16 (gain)",
+   "p": {
+    "g1": 10000,
+    "t1": 40000,
+    "cl": 8000,
+    "tl": 55000,
+    "g3": 12000,
+    "t3": 30000
+   },
+   "v": {
+    "g1": [
+     2000,
+     30000,
+     1000
+    ],
+    "t1": [
+     10000,
+     60000,
+     1000
+    ],
+    "cl": [
+     2000,
+     20000,
+     1000
+    ],
+    "tl": [
+     20000,
+     90000,
+     1000
+    ],
+    "g3": [
+     5000,
+     40000,
+     1000
+    ],
+    "t3": [
+     10000,
+     60000,
+     1000
+    ]
+   },
+   "c": "cl<g3 && tl>t1 && tl-t1<t3",
+   "q": "Y1: capital gain ${g1}, trading profit ${t1}. Y2: capital loss ${cl}, trading loss ${tl}. Y3: capital gain ${g3}, trading profit ${t3}. Trading losses go back one year then forward; capital losses can only go forward against gains. What is the Y3 taxable gain?",
+   "ans": "g3-cl",
+   "sol": [
+    "The capital loss can't go back to Y1 or against trading profit.",
+    "Y3 gain = {g3} − {cl} = <b>{=g3-cl}</b>"
+   ],
+   "trap": "Using the capital loss against Y1's gain."
+  },
+  {
+   "id": "c2-t16b",
+   "t": "q",
+   "type": "num",
+   "lo": [
+    "C2b"
+   ],
+   "src": "Chapter TYU 16 (trading)",
+   "p": {
+    "g1": 10000,
+    "t1": 40000,
+    "cl": 8000,
+    "tl": 55000,
+    "g3": 12000,
+    "t3": 30000
+   },
+   "v": {
+    "g1": [
+     2000,
+     30000,
+     1000
+    ],
+    "t1": [
+     10000,
+     60000,
+     1000
+    ],
+    "cl": [
+     2000,
+     20000,
+     1000
+    ],
+    "tl": [
+     20000,
+     90000,
+     1000
+    ],
+    "g3": [
+     5000,
+     40000,
+     1000
+    ],
+    "t3": [
+     10000,
+     60000,
+     1000
+    ]
+   },
+   "c": "cl<g3 && tl>t1 && tl-t1<t3",
+   "q": "Y1: capital gain ${g1}, trading profit ${t1}. Y2: capital loss ${cl}, trading loss ${tl}. Y3: capital gain ${g3}, trading profit ${t3}. Trading losses go back one year then forward; capital losses can only go forward against gains. What is the Y3 taxable trading profit?",
+   "ans": "t3-(tl-t1)",
+   "sol": [
+    "Trading loss back to Y1: use {t1}. Left {=tl-t1}.",
+    "Y3 trading: {t3} − {=tl-t1} = <b>{=t3-(tl-t1)}</b>"
+   ],
+   "trap": "Setting the trading loss against Y1's capital gain too. The rules here keep trading losses against trading profits."
+  },
+  {
+   "id": "b037",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C2c"
+   ],
+   "src": "Bank 037",
+   "p": {
+    "loss": 20000,
+    "enh": 2000,
+    "gain": 64000,
+    "own": 0.5,
+    "exm": 6000,
+    "r": 0.3
+   },
+   "v": {
+    "loss": [
+     5000,
+     30000,
+     1000
+    ],
+    "enh": [
+     1000,
+     5000,
+     500
+    ],
+    "gain": [
+     40000,
+     120000,
+     1000
+    ],
+    "exm": [
+     [
+      3000,
+      6000,
+      10000
+     ]
+    ],
+    "r": [
+     [
+      0.2,
+      0.25,
+      0.3
+     ]
+    ]
+   },
+   "c": "(gain-loss-enh)*own>exm",
+   "q": "KL owns {own%} of two assets. One is sold at a loss of ${loss} and the other at a gain of ${gain} (both figures are for the whole asset). A ${enh} enhancement cost on the loss asset was left out of the loss figure. The annual exemption is ${exm} and the tax rate is {r%}; ignore indexation. KL's tax is:",
+   "opts": [
+    "${=((gain-loss)*own-exm)*r}",
+    "${=((gain-loss-enh)*own-exm)*r}",
+    "${=(gain-loss-enh-exm)*r}",
+    "${=(gain-loss-enh)*own*r}"
+   ],
+   "a": 1,
+   "sol": [
+    "Correct the loss: {loss} + {enh} = {=loss+enh}",
+    "Net gain on the whole assets = {gain} − {=loss+enh} = {=gain-loss-enh}",
+    "KL's {own%} share = {=(gain-loss-enh)*own}",
+    "Less exemption {exm} = {=(gain-loss-enh)*own-exm}",
+    "Tax at {r%} = <b>{=((gain-loss-enh)*own-exm)*r}</b>"
+   ],
+   "trap": "Applying the exemption before taking KL's share, or forgetting the enhancement makes the loss bigger."
+  },
+  {
+   "id": "c2-c15",
+   "t": "c",
+   "lo": [
+    "C2c"
+   ],
+   "title": "Rollover relief",
+   "rule": "<span class=\"eq\">Taxed now = min(gain, proceeds − amount reinvested)\nDeferred   = gain − taxed now</span>",
+   "body": "<p>Reinvest the proceeds in a replacement business asset and the gain is postponed (not exempted) until the replacement is sold.</p>",
+   "ex": {
+    "given": "Asset sold for 250,000 with a gain of 40,000.",
+    "steps": [
+     "Reinvest 260,000: nothing held back → taxed 0, deferred 40,000",
+     "Reinvest 230,000: 20,000 held back → taxed 20,000, deferred 20,000",
+     "Reinvest 200,000: 50,000 held back, capped at the gain → taxed 40,000, deferred 0"
+    ]
+   },
+   "trap": "Calling it an exemption. The gain is <b>postponed</b>; it reduces the base cost of the replacement."
+  },
+  {
+   "id": "c2-q02",
+   "t": "q",
+   "type": "num",
+   "lo": [
+    "C2c"
+   ],
+   "src": "Practice",
+   "p": {
+    "pr": 250000,
+    "g": 40000,
+    "re": 230000
+   },
+   "v": {
+    "pr": [
+     100000,
+     600000,
+     5000
+    ],
+    "g": [
+     10000,
+     120000,
+     1000
+    ],
+    "re": [
+     50000,
+     650000,
+     5000
+    ]
+   },
+   "c": "g<pr && re<pr && pr-re<g && re>0",
+   "q": "An asset is sold for ${pr}, giving a chargeable gain of ${g}. ${re} of the proceeds is reinvested in a qualifying replacement asset and rollover relief is claimed. How much of the gain is taxable now?",
+   "ans": "min(g,max(0,pr-re))",
+   "sol": [
+    "Proceeds not reinvested = {pr} − {re} = {=pr-re}",
+    "Taxed now = lower of the gain {g} and {=pr-re} = <b>{=min(g,max(0,pr-re))}</b>",
+    "Deferred = {=g-min(g,max(0,pr-re))}"
+   ],
+   "trap": "Taxing the gain × proportion not reinvested. The rule is the amount not reinvested, capped at the gain."
+  },
+  {
+   "id": "b039",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C2c"
+   ],
+   "src": "Bank 039",
+   "q": "Complete the sentence: \"With rollover relief, the gain on disposing of a business asset ______.\"",
+   "opts": [
+    "is tax-free if the proceeds go into a replacement asset",
+    "is postponed if all the proceeds go into a replacement asset",
+    "is postponed if some of the proceeds go into a replacement asset"
+   ],
+   "a": 1,
+   "sol": [
+    "Full deferral needs all the proceeds reinvested.",
+    "With partial reinvestment, some of the gain is taxed now (C is incomplete).",
+    "It's a deferral, not an exemption (A)."
+   ],
+   "trap": "A: \"tax-free\" is wrong. The gain comes back when the replacement is sold.",
+   "alt": [
+    {
+     "q": "Complete the sentence: \"With rollover relief, if only PART of the proceeds is reinvested in a replacement asset, the gain ______.\"",
+     "opts": [
+      "is fully postponed",
+      "is taxed now up to the amount not reinvested, and the rest is postponed",
+      "is exempt",
+      "is taxed in full now"
+     ],
+     "a": 1,
+     "sol": [
+      "Taxed now = lower of the gain and the proceeds not reinvested. The rest is deferred."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "b040",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C2c"
+   ],
+   "src": "Bank 040",
+   "q": "Rollover relief means:",
+   "opts": [
+    "trading losses can be used against future profits",
+    "inventory may be valued at current cost",
+    "capital losses can be used against future gains",
+    "tax on a gain is postponed when all the sale proceeds are reinvested in a replacement asset"
+   ],
+   "a": 3,
+   "sol": [
+    "Rollover relief defers a gain on reinvestment.",
+    "A and C are loss reliefs; B is not a tax relief."
+   ],
+   "alt": [
+    {
+     "q": "Which relief lets a business postpone tax on a gain when it reinvests the sale proceeds in a replacement asset?",
+     "opts": [
+      "Group loss relief",
+      "Rollover relief",
+      "Indexation allowance",
+      "Terminal loss relief"
+     ],
+     "a": 1,
+     "sol": [
+      "That is rollover relief.",
+      "Indexation reduces the gain for inflation; the other two are loss reliefs."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "c2-t22b",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C2c"
+   ],
+   "src": "Chapter TYU 22 Q2",
+   "q": "Rollover relief:",
+   "opts": [
+    "postpones tax on a gain on a business asset when the proceeds are reinvested in a replacement asset",
+    "lets inventory be valued at replacement cost",
+    "lets trading losses be carried back three years",
+    "lets capital losses be set against trading profits"
+   ],
+   "a": 0,
+   "sol": [
+    "Rollover = deferral of a gain on reinvestment in a replacement asset."
+   ]
+  },
+  {
+   "id": "c2-c16",
+   "t": "c",
+   "lo": [
+    "C2b"
+   ],
+   "title": "Groups: loss relief and capital gains groups",
+   "rule": "<p>Each company is still taxed separately. <b>Group loss relief</b> (tax consolidation) lets a trading loss in one member reduce another's taxable profit.</p><p><b>Why surrender a loss?</b> (1) relief sooner if the loss-maker has no profits coming; (2) save tax by surrendering to a member paying a <b>higher</b> rate.</p><p>Capital losses usually can't be surrendered, but in a <b>capital gains group</b> assets move between members at no gain / no loss. A gain arises only when the asset leaves the group.</p>",
+   "body": "<p><span class=\"mute\">The tax group is often defined differently from the accounting group (UK: 75% for group relief). Some countries allow only resident companies.</span></p>",
+   "trap": "Surrendering to a lower-rate company. Relief is worth loss × the recipient's rate, so go higher.",
+   "upd": "UK: since April 2017, carried-forward losses can also be group-relieved (subject to the £5m + 50% cap)."
+  },
+  {
+   "id": "b027",
+   "t": "q",
+   "type": "multi",
+   "lo": [
+    "C2b"
+   ],
+   "src": "Bank 027",
+   "q": "Which TWO are reasons for a group to surrender a loss to another group company rather than keep it in the company that made it?",
+   "opts": [
+    "The loss-making company expects no profits soon, so relief comes sooner",
+    "The company receiving the loss pays tax at a lower rate",
+    "The loss-making company gets a cash refund for surrendering",
+    "The company receiving the loss pays tax at a higher rate",
+    "The company receiving the loss gets a cash refund"
+   ],
+   "a": [
+    0,
+    3
+   ],
+   "sol": [
+    "Speed: relief now rather than waiting for future profits.",
+    "Value: a loss saves tax at the recipient's rate, so a higher rate saves more.",
+    "Group relief is not a cash refund mechanism."
+   ],
+   "trap": "B: surrendering to a lower-rate company wastes value.",
+   "alt": [
+    {
+     "q": "Which THREE are NOT valid reasons for a group to surrender a loss to another group company?",
+     "a": [
+      1,
+      2,
+      4
+     ],
+     "sol": [
+      "Valid reasons: relief comes sooner (A); the recipient pays a higher rate (D).",
+      "Surrendering to a lower-rate company (B) saves less tax. Group relief gives no cash refund to either company (C, E)."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "c2-q03",
+   "t": "q",
+   "type": "num",
+   "lo": [
+    "C2c"
+   ],
+   "src": "Practice",
+   "p": {
+    "L": 100000,
+    "ra": 0.19,
+    "rb": 0.25
+   },
+   "v": {
+    "L": [
+     20000,
+     300000,
+     5000
+    ],
+    "ra": [
+     [
+      0.15,
+      0.19,
+      0.2
+     ]
+    ],
+    "rb": [
+     [
+      0.25,
+      0.28,
+      0.3
+     ]
+    ]
+   },
+   "q": "A group has two members in the same tax group. Company A pays tax at {ra%} and Company B at {rb%}. Company A makes a trading loss of ${L}; both companies have plenty of profit to absorb it. By how much is the group's tax bill lower if the loss is surrendered to the {rb%} company rather than used against the {ra%} company's profit?",
+   "ans": "L*(rb-ra)",
+   "sol": [
+    "Relief value = loss × rate of the company using it.",
+    "At {rb%}: {=L*rb}. At {ra%}: {=L*ra}.",
+    "Difference = {L} × ({rb%} − {ra%}) = <b>{=L*(rb-ra)}</b>"
+   ]
+  },
+  {
+   "id": "c2-c17",
+   "t": "c",
+   "lo": [
+    "C2a",
+    "C2b"
+   ],
+   "title": "Dividends: four systems",
+   "rule": "<p>Dividends are an appropriation of profit, <b>not deductible</b>. So the same profit can be taxed in the company and again in the shareholder.</p><table><tr><th class=\"\">System</th><th class=\"\">How</th><th class=\"\">Double tax</th></tr><tr><td class=\"\">Classical</td><td class=\"\">Company and shareholder fully separate</td><td class=\"\">Full double tax</td></tr><tr><td class=\"\">Imputation</td><td class=\"\">Shareholder credited with ALL the underlying corporate tax</td><td class=\"\">Removed</td></tr><tr><td class=\"\">Partial imputation</td><td class=\"\">Credit for PART of it</td><td class=\"\">Reduced</td></tr><tr><td class=\"\">Split rate</td><td class=\"\">Lower corporate rate on distributed profit</td><td class=\"\">Reduced at company level</td></tr></table>"
+  },
+  {
+   "id": "c2-t22c",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C2a"
+   ],
+   "src": "Chapter TYU 22 Q3",
+   "q": "Under a full imputation system:",
+   "opts": [
+    "shareholders get a credit for all of the corporate tax on the profits distributed to them",
+    "the company pays tax, and shareholders pay full tax on dividends with no credit",
+    "only withholding tax is credited to shareholders",
+    "shareholders get a credit for part of the underlying corporate tax"
+   ],
+   "a": 0,
+   "sol": [
+    "Full imputation: credit for all the underlying corporate tax.",
+    "B is classical; D is partial imputation."
+   ],
+   "alt": [
+    {
+     "q": "Under a classical system:",
+     "opts": [
+      "shareholders get a credit for all of the corporate tax on the profits distributed to them",
+      "the company pays tax, and shareholders pay full tax on dividends with no credit",
+      "the company pays a lower rate on distributed profits",
+      "shareholders get a credit for part of the underlying corporate tax"
+     ],
+     "a": 1,
+     "sol": [
+      "Classical = company and shareholder treated as separate, so full double taxation.",
+      "C is split rate; D is partial imputation."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "c2-q04",
+   "t": "q",
+   "type": "match",
+   "lo": [
+    "C2a"
+   ],
+   "src": "Practice",
+   "q": "Match each description to the dividend tax system.",
+   "items": [
+    "The shareholder pays full personal tax on dividends with no credit for corporate tax",
+    "The company pays a lower rate on profits it distributes than on profits it keeps",
+    "The shareholder gets a credit for some, but not all, of the underlying corporate tax",
+    "The shareholder gets a credit for all the underlying corporate tax"
+   ],
+   "choices": [
+    "Classical",
+    "Imputation",
+    "Partial imputation",
+    "Split rate"
+   ],
+   "a": [
+    0,
+    3,
+    2,
+    1
+   ],
+   "sol": [
+    "Classical: no relief. Split rate: relief at company level. Partial imputation: part credit. Imputation: full credit."
+   ]
+  },
+  {
+   "id": "c2-c18",
+   "t": "c",
+   "lo": [
+    "C2b",
+    "C3a"
+   ],
+   "title": "Interest v dividends: thin capitalisation",
+   "rule": "<p>Interest is normally deductible; dividends are not. A group therefore prefers to fund a subsidiary with intra-group <b>debt</b> rather than shares.</p><p><b>Thin capitalisation rules</b> cap the deductible interest. The excess is treated as a dividend, so it isn't deductible.</p>",
+   "upd": "UK Corporate Interest Restriction (since 2017): net interest deduction generally capped at 30% of tax-EBITDA, with a £2m de minimis. Follows OECD BEPS Action 4."
+  },
+  {
+   "id": "c2-q05",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C2b"
+   ],
+   "src": "Practice",
+   "q": "A parent lends its subsidiary far more than an independent bank would, at a high interest rate. Under thin capitalisation rules, the excess interest is:",
+   "opts": [
+    "fully deductible because it was actually paid",
+    "treated as a dividend and not deductible",
+    "deductible but taxed at a higher rate",
+    "added to the subsidiary's share capital"
+   ],
+   "a": 1,
+   "sol": [
+    "Thin cap rules disallow interest on the excess debt and treat it like a distribution (dividend), which isn't deductible."
+   ]
+  }
+ ]
+}

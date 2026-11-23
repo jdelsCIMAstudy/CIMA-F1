@@ -1,0 +1,1476 @@
+{
+ "id": "ch3",
+ "n": 3,
+ "area": "C · Tax",
+ "title": "International taxation",
+ "lo": [
+  "C3a",
+  "C3b"
+ ],
+ "items": [
+  {
+   "id": "c3-c01",
+   "t": "c",
+   "lo": [
+    "C3a",
+    "C3b"
+   ],
+   "title": "Tax in a digital world",
+   "rule": "<p>Businesses now sell across borders without being physically present: online retail, remote education, streaming. Two questions follow:</p><ul><li>Which country should tax the profit?</li><li>What happens when several countries all try to tax the same profit?</li></ul>",
+   "body": "<p>Residence gets harder to pin down: should a business be resident where its head office is if most income comes from customers elsewhere?</p><p><b>Ethics angle:</b> directors choosing low-tax jurisdictions purely to cut tax are avoiding (legal), not evading, but face reputational risk.</p>",
+   "upd": "Several countries (UK 2% Digital Services Tax since 2020, France, Italy) tax digital revenue while the OECD \"Pillar One\" deal on taxing where customers are is negotiated."
+  },
+  {
+   "id": "c3-c02",
+   "t": "c",
+   "lo": [
+    "C3a"
+   ],
+   "title": "Corporate residence",
+   "rule": "<p>A resident company is normally taxed on its <b>worldwide</b> income. Residence is decided by either:</p><ul><li>place of <b>incorporation</b>, or</li><li>place of <b>central management and control</b> (where the board meets and decides)</li></ul><p>Generally the country of control wins.</p>",
+   "trap": "Where customers, suppliers, factories or a stock-exchange listing are has nothing to do with residence."
+  },
+  {
+   "id": "b078",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C3a"
+   ],
+   "src": "Bank 078",
+   "q": "Which of the following would NOT normally be used to decide where a company is resident for tax purposes?",
+   "opts": [
+    "Where central management and control is exercised",
+    "The country in which it was registered",
+    "Where its directors hold their board meetings",
+    "Where most of its customers are located"
+   ],
+   "a": 3,
+   "sol": [
+    "Residence tests: incorporation (registration) or central management and control (board meetings).",
+    "Customer location is not a test."
+   ],
+   "alt": [
+    {
+     "q": "Which of the following IS normally used to decide where a company is resident for tax purposes?",
+     "opts": [
+      "Where most of its customers are located",
+      "Where its largest supplier is based",
+      "Where its directors hold their board meetings",
+      "Where its shares are listed"
+     ],
+     "a": 2,
+     "sol": [
+      "Board meetings = central management and control, a residence test.",
+      "Customers, suppliers and listings are not."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "c3-t3q1",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C3a"
+   ],
+   "src": "Chapter TYU 3 Q1",
+   "q": "Which would NOT normally be used to decide where a company is resident for tax?",
+   "opts": [
+    "Where its board meetings are held",
+    "Where it is incorporated",
+    "Where central management and control is exercised",
+    "Where its largest supplier is based"
+   ],
+   "a": 3,
+   "sol": [
+    "Incorporation and control (board meetings, central management) are the tests. Supplier location is irrelevant."
+   ]
+  },
+  {
+   "id": "c3-c03",
+   "t": "c",
+   "lo": [
+    "C3a"
+   ],
+   "title": "OECD model: permanent establishment",
+   "rule": "<p>Business profits are taxable in another country <b>only if</b> the company has a <b>permanent establishment (PE)</b> there.</p><table><tr><td class=\"\">Place of management</td><td class=\"\">Branch</td></tr><tr><td class=\"\">Office</td><td class=\"\">Factory</td></tr><tr><td class=\"\">Workshop</td><td class=\"\">Mine, oil/gas well, quarry</td></tr><tr><td class=\"\">Building site lasting <b>more than 12 months</b></td><td class=\"\"></td></tr></table><p><b>Not a PE:</b> facilities used only for storage, display or delivery; building sites of 12 months or less.</p>",
+   "trap": "A warehouse used only to store goods is the classic wrong option. So is a 9- or 10-month construction project.",
+   "upd": "The 2017 OECD Model narrowed the storage/display exemption to activities that are preparatory or auxiliary. The 12-month site rule is unchanged. Exam answers are unaffected."
+  },
+  {
+   "id": "b080",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C3a"
+   ],
+   "src": "Bank 080",
+   "q": "Under the OECD model, a company's business profits are taxable in another country only if the company has a ______ in that country.",
+   "opts": [
+    "shareholder resident",
+    "permanent establishment",
+    "registered office for its AGM",
+    "customer base"
+   ],
+   "a": 1,
+   "sol": [
+    "OECD Article 7: business profits are taxable abroad only through a permanent establishment."
+   ],
+   "alt": [
+    {
+     "q": "Under the OECD model, which of the following would by itself allow Country F to tax a foreign company's business profits?",
+     "opts": [
+      "Many of the company's customers live in Country F",
+      "The company has a factory in Country F",
+      "Some of the company's shareholders live in Country F",
+      "The company holds its AGM in Country F once"
+     ],
+     "a": 1,
+     "sol": [
+      "A factory is a permanent establishment, so Country F can tax the profits it generates.",
+      "Customers, shareholders or a one-off meeting do not create a PE."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "b086",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C3a"
+   ],
+   "src": "Bank 086",
+   "p": {
+    "m": 9
+   },
+   "v": {
+    "m": [
+     [
+      3,
+      6,
+      8,
+      9,
+      10,
+      11
+     ]
+    ]
+   },
+   "q": "Which of the following is NOT specifically listed as a permanent establishment under the OECD model?",
+   "opts": [
+    "A branch",
+    "A workshop",
+    "A quarry",
+    "A building site that lasts {m} months"
+   ],
+   "a": 3,
+   "sol": [
+    "Branch, workshop and quarry (a place of extracting natural resources) are all listed.",
+    "A building site is a PE only if it lasts more than 12 months. {m} months is too short."
+   ],
+   "alt": [
+    {
+     "q": "Which of the following IS specifically listed as a permanent establishment under the OECD model?",
+     "opts": [
+      "A facility used only to store goods",
+      "A building site lasting 8 months",
+      "A facility used only to display goods",
+      "A workshop"
+     ],
+     "a": 3,
+     "sol": [
+      "A workshop is on the list.",
+      "Storage-only, display-only and sites of 12 months or less are not PEs."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "b087",
+   "t": "q",
+   "type": "mcq",
+   "fixed": true,
+   "lo": [
+    "C3a"
+   ],
+   "src": "Bank 087",
+   "q": "Which of the following would be a permanent establishment under the OECD model? I. A place of management. II. A facility used only to display goods. III. A gas well. IV. A construction project lasting ten months. V. A workshop.",
+   "opts": [
+    "All of them",
+    "I and V",
+    "I, III, IV and V",
+    "I, III and V"
+   ],
+   "a": 3,
+   "sol": [
+    "PE: place of management (I), gas well (III), workshop (V).",
+    "Not PE: display-only facility (II); construction lasting 12 months or less (IV)."
+   ],
+   "trap": "Option C counts the 10-month project. It needs to exceed 12 months.",
+   "alt": [
+    {
+     "q": "Which of the following would be a permanent establishment under the OECD model? I. A branch. II. A warehouse used only for storage. III. A construction project lasting 14 months. IV. A mine. V. A facility used only for delivery.",
+     "opts": [
+      "I, III and IV",
+      "I and IV",
+      "All of them",
+      "I, II, III and IV"
+     ],
+     "a": 0,
+     "sol": [
+      "PE: branch (I), construction over 12 months (III), mine (IV).",
+      "Storage-only (II) and delivery-only (V) facilities are not PEs."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "c3-t3q5",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C3a"
+   ],
+   "src": "Chapter TYU 3 Q5",
+   "q": "Under the OECD model, which would NOT normally create a permanent establishment?",
+   "opts": [
+    "A branch office",
+    "A dependent agent who regularly signs contracts for the company",
+    "A factory",
+    "A facility used only to store and display goods"
+   ],
+   "a": 3,
+   "sol": [
+    "Branches, factories and dependent agents habitually concluding contracts create a PE.",
+    "Storage/display-only facilities do not."
+   ]
+  },
+  {
+   "id": "c3-c04",
+   "t": "c",
+   "lo": [
+    "C3a"
+   ],
+   "title": "Dual residence: the tie-breaker",
+   "rule": "<p>If two countries both treat a company as resident, the OECD tie-breaker makes it resident where its <b>place of effective management</b> is: where the board makes its key decisions.</p>",
+   "ex": {
+    "title": "Nova Ltd",
+    "given": "Incorporated in P. Factories and sales in Q. Board meets and decides strategy in R. All OECD treaties.",
+    "steps": [
+     "Incorporation (P) loses to effective management.",
+     "Where it trades or sells (Q) is not a residence test.",
+     "Resident in <b>R</b>."
+    ]
+   },
+   "trap": "Picking the country where it trades or makes its profits. The tie-breaker ignores that."
+  },
+  {
+   "id": "b077",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C3a"
+   ],
+   "src": "Bank 077",
+   "q": "Tarn Co is incorporated in Country P. Its factories are in Country Q. Its board meets and makes all strategic decisions in Country R. Its shares are listed on a stock exchange in Country S. All four countries follow the OECD model. Where is Tarn Co resident for tax?",
+   "opts": [
+    "Country Q",
+    "Country P",
+    "Country R",
+    "Country S"
+   ],
+   "a": 2,
+   "sol": [
+    "OECD tie-breaker: place of effective management.",
+    "The board decides strategy in R, so Tarn is resident in R.",
+    "Factories (Q) may create a PE there, but that is not residence."
+   ],
+   "trap": "Q: a factory creates a permanent establishment, not residence.",
+   "alt": [
+    {
+     "q": "Tarn Co is incorporated in Country P. Its factories are in Country R. Its shares are listed on a stock exchange in Country Q. Its board meets and makes all strategic decisions in Country S. All four countries follow the OECD model. Where is Tarn Co resident for tax?",
+     "opts": [
+      "Country Q",
+      "Country P",
+      "Country R",
+      "Country S"
+     ],
+     "a": 3,
+     "sol": [
+      "Place of effective management = where the board makes strategic decisions = Country S.",
+      "Incorporation (P), factories (R) and listing (Q) don't decide it."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "b088",
+   "t": "q",
+   "type": "mcq",
+   "fixed": true,
+   "lo": [
+    "C3a"
+   ],
+   "src": "Bank 088",
+   "q": "Lomond Co: (i) is incorporated in Country X; (ii) has its directors meet and exercise control in Country Y, though it does no trading there; (iii) carries out its main trade in Country Z. All three countries have OECD-model treaties with each other. Where is Lomond resident for tax?",
+   "opts": [
+    "Country X",
+    "Country Y",
+    "Country Z",
+    "Countries Y and Z"
+   ],
+   "a": 1,
+   "sol": [
+    "Control and effective management are in Y.",
+    "Doing no trading in Y doesn't matter; residence follows control."
+   ],
+   "trap": "Thinking it can't be resident somewhere it doesn't trade.",
+   "alt": [
+    {
+     "q": "Lomond Co: (i) is incorporated in Country Y; (ii) has its directors meet and exercise control in Country Z, where it also does some trading; (iii) carries out its main trade in Country X. All three countries have OECD-model treaties with each other. Where is Lomond resident for tax?",
+     "a": 2,
+     "sol": [
+      "Control and effective management are in Z, so Lomond is resident in Z.",
+      "Main trade in X creates a PE there, not residence."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "b090",
+   "t": "q",
+   "type": "mcq",
+   "fixed": true,
+   "lo": [
+    "C3a"
+   ],
+   "src": "Bank 090",
+   "q": "Fenwick Co is incorporated in Country 1 and trades mainly in Country 2. Its board and effective management are in Country 3. All three have OECD-model treaties. Where is Fenwick resident for tax?",
+   "opts": [
+    "Country 1",
+    "Country 2",
+    "Country 3",
+    "Both Country 2 and Country 3"
+   ],
+   "a": 2,
+   "sol": [
+    "Place of effective management = Country 3."
+   ],
+   "alt": [
+    {
+     "q": "Fenwick Co is incorporated in Country 3 and trades mainly in Country 1. Its board and effective management are in Country 2. All three have OECD-model treaties. Where is Fenwick resident for tax?",
+     "a": 1,
+     "sol": [
+      "Place of effective management = Country 2."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "c3-t4q1",
+   "t": "q",
+   "type": "mcq",
+   "fixed": true,
+   "lo": [
+    "C3a"
+   ],
+   "src": "Chapter TYU 4 Q1",
+   "q": "FZ is incorporated in Country X and makes most of its sales in Country Y. Its board meets in, and effective management is run from, Country Z. All three countries have OECD-based treaties. Where is FZ resident?",
+   "opts": [
+    "Country X",
+    "Country Y",
+    "Country Z",
+    "Both Y and Z"
+   ],
+   "a": 2,
+   "sol": [
+    "The tie-breaker is the place of effective management: Z."
+   ],
+   "alt": [
+    {
+     "q": "FZ is incorporated in Country Z and makes most of its sales in Country X. Its board meets in, and effective management is run from, Country Y. All three countries have OECD-based treaties. Where is FZ resident?",
+     "opts": [
+      "Country X",
+      "Country Y",
+      "Country Z",
+      "Both X and Z"
+     ],
+     "a": 1,
+     "sol": [
+      "Effective management is in Y."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "c3-c05",
+   "t": "c",
+   "lo": [
+    "C3a"
+   ],
+   "title": "Double taxation and the three reliefs",
+   "rule": "<p>Double taxation: the same income taxed where it <b>arises</b> and again where the taxpayer is <b>resident</b>. Treaties relieve it, but often not completely.</p><table><tr><th class=\"\">Method</th><th class=\"\">How</th></tr><tr><td class=\"\">Exemption</td><td class=\"\">Income exempt (wholly or partly) in one country</td></tr><tr><td class=\"\">Tax credit</td><td class=\"\">Foreign tax credited against home tax, capped at the lower of foreign tax and home tax on that income</td></tr><tr><td class=\"\">Deduction</td><td class=\"\">Foreign tax deducted from the income; only the net is taxed at home. Least generous.</td></tr></table>",
+   "trap": "Group loss relief is not a double tax relief method. It's a domestic group rule."
+  },
+  {
+   "id": "b081",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C3a"
+   ],
+   "src": "Bank 081",
+   "q": "Double taxation arises:",
+   "opts": [
+    "when group companies surrender losses to each other",
+    "when the same income is taxed both in the country where it arises and in the taxpayer's country of residence",
+    "when tax losses are carried forward against future profits",
+    "when a gain is relieved because the proceeds are reinvested"
+   ],
+   "a": 1,
+   "sol": [
+    "Source country taxes because the income arose there; residence country taxes worldwide income."
+   ],
+   "alt": [
+    {
+     "q": "Which of the following is an example of double taxation?",
+     "opts": [
+      "A trading loss surrendered to another group company",
+      "Royalty income taxed in the country it is earned and again in the recipient's country of residence",
+      "Two companies in the same group each paying tax on their own profits",
+      "A gain postponed by rollover relief"
+     ],
+     "a": 1,
+     "sol": [
+      "The same income taxed in two countries = double taxation."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "b079",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C3a"
+   ],
+   "src": "Bank 079",
+   "q": "The purpose of double taxation relief is to:",
+   "opts": [
+    "make sure no income is ever taxed more than once",
+    "reduce the double taxation of income earned overseas",
+    "stop dividends between group companies in the same country being taxed twice",
+    "give relief when a company's tax rate is twice the normal rate"
+   ],
+   "a": 1,
+   "sol": [
+    "DTR mitigates double taxation on overseas income. It often doesn't remove it completely (e.g. the deduction method)."
+   ],
+   "trap": "A overstates it: \"ensure never\" is too strong.",
+   "alt": [
+    {
+     "q": "Which statement about double taxation relief is correct?",
+     "opts": [
+      "It always removes double taxation completely",
+      "Under the credit method, relief is capped at the home tax on that income",
+      "It applies only to dividends between companies in the same country",
+      "It refunds foreign tax that exceeds home tax"
+     ],
+     "a": 1,
+     "sol": [
+      "Credit relief = lower of foreign tax and home tax on that income.",
+      "Excess foreign tax isn't refunded, so relief doesn't always remove double tax."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "b092",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C3a"
+   ],
+   "src": "Bank 092",
+   "q": "Which statement correctly describes the deduction method of double tax relief?",
+   "opts": [
+    "The foreign tax is deducted as an expense in the statement of profit or loss",
+    "The foreign tax is treated as a trading loss",
+    "The foreign tax is deducted from the foreign income, so only the net amount is taxed in the country of residence",
+    "The foreign tax is deducted from sales revenue"
+   ],
+   "a": 2,
+   "sol": [
+    "Deduction relief: net foreign income (after foreign tax) is taxed at home."
+   ],
+   "alt": [
+    {
+     "q": "Which statement correctly describes the credit method of double tax relief?",
+     "opts": [
+      "The foreign tax is deducted from the foreign income, so only the net is taxed at home",
+      "Foreign tax is set against home tax on that income, up to the amount of the home tax",
+      "The foreign income is exempt in the home country",
+      "The foreign tax is treated as a trading loss"
+     ],
+     "a": 1,
+     "sol": [
+      "Credit relief: home tax on the gross income, less a credit for foreign tax, capped at the home tax.",
+      "A is deduction; C is exemption."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "c3-t3q4",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C3a"
+   ],
+   "src": "Chapter TYU 3 Q4",
+   "q": "Which is NOT a method of double tax relief?",
+   "opts": [
+    "Deduction relief",
+    "Exemption",
+    "Tax credit relief",
+    "Group loss relief"
+   ],
+   "a": 3,
+   "sol": [
+    "The three DTR methods are exemption, credit and deduction. Group loss relief is a domestic group rule."
+   ]
+  },
+  {
+   "id": "c3-c06",
+   "t": "c",
+   "lo": [
+    "C3a"
+   ],
+   "title": "The three reliefs as formulas",
+   "rule": "<span class=\"eq\">Income I, foreign rate f, home rate h\n\nExemption:  total = f·I\nCredit:     home pays max(0, (h − f)·I)\n            total = max(f, h)·I\nDeduction:  total = f·I + h·(1 − f)·I</span>",
+   "svg": "<svg viewBox=\"0 0 320 200\" role=\"img\" aria-label=\"Total tax on 100,000 of foreign income under exemption, credit and deduction relief\">\n<text x=\"160\" y=\"14\" font-size=\"11\" text-anchor=\"middle\">Total tax on 100,000 (f 20%, h 30%)</text>\n<line x1=\"30\" y1=\"170\" x2=\"300\" y2=\"170\" stroke=\"currentColor\"/>\n<rect x=\"50\" y=\"130\" width=\"50\" height=\"40\" fill=\"#1f5fbf\"/><text x=\"75\" y=\"186\" font-size=\"10\" text-anchor=\"middle\">Exemption</text><text x=\"75\" y=\"124\" font-size=\"10\" text-anchor=\"middle\">20,000</text>\n<rect x=\"135\" y=\"130\" width=\"50\" height=\"40\" fill=\"#1f5fbf\"/><rect x=\"135\" y=\"110\" width=\"50\" height=\"20\" fill=\"#b42318\"/><text x=\"160\" y=\"186\" font-size=\"10\" text-anchor=\"middle\">Credit</text><text x=\"160\" y=\"104\" font-size=\"10\" text-anchor=\"middle\">30,000</text>\n<rect x=\"220\" y=\"130\" width=\"50\" height=\"40\" fill=\"#1f5fbf\"/><rect x=\"220\" y=\"82\" width=\"50\" height=\"48\" fill=\"#b42318\"/><text x=\"245\" y=\"186\" font-size=\"10\" text-anchor=\"middle\">Deduction</text><text x=\"245\" y=\"76\" font-size=\"10\" text-anchor=\"middle\">44,000</text>\n<rect x=\"40\" y=\"30\" width=\"10\" height=\"10\" fill=\"#1f5fbf\"/><text x=\"54\" y=\"39\" font-size=\"10\">foreign tax</text><rect x=\"125\" y=\"30\" width=\"10\" height=\"10\" fill=\"#b42318\"/><text x=\"139\" y=\"39\" font-size=\"10\">home tax</text></svg>",
+   "ex": {
+    "given": "I = 100,000, f = 20%, h = 30%.",
+    "steps": [
+     "Exemption: 20,000 total.",
+     "Credit: home tax 30,000 − credit 20,000 = 10,000; total 30,000 = the higher rate.",
+     "Deduction: home tax 30% × 80,000 = 24,000; total 44,000."
+    ]
+   },
+   "trap": "Under credit relief, if f > h the excess foreign tax is simply lost. The home country never refunds it."
+  },
+  {
+   "id": "c3-q01",
+   "t": "q",
+   "type": "num",
+   "lo": [
+    "C3a"
+   ],
+   "src": "Practice",
+   "p": {
+    "I": 100000,
+    "f": 0.2,
+    "h": 0.3
+   },
+   "v": {
+    "I": [
+     20000,
+     500000,
+     5000
+    ],
+    "f": [
+     [
+      0.1,
+      0.15,
+      0.2,
+      0.25,
+      0.35,
+      0.4
+     ]
+    ],
+    "h": [
+     [
+      0.2,
+      0.25,
+      0.3,
+      0.35
+     ]
+    ]
+   },
+   "c": "abs(f-h)>0.001",
+   "q": "A company resident in Country H earns ${I} of income in Country F, where it pays tax at {f%}. Country H taxes residents at {h%} and gives credit relief for foreign tax. How much tax does the company pay in Country H on this income?",
+   "ans": "max(0,(h-f)*I)",
+   "sol": [
+    "Home tax on gross income: {I} × {h%} = {=I*h}",
+    "Credit = lower of foreign tax {=I*f} and home tax {=I*h} = {=min(I*f,I*h)}",
+    "Home tax payable = <b>{=max(0,(h-f)*I)}</b>{?f>h| (the extra {=(f-h)*I} of foreign tax goes unrelieved)|}"
+   ],
+   "trap": "{?f>h|Entering a negative number. The credit is capped at the home tax; no refund.|Paying the full {=I*h}: the credit for foreign tax comes off.}"
+  },
+  {
+   "id": "c3-q02",
+   "t": "q",
+   "type": "num",
+   "lo": [
+    "C3a"
+   ],
+   "src": "Practice",
+   "p": {
+    "I": 100000,
+    "f": 0.2,
+    "h": 0.3
+   },
+   "v": {
+    "I": [
+     20000,
+     500000,
+     5000
+    ],
+    "f": [
+     [
+      0.1,
+      0.15,
+      0.2,
+      0.25
+     ]
+    ],
+    "h": [
+     [
+      0.2,
+      0.25,
+      0.3,
+      0.35
+     ]
+    ]
+   },
+   "q": "A company resident in Country H earns ${I} of income in Country F, where it pays tax at {f%}. Country H taxes residents at {h%} and gives relief only by the <b>deduction</b> method. What is the TOTAL tax (both countries) on this income?",
+   "ans": "f*I + h*(1-f)*I",
+   "sol": [
+    "Foreign tax = {I} × {f%} = {=f*I}",
+    "Net income taxed at home = {=I*(1-f)} × {h%} = {=h*(1-f)*I}",
+    "Total = <b>{=f*I + h*(1-f)*I}</b>"
+   ],
+   "trap": "Taxing the gross {I} at home. Deduction relief taxes only the net after foreign tax."
+  },
+  {
+   "id": "c3-c07",
+   "t": "c",
+   "lo": [
+    "C3a"
+   ],
+   "title": "Overseas branch v subsidiary",
+   "rule": "<table><tr><th class=\"\"></th><th class=\"\">Subsidiary</th><th class=\"\">Branch</th></tr><tr><td class=\"\">Status</td><td class=\"\">Separate entity, resident abroad</td><td class=\"\">Part of the parent</td></tr><tr><td class=\"\">Parent taxed on</td><td class=\"\">Dividends received only</td><td class=\"\">All branch profits as they arise</td></tr><tr><td class=\"\">Losses</td><td class=\"\">No group relief</td><td class=\"\">Available to the parent straight away</td></tr><tr><td class=\"\">Tax depreciation</td><td class=\"\">Foreign rules only</td><td class=\"\">Parent claims on branch assets</td></tr><tr><td class=\"\">Asset transfers</td><td class=\"\">May trigger a gain</td><td class=\"\">No gain / no loss</td></tr></table>",
+   "body": "<p><b>Rule of thumb:</b> branch for a new operation expecting early losses; subsidiary for a profitable operation in a lower-tax country.</p>",
+   "trap": "Saying a branch is taxed only on profits remitted home. That's the subsidiary (via dividends). Branch profits are taxed as they arise."
+  },
+  {
+   "id": "b089",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C3a"
+   ],
+   "src": "Bank 089",
+   "q": "A resident company trades overseas through a branch. Which of the following does NOT usually apply?",
+   "opts": [
+    "Assets can be moved to the branch without a capital gain arising",
+    "Tax is charged only on the profits the branch sends home",
+    "Capital allowances can be claimed on the branch's qualifying assets",
+    "Branch losses can be set against the company's other profits straight away"
+   ],
+   "a": 1,
+   "sol": [
+    "A branch is part of the company, so all its profits are taxed as they arise, not just remittances.",
+    "A, C and D are standard branch features."
+   ],
+   "alt": [
+    {
+     "q": "A resident company trades overseas through a subsidiary. Which of the following usually applies?",
+     "opts": [
+      "Assets can be moved to the subsidiary without a capital gain arising",
+      "The parent is taxed only on dividends it receives from the subsidiary",
+      "The parent claims capital allowances on the subsidiary's assets",
+      "Subsidiary losses can be set against the parent's profits straight away"
+     ],
+     "a": 1,
+     "sol": [
+      "A foreign subsidiary is a separate taxpayer abroad. The parent is taxed only on what it receives as dividends.",
+      "A, C and D are branch features."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "c3-t3q2",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C3a"
+   ],
+   "src": "Chapter TYU 3 Q2",
+   "q": "Which is the best definition of an overseas subsidiary?",
+   "opts": [
+    "A division of the parent company that trades abroad",
+    "A company resident for tax in one country whose shares are owned (controlled) by a company resident in another country",
+    "Any company with foreign shareholders",
+    "A permanent establishment of the parent abroad"
+   ],
+   "a": 1,
+   "sol": [
+    "A subsidiary is a separate company, resident abroad, controlled by the parent.",
+    "A and D describe a branch / PE."
+   ]
+  },
+  {
+   "id": "c3-q03",
+   "t": "q",
+   "type": "match",
+   "lo": [
+    "C3a"
+   ],
+   "src": "Practice",
+   "q": "For each feature, choose whether it applies to an overseas branch or an overseas subsidiary.",
+   "items": [
+    "Losses can be used against the parent's profits straight away",
+    "The parent is taxed only on dividends received",
+    "Assets move from the parent at no gain / no loss",
+    "Suits a profitable operation in a lower-tax country"
+   ],
+   "choices": [
+    "Branch",
+    "Subsidiary"
+   ],
+   "a": [
+    0,
+    1,
+    0,
+    1
+   ],
+   "sol": [
+    "Branch = part of the parent: losses usable immediately, assets move at no gain / no loss.",
+    "Subsidiary = separate taxpayer: parent taxed on dividends only, so low-tax profits can be kept abroad."
+   ]
+  },
+  {
+   "id": "c3-c08",
+   "t": "c",
+   "lo": [
+    "C3a"
+   ],
+   "title": "Withholding tax v underlying tax",
+   "rule": "<table><tr><td class=\"\">Withholding tax (WHT)</td><td class=\"\">Deducted at source by the paying country from interest, royalties, rent or dividends paid abroad. Recipient gets gross − WHT.</td></tr><tr><td class=\"\">Underlying tax (UT)</td><td class=\"\">The corporate tax already paid on the profits a dividend comes out of.</td></tr></table><span class=\"eq\">UT = gross dividend × (tax on profits ÷ profit after tax)</span>",
+   "body": "<p>Both count as foreign tax for double tax relief.</p>",
+   "trap": "Trading profits the company earns itself are not subject to withholding tax. WHT is on payments made to foreign recipients."
+  },
+  {
+   "id": "b083",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C3a"
+   ],
+   "src": "Bank 083",
+   "p": {
+    "w": 6000,
+    "net": 54000
+   },
+   "v": {
+    "w": [
+     1000,
+     20000,
+     500
+    ]
+   },
+   "d": {
+    "net2": "w*9"
+   },
+   "q": "Kell Co owns 30% of Rho Co, which is resident abroad. Rho pays Kell a dividend: Rho's tax authority deducts ${w} before payment, and Kell receives ${net2}. The ${w} is:",
+   "opts": [
+    "corporate income tax",
+    "underlying tax",
+    "capital tax",
+    "withholding tax"
+   ],
+   "a": 3,
+   "sol": [
+    "Tax deducted at source from a dividend before it is paid = withholding tax.",
+    "Underlying tax is the corporate tax already paid on Rho's profits."
+   ]
+  },
+  {
+   "id": "b085",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C3a"
+   ],
+   "src": "Bank 085",
+   "q": "Underlying tax is:",
+   "opts": [
+    "tax withheld at source when a dividend is paid",
+    "the tax paid on the profits out of which a dividend is paid",
+    "the amount of double tax relief that can be claimed",
+    "tax paid in the country of residence on foreign income"
+   ],
+   "a": 1,
+   "sol": [
+    "UT = corporate tax already suffered on the profits behind the dividend.",
+    "A is withholding tax."
+   ],
+   "alt": [
+    {
+     "q": "Withholding tax is:",
+     "opts": [
+      "tax withheld at source when a dividend is paid",
+      "the tax paid on the profits out of which a dividend is paid",
+      "the amount of double tax relief that can be claimed",
+      "tax paid in the country of residence on foreign income"
+     ],
+     "a": 0,
+     "sol": [
+      "WHT is deducted by the paying country at source.",
+      "B is underlying tax."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "b091",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C3a"
+   ],
+   "src": "Bank 091",
+   "q": "A withholding tax is:",
+   "opts": [
+    "tax an employer deducts but never pays over",
+    "the tax due less any amount withheld",
+    "tax deducted at source before interest or dividends are paid",
+    "tax on increases in the value of investments"
+   ],
+   "a": 2,
+   "sol": [
+    "Withholding = deducted at source before payment."
+   ],
+   "alt": [
+    {
+     "q": "Underlying tax is:",
+     "opts": [
+      "tax an employer deducts but never pays over",
+      "the corporate tax paid on the profits a dividend is paid out of",
+      "tax deducted at source before interest or dividends are paid",
+      "tax on increases in the value of investments"
+     ],
+     "a": 1,
+     "sol": [
+      "UT = corporate tax already suffered on the profits behind the dividend.",
+      "C is withholding tax."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "b093",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C3a"
+   ],
+   "src": "Bank 093",
+   "p": {
+    "pr": 500000,
+    "tx": 125000,
+    "gd": 200000,
+    "w": 0.15
+   },
+   "v": {
+    "pr": [
+     200000,
+     900000,
+     10000
+    ],
+    "gd": [
+     50000,
+     300000,
+     10000
+    ],
+    "w": [
+     [
+      0.05,
+      0.1,
+      0.15,
+      0.2
+     ]
+    ]
+   },
+   "d": {
+    "tx2": "pr*0.25"
+   },
+   "c": "gd<pr*0.75",
+   "q": "Opal Co made a profit of ${pr} and paid tax of ${tx2}. It pays a gross dividend of ${gd} to its overseas parent, and {w%} is deducted when the dividend is paid. The {w%} is called:",
+   "opts": [
+    "underlying tax",
+    "corporate income tax",
+    "foreign tax",
+    "withholding tax"
+   ],
+   "a": 3,
+   "sol": [
+    "Deducted when the dividend is paid = withholding tax.",
+    "The ${tx2} tax on Opal's profit is what gives rise to underlying tax."
+   ],
+   "trap": "C \"foreign tax\" is too vague: both WHT and UT are foreign taxes."
+  },
+  {
+   "id": "c3-t3q3",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C3a"
+   ],
+   "src": "Chapter TYU 3 Q3",
+   "q": "Which of these is normally NOT subject to withholding tax?",
+   "opts": [
+    "Trading profits the company earns itself",
+    "Royalties paid to a foreign owner",
+    "Dividends paid to foreign shareholders",
+    "Interest paid to a foreign lender"
+   ],
+   "a": 0,
+   "sol": [
+    "WHT applies to payments made to foreign recipients (royalties, dividends, interest).",
+    "A company's own trading profit is subject to corporate tax, not WHT."
+   ]
+  },
+  {
+   "id": "c3-t4q2",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C3a"
+   ],
+   "src": "Chapter TYU 4 Q2",
+   "q": "Which statement correctly distinguishes withholding tax from underlying tax?",
+   "opts": [
+    "Withholding tax is deducted at source from a payment; underlying tax is the corporate tax already paid on the profits the dividend comes from",
+    "Withholding tax is the corporate tax on the subsidiary's profits; underlying tax is deducted when the dividend is paid",
+    "They are two names for the same tax",
+    "Withholding tax applies to companies; underlying tax applies to individuals"
+   ],
+   "a": 0,
+   "sol": [
+    "WHT: deducted by the paying country from the payment itself.",
+    "UT: corporate tax suffered on the profits behind the dividend."
+   ]
+  },
+  {
+   "id": "c3-c09",
+   "t": "c",
+   "lo": [
+    "C3a"
+   ],
+   "title": "Computing foreign tax on a dividend",
+   "rule": "<span class=\"eq\">WHT   = gross dividend × w\nUT    = gross dividend × T / PAT\nGross foreign income = dividend + UT\nCash received        = dividend − WHT\nForeign tax suffered = WHT + UT</span>",
+   "svg": "<svg viewBox=\"0 0 320 210\" role=\"img\" aria-label=\"From subsidiary profit to dividend received: underlying tax and withholding tax\">\n<g font-size=\"10\"><rect x=\"20\" y=\"30\" width=\"60\" height=\"150\" fill=\"#1f5fbf\" fill-opacity=\".2\" stroke=\"#1f5fbf\"/><text x=\"50\" y=\"22\" text-anchor=\"middle\">PBT 500</text>\n<rect x=\"20\" y=\"30\" width=\"60\" height=\"37.5\" fill=\"#b42318\" fill-opacity=\".5\"/><text x=\"50\" y=\"52\" text-anchor=\"middle\">tax 125</text>\n<rect x=\"110\" y=\"67.5\" width=\"60\" height=\"112.5\" fill=\"#1f5fbf\" fill-opacity=\".2\" stroke=\"#1f5fbf\"/><text x=\"140\" y=\"60\" text-anchor=\"middle\">PAT 375</text>\n<rect x=\"200\" y=\"135\" width=\"60\" height=\"45\" fill=\"#1f5fbf\" fill-opacity=\".45\" stroke=\"#1f5fbf\"/><text x=\"230\" y=\"128\" text-anchor=\"middle\">Dividend 150</text>\n<rect x=\"200\" y=\"120\" width=\"60\" height=\"0\" /><rect x=\"200\" y=\"135\" width=\"60\" height=\"4.5\" fill=\"#b42318\"/><text x=\"268\" y=\"142\">WHT 15</text>\n<rect x=\"270\" y=\"90\" width=\"40\" height=\"15\" fill=\"#b42318\" fill-opacity=\".5\"/><text x=\"290\" y=\"85\" text-anchor=\"middle\">UT 50</text>\n<text x=\"160\" y=\"200\" text-anchor=\"middle\">UT = 150 × 125/375 = 50 · gross = 150 + 50 = 200 · cash = 135</text></g></svg>",
+   "body": "<p>Shortcut when the sub pays tax at rate t and you know the dividend D: T/PAT = t/(1 − t), so UT = D·t/(1 − t) and D + UT = D/(1 − t), the pre-tax profit behind the dividend.</p>",
+   "ex": {
+    "title": "HomeCo / OverCo",
+    "given": "OverCo (100% owned): PBT 500,000, tax 125,000, PAT 375,000. Dividend 150,000 with 10% WHT.",
+    "steps": [
+     "WHT = 150,000 × 10% = 15,000",
+     "UT = 150,000 × 125,000/375,000 = 50,000",
+     "Foreign tax suffered = 65,000. Cash received 135,000.",
+     "Gross income for home tax = 150,000 + 50,000 = 200,000"
+    ]
+   },
+   "trap": "Dividing by PBT instead of PAT. Dividends come out of after-tax profit."
+  },
+  {
+   "id": "b082",
+   "t": "q",
+   "type": "num",
+   "lo": [
+    "C3a"
+   ],
+   "src": "Bank 082",
+   "p": {
+    "gd": 240000,
+    "pbt": 1500000,
+    "tx": 300000
+   },
+   "v": {
+    "gd": [
+     50000,
+     600000,
+     10000
+    ],
+    "pbt": [
+     500000,
+     3000000,
+     100000
+    ],
+    "tx": [
+     100000,
+     900000,
+     25000
+    ]
+   },
+   "c": "tx<pbt*0.5 && gd<pbt-tx",
+   "q": "A foreign subsidiary pays a gross dividend of ${gd} to its parent. The subsidiary's profit before tax was ${pbt}, and it paid tax of ${tx}. Calculate the underlying tax on the dividend, to the nearest $.",
+   "ans": "rd(gd*tx/(pbt-tx))",
+   "sol": [
+    "Profit after tax = {pbt} − {tx} = {=pbt-tx}",
+    "UT = {gd} × {tx} / {=pbt-tx} = <b>{=rd(gd*tx/(pbt-tx))}</b>"
+   ],
+   "trap": "Using profit before tax as the denominator ({=rd(gd*tx/pbt)})."
+  },
+  {
+   "id": "b084",
+   "t": "q",
+   "type": "num",
+   "lo": [
+    "C3a"
+   ],
+   "src": "Bank 084",
+   "p": {
+    "net": 72000,
+    "w": 0.1,
+    "pbt": 500000,
+    "tx": 100000
+   },
+   "v": {
+    "net": [
+     9000,
+     180000,
+     900
+    ],
+    "w": [
+     [
+      0.05,
+      0.1,
+      0.2
+     ]
+    ],
+    "pbt": [
+     200000,
+     1000000,
+     50000
+    ],
+    "tx": [
+     [
+      50000,
+      100000,
+      150000
+     ]
+    ]
+   },
+   "c": "tx<pbt*0.5 && net/(1-w)<pbt-tx",
+   "q": "A parent company receives a dividend of ${net} from a foreign subsidiary, after {w%} withholding tax. The subsidiary's profit before tax was ${pbt}, and it paid tax of ${tx}. How much foreign tax has been suffered on the dividend? Answer to the nearest $.",
+   "ans": "rd(net/(1-w)*w + net/(1-w)*tx/(pbt-tx))",
+   "sol": [
+    "Gross dividend = {net} ÷ (1 − {w%}) = {=net/(1-w)}",
+    "WHT = {=net/(1-w)} − {net} = {=net/(1-w)*w}",
+    "PAT = {=pbt-tx}; UT = {=net/(1-w)} × {tx}/{=pbt-tx} = {=net/(1-w)*tx/(pbt-tx)}",
+    "Total foreign tax = <b>{=rd(net/(1-w)*w + net/(1-w)*tx/(pbt-tx))}</b>"
+   ],
+   "trap": "Computing WHT as {w%} of the net {net}. The {w%} applies to the gross dividend, so gross up first."
+  },
+  {
+   "id": "c3-c10",
+   "t": "c",
+   "lo": [
+    "C3a"
+   ],
+   "title": "Credit relief on a dividend; ownership %",
+   "rule": "<span class=\"eq\">Home tax = gross foreign income × h\nDTR      = min(WHT + UT, home tax)\nPayable  = home tax − DTR</span>",
+   "ex": {
+    "title": "HomeCo continued (gross 200,000; foreign tax 65,000)",
+    "steps": [
+     "Home rate 30%: home tax 60,000; DTR = min(65,000, 60,000) = 60,000; payable 0. 5,000 of foreign tax is unrelieved.",
+     "Home rate 40%: home tax 80,000; DTR 65,000; payable <b>15,000</b>."
+    ]
+   },
+   "trap": "If the parent owns less than 100%, it only receives its share of the dividend. Apply WHT and UT to the parent's share, not the whole dividend."
+  },
+  {
+   "id": "c3-t1a",
+   "t": "q",
+   "type": "num",
+   "lo": [
+    "C3a"
+   ],
+   "src": "Chapter TYU 1 (net)",
+   "p": {
+    "own": 0.75,
+    "pbt": 200000,
+    "ft": 0.25,
+    "w": 0.1,
+    "h": 0.4
+   },
+   "v": {
+    "own": [
+     [
+      0.6,
+      0.75,
+      0.8,
+      1
+     ]
+    ],
+    "pbt": [
+     100000,
+     600000,
+     10000
+    ],
+    "ft": [
+     [
+      0.15,
+      0.2,
+      0.25,
+      0.3
+     ]
+    ],
+    "w": [
+     [
+      0.05,
+      0.1,
+      0.15
+     ]
+    ],
+    "h": [
+     [
+      0.25,
+      0.3,
+      0.35,
+      0.4
+     ]
+    ]
+   },
+   "d": {
+    "div": "own*pbt*(1-ft)",
+    "wht": "own*pbt*(1-ft)*w",
+    "ut": "own*pbt*ft",
+    "gross": "own*pbt",
+    "home": "own*pbt*h",
+    "ftot": "own*pbt*(1-ft)*w + own*pbt*ft"
+   },
+   "q": "Home Co owns {own%} of Overseas Co. Overseas Co's profit before tax is ${pbt}. It pays foreign corporate tax at {ft%} and distributes all of its after-tax profit. Withholding tax of {w%} is deducted from dividends paid abroad. Home Co pays tax at {h%} on the gross foreign income and gets credit relief for foreign taxes. <b>Calculate the net dividend Home Co receives in cash.</b>",
+   "ans": "div-wht",
+   "sol": [
+    "Overseas PAT = {pbt} × (1 − {ft%}) = {=pbt*(1-ft)}, all distributed",
+    "Home Co's {own%} share = {div}",
+    "WHT {w%} = {wht}",
+    "Cash received = <b>{=div-wht}</b>"
+   ],
+   "trap": "Using the whole dividend instead of Home Co's {own%} share."
+  },
+  {
+   "id": "c3-t1b",
+   "t": "q",
+   "type": "num",
+   "lo": [
+    "C3a"
+   ],
+   "src": "Chapter TYU 1 (UT)",
+   "p": {
+    "own": 0.75,
+    "pbt": 200000,
+    "ft": 0.25,
+    "w": 0.1,
+    "h": 0.4
+   },
+   "v": {
+    "own": [
+     [
+      0.6,
+      0.75,
+      0.8,
+      1
+     ]
+    ],
+    "pbt": [
+     100000,
+     600000,
+     10000
+    ],
+    "ft": [
+     [
+      0.15,
+      0.2,
+      0.25,
+      0.3
+     ]
+    ],
+    "w": [
+     [
+      0.05,
+      0.1,
+      0.15
+     ]
+    ],
+    "h": [
+     [
+      0.25,
+      0.3,
+      0.35,
+      0.4
+     ]
+    ]
+   },
+   "d": {
+    "div": "own*pbt*(1-ft)",
+    "wht": "own*pbt*(1-ft)*w",
+    "ut": "own*pbt*ft",
+    "gross": "own*pbt",
+    "home": "own*pbt*h",
+    "ftot": "own*pbt*(1-ft)*w + own*pbt*ft"
+   },
+   "q": "Home Co owns {own%} of Overseas Co. Overseas Co's profit before tax is ${pbt}. It pays foreign corporate tax at {ft%} and distributes all of its after-tax profit. Withholding tax of {w%} is deducted from dividends paid abroad. Home Co pays tax at {h%} on the gross foreign income and gets credit relief for foreign taxes. <b>Calculate the underlying tax on Home Co's dividend.</b>",
+   "ans": "ut",
+   "sol": [
+    "Overseas tax = {=pbt*ft}; PAT = {=pbt*(1-ft)}",
+    "Home Co's dividend = {div}",
+    "UT = {div} × {=pbt*ft}/{=pbt*(1-ft)} = <b>{ut}</b>"
+   ]
+  },
+  {
+   "id": "c3-t1c",
+   "t": "q",
+   "type": "num",
+   "lo": [
+    "C3a"
+   ],
+   "src": "Chapter TYU 1 (home tax)",
+   "p": {
+    "own": 0.75,
+    "pbt": 200000,
+    "ft": 0.25,
+    "w": 0.1,
+    "h": 0.4
+   },
+   "v": {
+    "own": [
+     [
+      0.6,
+      0.75,
+      0.8,
+      1
+     ]
+    ],
+    "pbt": [
+     100000,
+     600000,
+     10000
+    ],
+    "ft": [
+     [
+      0.15,
+      0.2,
+      0.25,
+      0.3
+     ]
+    ],
+    "w": [
+     [
+      0.05,
+      0.1,
+      0.15
+     ]
+    ],
+    "h": [
+     [
+      0.25,
+      0.3,
+      0.35,
+      0.4
+     ]
+    ]
+   },
+   "d": {
+    "div": "own*pbt*(1-ft)",
+    "wht": "own*pbt*(1-ft)*w",
+    "ut": "own*pbt*ft",
+    "gross": "own*pbt",
+    "home": "own*pbt*h",
+    "ftot": "own*pbt*(1-ft)*w + own*pbt*ft"
+   },
+   "q": "Home Co owns {own%} of Overseas Co. Overseas Co's profit before tax is ${pbt}. It pays foreign corporate tax at {ft%} and distributes all of its after-tax profit. Withholding tax of {w%} is deducted from dividends paid abroad. Home Co pays tax at {h%} on the gross foreign income and gets credit relief for foreign taxes. <b>Calculate Home Co's tax payable on the dividend.</b>",
+   "ans": "max(0,home-ftot)",
+   "sol": [
+    "Dividend {div}; UT {ut}; gross income = {gross}",
+    "Home tax {h%} × {gross} = {home}",
+    "Foreign tax = WHT {wht} + UT {ut} = {ftot}",
+    "DTR = lower of {ftot} and {home}",
+    "Payable = <b>{=max(0,home-ftot)}</b>"
+   ],
+   "trap": "Taxing only the cash received. Home tax is on the gross income: dividend + underlying tax."
+  },
+  {
+   "id": "c3-c11",
+   "t": "c",
+   "lo": [
+    "C3a",
+    "C3b"
+   ],
+   "title": "Transfer pricing",
+   "rule": "<p>Sales, services or loans between group companies on non-arm's-length terms shift profit, usually to a lower-tax country.</p><span class=\"eq\">Adjustment = quantity × (arm's-length price − transfer price)\n→ added to the under-charging company's taxable profit</span>",
+   "body": "<p>Two forms of rule: (1) goods and services restated to an arm's-length (market) price; (2) loans: interest on debt beyond what an independent lender would give is disallowed (thin capitalisation).</p><p>Documentation of the transfer-pricing policy is a key record-keeping requirement for groups.</p>",
+   "ex": {
+    "given": "Alpha (30% tax) sells 10,000 units to subsidiary Beta (10% tax) at $4. Market price $9.",
+    "steps": [
+     "Profit shifted = 10,000 × (9 − 4) = 50,000",
+     "Alpha's taxable profit is increased by <b>50,000</b>."
+    ]
+   },
+   "trap": "Adjusting the low-tax company. The authority adjusts the company that gained the tax advantage by under-charging."
+  },
+  {
+   "id": "c3-t2",
+   "t": "q",
+   "type": "num",
+   "lo": [
+    "C3a"
+   ],
+   "src": "Chapter TYU 2",
+   "p": {
+    "q": 8000,
+    "tp": 4,
+    "mp": 6.5
+   },
+   "v": {
+    "q": [
+     1000,
+     50000,
+     500
+    ],
+    "tp": [
+     1,
+     20,
+     0.5
+    ],
+    "mp": [
+     3,
+     30,
+     0.5
+    ]
+   },
+   "c": "mp>tp+0.5",
+   "q": "Brook sells {q} units to a related overseas company at ${tp#2} each. The same units sell to unrelated customers for ${mp#2} each. Transfer pricing rules apply. By how much is Brook's taxable profit increased?",
+   "ans": "q*(mp-tp)",
+   "sol": [
+    "Arm's-length price = {mp#2}",
+    "Adjustment = {q} × ({mp#2} − {tp#2}) = <b>{=q*(mp-tp)}</b>"
+   ]
+  },
+  {
+   "id": "c3-q04",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C3a"
+   ],
+   "src": "Practice",
+   "q": "Parent P (tax 30%) sells goods to its subsidiary S (tax 12%) at well below market price. Under transfer pricing rules, what happens?",
+   "opts": [
+    "S's taxable profit is reduced to market price",
+    "P's taxable profit is increased as if the sale were at market price",
+    "Both companies are taxed at 30%",
+    "Nothing, because group sales are exempt"
+   ],
+   "a": 1,
+   "sol": [
+    "P under-charged, shifting profit to low-tax S.",
+    "The rules restate P's sale to the arm's-length price, increasing P's taxable profit."
+   ],
+   "alt": [
+    {
+     "q": "Parent P (tax 12%) BUYS goods from its subsidiary S (tax 30%) at well below market price. Under transfer pricing rules, whose taxable profit is adjusted upward?",
+     "opts": [
+      "P's",
+      "S's",
+      "Neither",
+      "Both"
+     ],
+     "a": 1,
+     "sol": [
+      "S is under-charging, shifting profit to low-tax P.",
+      "S's sales are restated to arm's length, so S's taxable profit goes up."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "c3-q05",
+   "t": "q",
+   "type": "mcq",
+   "lo": [
+    "C3a"
+   ],
+   "src": "Practice",
+   "q": "A parent funds its overseas subsidiary with a loan far larger than an independent bank would offer. The subsidiary deducts all the interest. How do thin capitalisation rules respond?",
+   "opts": [
+    "The interest on the excess debt is disallowed for tax",
+    "The whole loan is treated as share capital and no interest is deductible",
+    "The subsidiary is taxed in the parent's country",
+    "The parent must charge a higher interest rate"
+   ],
+   "a": 0,
+   "sol": [
+    "Only interest on debt beyond the arm's-length amount is disallowed (treated like a dividend)."
+   ]
+  },
+  {
+   "id": "c3-c12",
+   "t": "c",
+   "lo": [
+    "C3b"
+   ],
+   "title": "Ethics of international tax",
+   "rule": "<p>Using tax havens, aggressive transfer pricing or thin capitalisation is usually <b>avoidance</b>: legal, but it can wreck reputation (\"not paying a fair share\").</p><p><b>Evasion</b> internationally: hiding income offshore, false invoices between group companies. Illegal.</p>",
+   "body": "<p>Authorities' tools: transfer-pricing documentation, arm's-length rules, information exchange between tax authorities, thin cap rules.</p>"
+  },
+  {
+   "id": "c3-q06",
+   "t": "q",
+   "type": "match",
+   "lo": [
+    "C3b"
+   ],
+   "src": "Practice",
+   "q": "Classify each as tax avoidance or tax evasion.",
+   "items": [
+    "Moving the board and effective management to a low-tax country",
+    "Issuing false invoices from an overseas subsidiary to inflate expenses",
+    "Not declaring interest earned in an offshore bank account",
+    "Funding a subsidiary with debt to get interest deductions within the thin cap limit"
+   ],
+   "choices": [
+    "Avoidance",
+    "Evasion"
+   ],
+   "a": [
+    0,
+    1,
+    1,
+    0
+   ],
+   "sol": [
+    "Legal restructuring (residence, permitted debt) = avoidance.",
+    "False documents and hidden income = evasion."
+   ]
+  },
+  {
+   "id": "c3-c13",
+   "t": "c",
+   "lo": [
+    "C3a"
+   ],
+   "beyond": true,
+   "title": "Global minimum tax (Pillar Two)",
+   "rule": "<p>About 140 countries agreed a <b>15% minimum effective rate</b> for groups with revenue of €750m+. If a group's rate in a country is below 15%, a top-up tax applies: collected locally (domestic minimum tax) or by the parent's country (Income Inclusion Rule).</p>",
+   "body": "<p>UK: Multinational Top-up Tax for periods from 31 December 2023, plus a domestic top-up tax. A January 2026 \"side-by-side\" package mainly leaves US-parented groups under US rules.</p><p>Why it matters: it cuts the payoff from shifting profit to low-tax countries.</p>",
+   "upd": "This is outside the F1 syllabus and study text. It's here only as context for transfer pricing and tax havens."
+  }
+ ]
+}

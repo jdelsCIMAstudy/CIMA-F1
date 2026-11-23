@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#1f3a5f">
+<title>CIMA F1 Study</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="CIMA F1">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--ink:#1b1f24;--mute:#5d6673;--line:#dde1e7;--acc:#1f5fbf;--acc2:#e8f0fc;--ok:#1d7a46;--okb:#e5f5ec;--bad:#b42318;--badb:#fdecea;--warn:#7a4b00;--warnb:#fff4dc;--pur:#5b2a86;--purb:#f3ecfa;--r:12px}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1216;--card:#181c22;--ink:#e7eaee;--mute:#9aa4b1;--line:#2b313a;--acc:#6aa3ff;--acc2:#1c2a40;--ok:#5fd394;--okb:#12291d;--bad:#ff8a80;--badb:#3a1714;--warn:#ffcf70;--warnb:#33270f;--pur:#d4b3ff;--purb:#2a1d3a}}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-text-size-adjust:100%}
+#app{max-width:680px;margin:0 auto;padding:calc(12px + env(safe-area-inset-top)) calc(12px + env(safe-area-inset-right)) calc(96px + env(safe-area-inset-bottom)) calc(12px + env(safe-area-inset-left))}
+header.top{display:flex;align-items:center;gap:8px;margin:4px 0 12px}
+header.top h1{font-size:18px;margin:0;flex:1;line-height:1.25}
+a{color:var(--acc)}
+button,.btn{font:inherit;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:10px 14px;cursor:pointer;min-height:44px}
+button.pri{background:var(--acc);border-color:var(--acc);color:#fff}
+@media (prefers-color-scheme:dark){button.pri{color:#0b1220}}
+button:disabled{opacity:.45}
+button.ghost{background:transparent;border-color:transparent;color:var(--acc);padding:8px 6px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row.end{justify-content:flex-end}
+.grow{flex:1}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px;margin:0 0 12px}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:12px;text-align:left;min-height:72px}
+.tile b{display:block;font-size:15px}.tile span{color:var(--mute);font-size:13px}
+h2{font-size:17px;margin:4px 0 10px}h3{font-size:15px;margin:12px 0 6px}
+.mute{color:var(--mute);font-size:13px}
+.bar{height:8px;background:var(--line);border-radius:6px;overflow:hidden;margin:6px 0}
+.bar>i{display:block;height:100%;background:var(--acc)}
+.bar.ok>i{background:var(--ok)}.bar.bad>i{background:var(--bad)}
+.chip{display:inline-block;font-size:11px;padding:2px 7px;border-radius:20px;background:var(--acc2);color:var(--acc);margin:0 4px 4px 0;white-space:nowrap}
+.chip.pur{background:var(--purb);color:var(--pur)}.chip.warn{background:var(--warnb);color:var(--warn)}
+.rule{background:var(--acc2);border-left:4px solid var(--acc);border-radius:8px;padding:10px 12px;margin:8px 0}
+.rule p{margin:4px 0}
+.ex{border:1px dashed var(--line);border-radius:10px;padding:10px 12px;margin:10px 0}
+.ex h4{margin:0 0 6px;font-size:14px}
+.step{padding:6px 0;border-top:1px solid var(--line)}.step:first-of-type{border-top:0}
+.step .n{display:inline-block;min-width:22px;font-weight:600;color:var(--acc)}
+.box{border-radius:10px;padding:10px 12px;margin:10px 0;font-size:14px}
+.box.trap{background:var(--warnb);color:var(--warn)}
+.box.flag,.box.upd{background:var(--purb);color:var(--pur)}
+.box.ok{background:var(--okb);color:var(--ok)}.box.bad{background:var(--badb);color:var(--bad)}
+.box b{display:block;margin-bottom:2px}
+.mono,.eq{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14px}
+.eq{display:block;white-space:pre-wrap;font-size:13px;padding:6px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;margin:6px 0}
+td,th{border-bottom:1px solid var(--line);padding:5px 4px;text-align:left;vertical-align:top}
+td.r,th.r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.tot td{font-weight:600;border-top:2px solid var(--ink)}
+.qtext{margin:4px 0 10px}
+.opt{display:flex;gap:10px;align-items:flex-start;width:100%;text-align:left;margin:0 0 8px;border-radius:10px;padding:10px 12px;background:var(--card);border:1px solid var(--line)}
+.opt .k{font-weight:600;min-width:20px;color:var(--mute)}
+.opt.sel{border-color:var(--acc);background:var(--acc2)}
+.opt.right{border-color:var(--ok);background:var(--okb)}
+.opt.wrong{border-color:var(--bad);background:var(--badb)}
+.opt input{margin-top:4px}
+input[type=text],textarea,select{font:inherit;width:100%;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink)}
+select{min-height:44px}
+textarea{min-height:110px;font-family:ui-monospace,Menlo,monospace;font-size:12px}
+.numrow{display:flex;align-items:center;gap:6px}.numrow span{font-weight:600}
+.mrow{margin-bottom:10px}.mrow .lbl{font-size:14px;margin-bottom:4px}
+.sol ol{padding-left:20px;margin:6px 0}.sol li{margin:4px 0}
+.prog{position:sticky;top:0;background:var(--bg);padding:6px 0 4px;z-index:2}
+svg{max-width:100%;height:auto}
+svg text{fill:currentColor;font-family:inherit}
+.calcbtn{position:fixed;right:12px;bottom:84px;width:46px;height:46px;border-radius:23px;opacity:.9;background:var(--acc);color:#fff;border:0;font-size:22px;box-shadow:0 4px 14px rgba(0,0,0,.25);z-index:20}
+@media (prefers-color-scheme:dark){.calcbtn{color:#0b1220}}
+.sheet{position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:1px solid var(--line);padding:12px;z-index:30;box-shadow:0 -6px 20px rgba(0,0,0,.2)}
+.sheet .inner{max-width:680px;margin:0 auto}
+.sheet .res{font-size:22px;font-weight:600;min-height:32px;font-variant-numeric:tabular-nums}
+.hist{font-size:12px;color:var(--mute);max-height:72px;overflow:auto}
+.list a{display:block;padding:10px 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink)}
+.timer{font-variant-numeric:tabular-nums;font-weight:600}
+.warnline{background:var(--badb);color:var(--bad);padding:8px 10px;border-radius:8px;font-size:13px;margin-bottom:10px}
+details summary{cursor:pointer;padding:6px 0}
+.hide{display:none!important}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;z-index:50;padding:20px}
+.modal .card{max-width:420px;width:100%}
+.calcwrap{margin-top:10px;border-top:1px solid var(--line);padding-top:4px}.calcwrap summary{color:var(--acc);font-size:14px}
+.calc{max-width:360px;margin:6px auto 0}.cdisp{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:6px 10px;text-align:right;font-variant-numeric:tabular-nums;margin-bottom:6px}.cexpr{font-family:ui-monospace,Menlo,monospace;font-size:15px;word-break:break-all;color:var(--mute)}.cres{font-size:22px;font-weight:600}
+.ckeys{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}.ck{padding:8px 0;min-height:44px;font-size:18px}.ck.num{background:var(--acc2)}.ck.eqk{grid-column:span 2;background:var(--acc);color:#fff;border-color:var(--acc)}.cuse{width:100%;margin-top:6px}
+@media (prefers-color-scheme:dark){.ck.eqk{color:#0b1220}}
+.lkpill{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(140px + env(safe-area-inset-bottom));z-index:45;background:var(--ink);color:var(--bg);border:0;border-radius:22px;padding:10px 16px;box-shadow:0 4px 16px rgba(0,0,0,.3);max-width:92vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-height:44px}
+.sheet.lk{z-index:44;max-height:82vh;overflow:auto;-webkit-overflow-scrolling:touch;padding-bottom:calc(16px + env(safe-area-inset-bottom))}
+.gl{border-bottom:1.5px dotted var(--acc);cursor:pointer}
+.gle{border-bottom:1px solid var(--line);padding:2px 0 8px}.gle summary{padding:8px 0}.gld{font-size:15px}.gld p{margin:4px 0}
+.ansrow summary{list-style:none}.ansrow summary::-webkit-details-marker{display:none}.ansrow .stem{font-size:14px;margin:4px 0}.ansrow .aline{font-size:14px;margin:2px 0}.okrow{border-left:4px solid var(--ok)}.badrow{border-left:4px solid var(--bad)}
+</style>
+</head>
+<body>
+<div id="app"><div class="card" style="margin-top:20px"><h2>The app hasn't started</h2><p>You're probably seeing this in a preview viewer (for example the Files app on iPhone, or a chat attachment preview). Those show the page but don't run it.</p><p><b>Fix:</b> open this file in a full browser.</p><ul><li><b>iPhone:</b> tap Share → "Open in…" or "Save to Files", then open it from Chrome, or long-press the file in Files → Share → Safari/Chrome.</li><li><b>Android:</b> open it with Chrome ("Open with" → Chrome).</li></ul><p class="mute">If it is open in a full browser and you still see this, check that JavaScript is on in the browser settings.</p></div></div>
+<button class="calcbtn hide" id="calcbtn" aria-label="Calculator">🧮</button>
+<!-- =====================================================================
+     DATA:START
+     All study content lives in the JSON block below. The engine never
+     hard-codes content. To add a chapter, append one object to "chapters"
+     (same shape as the existing ones) and add its outcome codes to
+     "outcomes". Progress is keyed by item id, so keep ids stable between
+     versions and your saved progress carries over.
+     ===================================================================== -->
+<script id="f1-data" type="application/json">__DATA__</script>
+<!-- DATA:END -->
+<script>
+'use strict';
+/* ============================ ENGINE ============================ */
+const DATA = JSON.parse(document.getElementById('f1-data').textContent);
+const KEY = 'cimaF1study.v1';
+const app = document.getElementById('app');
+const CH = DATA.chapters;
+const ITEM = {}, QS = [], CARDS = [];
+CH.forEach(ch => ch.items.forEach(it => { it.ch = ch.id; ITEM[it.id] = it; (it.t === 'q' ? QS : CARDS).push(it); }));
+const chById = id => CH.find(c => c.id === id);
+
+/* ---------- storage ---------- */
+const blank = () => ({ v: 1, seen: {}, q: {}, pos: {}, mocks: [], last: null });
+let S, storageOK = true;
+try { S = JSON.parse(localStorage.getItem(KEY)) || blank(); } catch (e) { S = blank(); storageOK = false; }
+['seen', 'q', 'pos'].forEach(k => { if (!S[k]) S[k] = {}; }); if (!S.mocks) S.mocks = [];
+function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) { storageOK = false; } }
+try { localStorage.setItem(KEY + '.t', '1'); localStorage.removeItem(KEY + '.t'); } catch (e) { storageOK = false; }
+
+/* ---------- maths helpers available inside question expressions ---------- */
+const H = {
+  min: Math.min, max: Math.max, abs: Math.abs, floor: Math.floor, ceil: Math.ceil,
+  rd: (x, d = 0) => { const m = 10 ** d; return Math.round(x * m + Math.sign(x) * 1e-7) / m; },
+  rdn: (x, d = 0) => { const m = 10 ** d; return Math.floor(x * m + 1e-7) / m; }
+};
+const HK = Object.keys(H), HV = Object.values(H), FC = {};
+function ev(expr, sc) {
+  const ks = Object.keys(sc), k = expr + '\u0001' + ks.join(',');
+  let f = FC[k]; if (!f) f = FC[k] = new Function(...HK, ...ks, 'return (' + expr + ');');
+  return f(...HV, ...ks.map(x => sc[x]));
+}
+function fmt(x, dp) {
+  if (typeof x !== 'number') return String(x);
+  const d = dp != null ? dp : (Math.abs(x - Math.round(x)) < 1e-7 ? 0 : 2);
+  let s = Math.abs(x).toFixed(d); let [i, f] = s.split('.');
+  i = i.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  return (x < -1e-9 ? '−' : '') + i + (f ? '.' + f : '');
+}
+function pct(x) { const v = Math.round(x * 1e4) / 100; const d = Math.abs(v - Math.round(v)) < 1e-7 ? 0 : (Math.abs(v * 10 - Math.round(v * 10)) < 1e-7 ? 1 : 2); return fmt(v, d) + '%'; }
+/* Template syntax: {name} value · {name%} as % · {=expr} computed · {=expr#2} fixed dp · {?cond|yes|no} */
+function fill(t, sc) {
+  if (!t) return '';
+  let prev; let n = 0;
+  do { prev = t; t = fill1(t, sc); } while (t !== prev && ++n < 6);
+  return t;
+}
+function fill1(t, sc) {
+  return t.replace(/\{([^{}]+)\}/g, (m, inner) => {
+    try {
+      if (inner[0] === '?') { const p = inner.slice(1).split('|'); return ev(p[0], sc) ? (p[1] || '') : (p[2] || ''); }
+      let e = inner, pc = false, dp = null;
+      if (e.endsWith('%')) { pc = true; e = e.slice(0, -1); }
+      const md = e.match(/^(.*)#(\d)$/); if (md) { e = md[1]; dp = +md[2]; }
+      if (e[0] === '=') e = e.slice(1); else if (!(e in sc)) return m;
+      const v = ev(e, sc); return pc ? pct(v) : (typeof v === 'number' ? fmt(v, dp) : String(v));
+    } catch (err) { return m; }
+  });
+}
+const shuffle = a => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+function rnd(spec) {
+  if (Array.isArray(spec[0])) return spec[0][Math.floor(Math.random() * spec[0].length)];
+  const [a, b, st] = spec, n = Math.floor((b - a) / st + 1e-9);
+  return Math.round((a + st * Math.floor(Math.random() * (n + 1))) * 1e6) / 1e6;
+}
+function scope(q, vary) {
+  const build = v => { const sc = Object.assign({}, q.p || {}); if (v && q.v) for (const k in q.v) sc[k] = rnd(q.v[k]); if (q.d) for (const k in q.d) sc[k] = ev(q.d[k], sc); return sc; };
+  if (!vary) return build(false);
+  const base = JSON.stringify(build(false));
+  for (let t = 0; t < 60; t++) {
+    const sc = build(true);
+    try {
+      if (JSON.stringify(sc) === base) continue;
+      if (q.c && !ev(q.c, sc)) continue;
+      if (q.opts && q.type !== 'match') { const vals = q.opts.map(o => fill(o, sc)); if (new Set(vals).size !== vals.length) continue; }
+      if (q.type === 'num') { const v = ev(q.ans, sc); if (!isFinite(v) || (v < 0 && !q.neg)) continue; }
+      return sc;
+    } catch (e) { }
+  }
+  return build(false);
+}
+/* Build a playable instance. mode 'orig' = the question as written; 'fresh' = number-changed or logic-flipped variant. */
+function inst(q, mode) {
+  let src = q, kind = 'orig';
+  if (mode === 'fresh') {
+    const pool = []; if (q.v && Object.keys(q.v).length) pool.push(-1);
+    (q.alt || []).forEach((a, i) => pool.push(i));
+    if (pool.length) { const pk = pool[Math.floor(Math.random() * pool.length)]; if (pk >= 0) { src = Object.assign({}, q, q.alt[pk]); kind = 'flip'; } else kind = 'num'; }
+    else kind = 'shuf';
+  }
+  const sc = scope(src, kind === 'num' || (kind === 'flip' && !!src.v));
+  const I = { q: src, base: q, sc, kind };
+  I.text = fill(src.q, sc);
+  if (src.type === 'num') I.ans = ev(src.ans, sc);
+  if (src.opts) I.opts = src.opts.map(o => fill(o, sc));
+  if (src.type === 'mcq') I.a = typeof src.a === 'string' ? ev(src.a, sc) : src.a;
+  if (src.type === 'multi') I.a = typeof src.a === 'string' ? ev(src.a, sc) : src.a.slice();
+  if (src.type === 'match') { I.items = src.items.map(x => fill(x, sc)); I.choices = src.choices; I.a = src.a.slice(); }
+  if (kind !== 'orig' && I.opts && !src.fixed && (src.type === 'mcq' || src.type === 'multi')) {
+    const idx = shuffle(I.opts.map((_, i) => i)); I.opts = idx.map(i => I.opts[i]);
+    I.a = src.type === 'mcq' ? idx.indexOf(I.a) : I.a.map(x => idx.indexOf(x));
+  }
+  if (kind === 'shuf' && src.type === 'match' && I.items.length > 1) { const idx = shuffle(I.items.map((_, i) => i)); I.items = idx.map(i => I.items[i]); I.a = idx.map(i => I.a[i]); }
+  I.sol = (src.sol || []).map(s => fill(s, sc)); I.trap = fill(src.trap || '', sc); I.flag = src.flag || '';
+  return I;
+}
+function parseNum(s) { if (s == null) return NaN; s = String(s).replace(/[,$£€\s]/g, '').replace(/^\((.*)\)$/, '-$1').replace('−', '-'); if (s === '' || s === '-') return NaN; return Number(s); }
+function grade(I, r) {
+  const q = I.q;
+  if (r == null) return false;
+  if (q.type === 'mcq') return r === I.a;
+  if (q.type === 'multi') { const a = I.a.slice().sort().join(), b = r.slice().sort().join(); return a === b; }
+  if (q.type === 'num') { const v = parseNum(r); if (!isFinite(v)) return false; const tol = q.tol != null ? q.tol : (Math.abs(I.ans) >= 20 ? 1 : 0.01); return Math.abs(v - I.ans) <= tol + 1e-9; }
+  if (q.type === 'match') return r.length === I.a.length && r.every((x, i) => x === I.a[i]);
+  return false;
+}
+function ansText(I) {
+  const q = I.q, L = i => String.fromCharCode(65 + i);
+  if (q.type === 'mcq') return L(I.a) + '. ' + I.opts[I.a];
+  if (q.type === 'multi') return I.a.slice().sort().map(i => L(i) + '. ' + I.opts[i]).join('<br>');
+  if (q.type === 'num') return (q.unit === '%' ? '' : (q.unit != null ? q.unit : '$')) + fmt(I.ans, q.dp) + (q.unit === '%' ? '%' : '');
+  if (q.type === 'match') return I.items.map((it, i) => it + ' → <b>' + I.choices[I.a[i]] + '</b>').join('<br>');
+  return '';
+}
+
+/* ---------- progress records ---------- */
+const GAP = [0, 1, 3, 7, 14, 30];
+function rec(id) { return S.q[id] || (S.q[id] = { n: 0, c: 0, st: 0, b: 0, due: 0, w: 0, last: 0 }); }
+function record(id, ok) {
+  const r = rec(id); r.n++; r.last = Date.now();
+  if (ok) { r.c++; r.st++; r.b = Math.min(r.b + 1, 5); r.due = Date.now() + GAP[r.b] * 864e5; if (r.w && r.st >= 2) r.w = 0; }
+  else { r.st = 0; r.b = 0; r.w = 1; r.due = Date.now() + 10 * 60e3; }
+  save();
+}
+function chStats(ch) {
+  const cards = ch.items.filter(i => i.t === 'c'), qs = ch.items.filter(i => i.t === 'q');
+  let seen = 0, att = 0, n = 0, c = 0;
+  cards.forEach(x => { if (S.seen[x.id]) seen++; });
+  qs.forEach(x => { const r = S.q[x.id]; if (r && r.n) { att++; n += r.n; c += r.c; } });
+  return { cards: cards.length, seen, qs: qs.length, att, n, c, pc: n ? c / n : null };
+}
+function loStats() {
+  const m = {}; Object.keys(DATA.outcomes).forEach(k => m[k] = { code: k, n: 0, c: 0, qs: 0, has: false });
+  QS.forEach(q => (q.lo || []).forEach(l => { if (!m[l]) return; m[l].qs++; m[l].has = true; const r = S.q[q.id]; if (r) { m[l].n += r.n; m[l].c += r.c; } }));
+  return Object.values(m).filter(x => x.has);
+}
+const wrongList = () => QS.filter(q => S.q[q.id] && S.q[q.id].w);
+const dueList = () => QS.filter(q => S.q[q.id] && S.q[q.id].n && S.q[q.id].due <= Date.now());
+
+/* ---------- small UI helpers ---------- */
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const go = h => { location.hash = h; };
+/* in-page dialogs (browser alert/confirm are blocked in some viewers) */
+function ask(msg, onYes, yes = 'Yes', no = 'Cancel') {
+  const m = document.createElement('div'); m.className = 'modal';
+  m.innerHTML = `<div class="card"><p>${msg}</p><div class="row end">${no ? `<button class="mno">${no}</button>` : ''}<button class="pri myes">${yes}</button></div></div>`;
+  document.body.appendChild(m);
+  const close = () => m.remove();
+  const n = m.querySelector('.mno'); if (n) n.onclick = close;
+  m.querySelector('.myes').onclick = () => { close(); if (onYes) onYes(); };
+}
+const note = msg => ask(msg, null, 'OK', null);
+const pcs = x => x == null ? '–' : Math.round(x * 100) + '%';
+function bar(frac, cls) { return `<div class="bar ${cls || ''}"><i style="width:${Math.round((frac || 0) * 100)}%"></i></div>`; }
+function hdr(title, back) { return `<header class="top">${back ? `<button class="ghost" onclick="history.length>1?history.back():go('#/')">‹ Back</button>` : ''}<h1>${title}</h1>${back ? `<button class="ghost" onclick="go('#/')">Home</button>` : ''}</header>${storageOK ? '' : '<div class="warnline">This browser is blocking local storage, so progress will not be saved here. Use Backup to export before closing.</div>'}`; }
+const typeLabel = { mcq: 'Multiple choice', multi: 'Multiple response', num: 'Number entry', match: 'Drop-down / match' };
+
+/* ---------- card rendering ---------- */
+function renderCard(el, c) {
+  const ch = chById(c.ch);
+  let h = `<div class="card"><div>${(c.lo || []).map(l => `<span class="chip">${l}</span>`).join('')}${c.beyond ? '<span class="chip pur">Beyond syllabus: real-world context</span>' : ''}${c.refresh ? '<span class="chip warn">Refresher</span>' : ''}</div><h2>${c.title}</h2>`;
+  if (c.rule) h += `<div class="rule">${c.rule}</div>`;
+  if (c.svg) h += `<div>${c.svg}</div>`;
+  if (c.body) h += `<div>${c.body}</div>`;
+  if (c.ex) {
+    h += `<div class="ex"><h4>${c.ex.title || 'Worked example'}</h4>${c.ex.given ? `<div class="mute" style="font-size:14px;color:var(--ink)">${c.ex.given}</div>` : ''}<div class="steps">`;
+    c.ex.steps.forEach((s, i) => { h += `<div class="step ${i ? 'hide' : ''}"><span class="n">${i + 1}</span>${s}</div>`; });
+    h += `</div>${c.ex.steps.length > 1 ? `<div class="row"><button class="nxs">Next step</button><button class="ghost alls">Show all</button></div>` : ''}</div>`;
+  }
+  if (c.trap) h += `<div class="box trap"><b>Common trap</b>${c.trap}</div>`;
+  if (c.upd) h += `<div class="box upd"><b>Real-world update (not needed for the exam)</b>${c.upd}</div>`;
+  h += `<div class="mute">${ch ? 'Ch ' + ch.n + ' · ' : ''}card</div></div>`;
+  el.innerHTML = h;
+  const steps = [...el.querySelectorAll('.step')];
+  const nb = el.querySelector('.nxs'), ab = el.querySelector('.alls');
+  const upd = () => { const left = steps.filter(s => s.classList.contains('hide')).length; if (nb) { nb.disabled = !left; nb.textContent = left ? `Next step (${left} left)` : 'All steps shown'; } if (ab && !left) ab.classList.add('hide'); };
+  if (nb) nb.onclick = () => { const s = steps.find(s => s.classList.contains('hide')); if (s) s.classList.remove('hide'); upd(); };
+  if (ab) ab.onclick = () => { steps.forEach(s => s.classList.remove('hide')); upd(); };
+  upd();
+  markTerms(el.querySelector('.card'));
+  if (!S.seen[c.id]) { S.seen[c.id] = Date.now(); save(); }
+}
+
+/* ---------- question rendering ----------
+   opts.mock: no feedback, report response via opts.onChange
+   opts.onDone(ok): after submit in practice modes */
+function renderQ(el, I, opts = {}) {
+  const q = I.q, L = i => String.fromCharCode(65 + i);
+  const srcTag = `<span class="chip">${esc(q.src || 'Practice')}</span>${I.kind === 'num' ? '<span class="chip warn">Numbers changed</span>' : ''}${I.kind === 'flip' ? '<span class="chip warn">Logic flipped</span>' : ''}<span class="chip">${typeLabel[q.type]}</span>`;
+  let h = `<div class="card"><div>${srcTag}</div><div class="qtext">${I.text}</div><div class="qin">`;
+  if (q.type === 'mcq' || q.type === 'multi') I.opts.forEach((o, i) => { h += `<button class="opt" data-i="${i}">${q.type === 'multi' ? `<input type="checkbox" tabindex="-1">` : ''}<span class="k">${L(i)}</span><span>${o}</span></button>`; });
+  if (q.type === 'num') h += `<div class="numrow">${q.unit === '%' ? '' : `<span>${q.unit != null ? q.unit : '$'}</span>`}<input type="text" inputmode="decimal" autocomplete="off" placeholder="Your answer">${q.unit === '%' ? '<span>%</span>' : ''}</div>`;
+  if (q.type === 'match') I.items.forEach((it, i) => { h += `<div class="mrow"><div class="lbl">${it}</div><select data-i="${i}"><option value="">Choose…</option>${I.choices.map((c, j) => `<option value="${j}">${c}</option>`).join('')}</select></div>`; });
+  h += `</div>${opts.mock ? '' : `<div class="row end"><button class="pri sub">Submit</button></div>`}<div class="fb"></div>${opts.nocalc ? '' : `<details class="calcwrap" ${q.type === 'num' ? 'open' : ''}><summary>🧮 Calculator</summary><div class="calc"></div></details>`}</div>`;
+  el.innerHTML = h;
+  let resp = q.type === 'multi' ? [] : (q.type === 'match' ? I.items.map(() => null) : null);
+  if (opts.prev != null) resp = opts.prev;
+  const optEls = [...el.querySelectorAll('.opt')], inp = el.querySelector('input[type=text]'), sels = [...el.querySelectorAll('select')];
+  const paint = () => {
+    optEls.forEach((b, i) => { const on = q.type === 'mcq' ? resp === i : resp.includes(i); b.classList.toggle('sel', on); const cb = b.querySelector('input'); if (cb) cb.checked = on; });
+    if (inp && resp != null) inp.value = resp;
+    sels.forEach((s, i) => { s.value = resp[i] == null ? '' : resp[i]; });
+  };
+  const changed = () => { if (opts.onChange) opts.onChange(resp); };
+  let locked = false;
+  optEls.forEach((b, i) => b.onclick = () => { if (locked) return; if (q.type === 'mcq') resp = i; else { resp = resp.includes(i) ? resp.filter(x => x !== i) : resp.concat(i); } paint(); changed(); });
+  if (inp) inp.oninput = () => { resp = inp.value; changed(); };
+  sels.forEach((s, i) => s.onchange = () => { resp = resp.slice(); resp[i] = s.value === '' ? null : +s.value; changed(); });
+  paint();
+  const cw = el.querySelector('.calc'); if (cw) document.getElementById('calcbtn').classList.add('hide');
+  if (cw) makeCalc(cw, inp ? v => { if (locked) return; inp.value = String(v); resp = inp.value; changed(); } : null);
+  const sub = el.querySelector('.sub');
+  if (sub) sub.onclick = () => {
+    const empty = resp == null || resp === '' || (Array.isArray(resp) && (q.type === 'multi' ? !resp.length : resp.some(x => x == null)));
+    if (empty) { el.querySelector('.fb').innerHTML = '<div class="box trap">Answer first, then submit.</div>'; return; }
+    locked = true; sub.remove(); if (inp) inp.disabled = true; sels.forEach(s => s.disabled = true);
+    const ok = grade(I, resp);
+    record(I.base.id, ok);
+    showFeedback(el, I, resp, ok);
+    if (opts.onDone) opts.onDone(ok);
+  };
+  return { get resp() { return resp; } };
+}
+function showFeedback(el, I, resp, ok) {
+  const q = I.q;
+  el.querySelectorAll('.opt').forEach((b, i) => {
+    const isA = q.type === 'mcq' ? I.a === i : I.a.includes(i);
+    const picked = q.type === 'mcq' ? resp === i : (resp || []).includes(i);
+    if (isA) b.classList.add('right'); else if (picked) b.classList.add('wrong');
+  });
+  let h = `<div class="box ${ok ? 'ok' : 'bad'}"><b>${ok ? 'Correct' : 'Not right'}</b>Answer: ${ansText(I)}</div>`;
+  if (I.sol.length) h += `<div class="sol"><b>Solution</b><ol>${I.sol.map(s => `<li>${s}</li>`).join('')}</ol></div>`;
+  if (I.trap) h += `<div class="box trap"><b>Common trap</b>${I.trap}</div>`;
+  if (I.flag) h += `<div class="box flag"><b>Flag on this question</b>${I.flag}</div>`;
+  const r = S.q[I.base.id]; if (r && r.w) h += `<div class="mute">In your wrong-answer queue until you get it right twice in a row (streak ${r.st}/2).</div>`;
+  el.querySelector('.fb').innerHTML = h;
+  markTerms(el.querySelector('.fb'), 4);
+}
+
+/* ---------- views ---------- */
+function vHome() {
+  const W = wrongList().length, D = dueList().length;
+  const lastCh = S.last && chById(S.last) ? chById(S.last) : CH[0];
+  let h = hdr(esc(DATA.title));
+  h += `<div class="tiles">
+   <button class="tile" onclick="go('#/learn/${lastCh.id}')"><b>Continue learning</b><span>Ch ${lastCh.n}: ${esc(lastCh.title)}</span></button>
+   <button class="tile" onclick="go('#/wrong')"><b>Wrong answers (${W})</b><span>Fresh variants until right twice in a row</span></button>
+   <button class="tile" onclick="go('#/review')"><b>Review due (${D})</b><span>Spaced repetition across chapters</span></button>
+   <button class="tile" onclick="go('#/mock')"><b>Mock test</b><span>Timed, mixed sources</span></button>
+   <button class="tile" onclick="go('#/quiz')"><b>Objective quiz</b><span>Kit questions, your chapters, answers listed at the end</span></button>
+   <button class="tile" onclick="go('#/glossary')"><b>Glossary &amp; search</b><span>${GL.length} terms · search every card</span></button></div>`;
+  const los = loStats().map(x => Object.assign(x, { pc: x.n ? x.c / x.n : null }));
+  const tried = los.filter(x => x.n).sort((a, b) => a.pc - b.pc || b.n - a.n), untried = los.filter(x => !x.n);
+  h += `<div class="card"><h2>Weakest areas first</h2>`;
+  if (!tried.length) h += `<p class="mute">Nothing attempted yet. Your weakest learning outcomes will show here once you answer some questions.</p>`;
+  tried.slice(0, 6).forEach(x => { h += `<a href="#/lo/${x.code}" style="text-decoration:none;color:inherit;display:block;margin-bottom:8px"><div class="row"><span class="chip">${x.code}</span><span class="grow" style="font-size:14px">${esc(DATA.outcomes[x.code])}</span><b>${pcs(x.pc)}</b></div>${bar(x.pc, x.pc < 0.6 ? 'bad' : (x.pc >= 0.8 ? 'ok' : ''))}</a>`; });
+  if (untried.length) h += `<details><summary class="mute">Not started (${untried.length})</summary>${untried.map(x => `<a href="#/lo/${x.code}" class="mute" style="display:block;padding:4px 0">${x.code} · ${esc(DATA.outcomes[x.code])}</a>`).join('')}</details>`;
+  h += `</div><h2>Chapters</h2>`;
+  CH.forEach(ch => { const s = chStats(ch); h += `<a class="card" href="#/ch/${ch.id}" style="display:block;text-decoration:none;color:inherit"><div class="row"><b class="grow">Ch ${ch.n}. ${esc(ch.title)}</b><span class="chip">${esc(ch.area)}</span></div><div class="mute">Cards ${s.seen}/${s.cards} · Questions ${s.att}/${s.qs} · Correct ${pcs(s.pc)}</div>${bar((s.seen + s.att) / (s.cards + s.qs || 1))}</a>`; });
+  if (DATA.pending && DATA.pending.length) h += `<p class="mute">Chapters still to add: ${DATA.pending.map(esc).join(' · ')}</p>`;
+  h += `<div class="row"><button onclick="go('#/backup')">Backup / restore progress</button><button onclick="go('#/about')">About</button></div>`;
+  app.innerHTML = h;
+}
+function vChapter(id) {
+  const ch = chById(id); if (!ch) return go('#/');
+  const s = chStats(ch);
+  let h = hdr('Ch ' + ch.n + '. ' + esc(ch.title), true);
+  h += `<div class="card"><div>${ch.lo.map(l => `<span class="chip">${l}</span>`).join('')}</div><div class="mute">Cards seen ${s.seen}/${s.cards} · Questions attempted ${s.att}/${s.qs} · Correct ${pcs(s.pc)} (${s.c}/${s.n} attempts)</div>${bar(s.pc, 'ok')}
+   <div class="row" style="margin-top:10px"><button class="pri" onclick="go('#/learn/${id}')">${S.pos[id] ? 'Resume learning' : 'Start learning'}</button><button onclick="go('#/practice/${id}')">Practise questions</button></div></div>`;
+  h += `<div class="card"><h2>Contents</h2><div class="list">`;
+  ch.items.forEach((it, i) => { if (it.t === 'c') h += `<a href="#/learn/${id}/${i}">${S.seen[it.id] ? '✓ ' : ''}${esc(it.title)}</a>`; });
+  h += `</div></div><div class="row"><button onclick="ask('Reset all progress for this chapter?', () => resetCh('${id}'), 'Reset')">Reset chapter progress</button></div>`;
+  app.innerHTML = h;
+}
+function resetCh(id) { const ch = chById(id); ch.items.forEach(it => { delete S.seen[it.id]; delete S.q[it.id]; }); delete S.pos[id]; save(); vChapter(id); }
+function vLearn(id, at) {
+  const ch = chById(id); if (!ch) return go('#/');
+  let i = at != null ? +at : (S.pos[id] || 0); i = Math.max(0, Math.min(i, ch.items.length - 1));
+  S.pos[id] = i; S.last = id; save();
+  const it = ch.items[i];
+  app.innerHTML = hdr('Ch ' + ch.n + '. ' + esc(ch.title), true) + `<div class="prog"><div class="mute">Item ${i + 1} of ${ch.items.length}</div>${bar((i + 1) / ch.items.length)}</div><div id="slot"></div><div class="row"><button id="pv" ${i ? '' : 'disabled'}>‹ Previous</button><span class="grow"></span><button class="pri" id="nx">${i < ch.items.length - 1 ? 'Next ›' : 'Finish chapter'}</button></div>`;
+  const slot = document.getElementById('slot');
+  if (it.t === 'c') renderCard(slot, it); else renderQ(slot, inst(it, 'orig'), {});
+  document.getElementById('pv').onclick = () => go(`#/learn/${id}/${i - 1}`);
+  document.getElementById('nx').onclick = () => i < ch.items.length - 1 ? go(`#/learn/${id}/${i + 1}`) : go(`#/ch/${id}`);
+  window.scrollTo(0, 0);
+}
+/* practice / wrong / review / LO share one runner */
+function runner(title, pickNext, emptyMsg, modeFor) {
+  let count = 0, right = 0;
+  const step = () => {
+    const q = pickNext();
+    if (!q) { app.innerHTML = hdr(title, true) + `<div class="card"><p>${emptyMsg}</p>${count ? `<p>This session: ${right}/${count} correct.</p>` : ''}<button class="pri" onclick="go('#/')">Home</button></div>`; return; }
+    app.innerHTML = hdr(title, true) + `<div class="mute">This session: ${right}/${count} correct</div><div id="slot"></div><div class="row end"><button id="skip" class="ghost">Skip</button><button class="pri hide" id="nx">Next question ›</button></div>`;
+    const I = inst(q, modeFor(q));
+    renderQ(document.getElementById('slot'), I, { onDone: ok => { count++; if (ok) right++; document.getElementById('nx').classList.remove('hide'); document.getElementById('skip').classList.add('hide'); } });
+    document.getElementById('nx').onclick = step; document.getElementById('skip').onclick = step;
+    window.scrollTo(0, 0);
+  };
+  step();
+}
+const usedOrig = q => { const r = S.q[q.id]; return r && r.n ? 'fresh' : 'orig'; };
+function vPractice(id) {
+  const ch = chById(id); if (!ch) return go('#/');
+  const qs = ch.items.filter(x => x.t === 'q'); const done = new Set();
+  const score = q => { const r = S.q[q.id]; if (!r || !r.n) return -1; return r.c / r.n + Math.random() * 0.1; };
+  runner('Practise · Ch ' + ch.n, () => { const left = qs.filter(q => !done.has(q.id)); if (!left.length) return null; left.sort((a, b) => score(a) - score(b) || Math.random() - .5); const q = left[0]; done.add(q.id); return q; }, 'You have been through every question in this chapter once this session. Unattempted and weakest come first.', usedOrig);
+}
+function vLO(code) {
+  const qs = QS.filter(q => (q.lo || []).includes(code)); const done = new Set();
+  runner(code + ' practice', () => { const left = shuffle(qs.filter(q => !done.has(q.id))); if (!left.length) return null; done.add(left[0].id); return left[0]; }, 'All questions for this outcome done this session.', usedOrig);
+}
+function vWrong() {
+  const seen = new Set();
+  runner('Wrong-answer queue', () => { const l = wrongList().filter(q => !seen.has(q.id)); if (!l.length) { if (wrongList().length) { seen.clear(); return wrongList()[0]; } return null; } const q = shuffle(l)[0]; seen.add(q.id); return q; }, 'Queue empty. Nothing to fix right now.', () => 'fresh');
+}
+function vReview() {
+  const seen = new Set();
+  runner('Spaced review', () => { const l = dueList().filter(q => !seen.has(q.id)).sort((a, b) => S.q[a.id].due - S.q[b.id].due); if (!l.length) return null; seen.add(l[0].id); return l[0]; }, 'Nothing due. Questions come back 1, 3, 7, 14 and 30 days after you get them right.', () => 'fresh');
+}
+/* ---------- tests: mock test (timed, mixed sources) and objective quiz ---------- */
+let MOCK = null, TIMER = null;
+const SRC = { obj: q => /^o\d{3}$/.test(q.id), bank: q => /^b\d{3}$/.test(q.id), chap: q => !/^[ob]\d{3}$/.test(q.id) };
+const SRCL = { obj: 'Objective kit questions', bank: 'Test Yourself bank', chap: 'Chapter and practice questions' };
+const isEmpty = (I, r) => r == null || r === '' || (Array.isArray(r) && (I.q.type === 'multi' ? !r.length : r.some(x => x == null)));
+function respText(I, r) {
+  const q = I.q, L = i => String.fromCharCode(65 + i);
+  if (isEmpty(I, r)) return '<i>No answer</i>';
+  if (q.type === 'mcq') return L(r) + '. ' + I.opts[r];
+  if (q.type === 'multi') return r.slice().sort().map(i => L(i) + '. ' + I.opts[i]).join('<br>');
+  if (q.type === 'num') return esc(r);
+  if (q.type === 'match') return I.items.map((it, i) => it + ' → <b>' + (r[i] == null ? '–' : I.choices[r[i]]) + '</b>').join('<br>');
+  return '';
+}
+function vTest(kind) {
+  if (MOCK && !MOCK.done) { if (MOCK.kind === kind) return vMockRun(); return go('#/' + MOCK.kind); }
+  const quiz = kind === 'quiz', title = quiz ? 'Objective quiz' : 'Mock test';
+  S.tp = S.tp || {}; const P = S.tp[kind] = S.tp[kind] || (quiz ? { src: ['obj'], n: 10, timed: false, each: false } : { src: ['obj', 'bank', 'chap'], n: 20, timed: true, each: false });
+  if (P.chs == null) P.chs = CH.map(c => c.id);
+  let h = hdr(title, true) + `<div class="card"><p class="mute" style="margin-top:0">${quiz ? 'Questions from the exam kit\'s objective-test section, for the chapters you pick. Questions you haven\'t tried come first, then your weakest. At the end you get every question listed with your answer and the correct answer.' : 'Random questions from the chapters you tick, mixing originals and fresh variants. Real exam: 60 questions in 90 minutes, so the timer gives 1.5 minutes a question.'}</p>
+  <h3>Chapters</h3><div class="row"><button class="ghost" id="all">Select all</button><button class="ghost" id="none">Clear</button></div><div id="chl"></div>
+  <h3>Question sources</h3>${Object.keys(SRC).map(k => `<label class="row" style="margin:6px 0"><input type="checkbox" class="msrc" value="${k}" ${P.src.includes(k) ? 'checked' : ''}> ${SRCL[k]}</label>`).join('')}
+  <h3>Settings</h3><div class="row"><label class="grow">Number of questions <select id="mn">${[5, 10, 15, 20, 30, 45, 60, 0].map(n => `<option value="${n}" ${n === P.n ? 'selected' : ''}>${n || 'All available'}</option>`).join('')}</select></label></div>
+  <label class="row" style="margin:8px 0"><input type="checkbox" id="mt" ${P.timed ? 'checked' : ''}> Timed (1.5 minutes a question)</label>
+  <label class="row" style="margin:8px 0"><input type="checkbox" id="me" ${P.each ? 'checked' : ''}> Show the answer after each question (otherwise all at the end)</label>
+  <p class="mute" id="avail"></p><div class="row end"><button class="pri" id="mgo">Start</button></div></div>`;
+  const past = S.mocks.filter(m => (m.kind || 'mock') === kind);
+  if (past.length) h += `<div class="card"><h2>Past ${quiz ? 'quizzes' : 'mocks'}</h2>${past.slice(-8).reverse().map(m => `<div class="row"><span class="grow mute">${new Date(m.at).toLocaleDateString()} · ${m.n} q · ${Math.max(1, Math.round(m.secs / 60))} min</span><b>${Math.round(m.s / m.n * 100)}%</b></div>`).join('')}</div>`;
+  app.innerHTML = h;
+  const srcs = () => [...document.querySelectorAll('.msrc:checked')].map(x => x.value);
+  const inSrc = (q, ss) => ss.some(k => SRC[k](q));
+  const drawCh = () => {
+    const ss = srcs();
+    document.getElementById('chl').innerHTML = CH.map(ch => { const n = ch.items.filter(x => x.t === 'q' && inSrc(x, ss)).length; return `<label class="row" style="margin:6px 0"><input type="checkbox" class="mch" value="${ch.id}" ${P.chs.includes(ch.id) ? 'checked' : ''} ${n ? '' : 'disabled'}> <span class="grow">Ch ${ch.n}. ${esc(ch.title)}</span><span class="mute">${n}</span></label>`; }).join('');
+    document.querySelectorAll('.mch').forEach(b => b.onchange = () => { P.chs = [...document.querySelectorAll('.mch:checked')].map(x => x.value); avail(); });
+    avail();
+  };
+  const pool = () => { const ss = srcs(); return QS.filter(q => P.chs.includes(q.ch) && inSrc(q, ss) && chById(q.ch).items.some(x => x.id === q.id)); };
+  const avail = () => { const n = pool().length; document.getElementById('avail').textContent = n ? `${n} questions available.` : 'No questions match. Tick a chapter and a source.'; save(); };
+  document.querySelectorAll('.msrc').forEach(b => b.onchange = () => { P.src = srcs(); drawCh(); });
+  document.getElementById('all').onclick = () => { P.chs = CH.map(c => c.id); drawCh(); };
+  document.getElementById('none').onclick = () => { P.chs = []; drawCh(); };
+  document.getElementById('mn').onchange = e => { P.n = +e.target.value; save(); };
+  document.getElementById('mt').onchange = e => { P.timed = e.target.checked; save(); };
+  document.getElementById('me').onchange = e => { P.each = e.target.checked; save(); };
+  drawCh();
+  document.getElementById('mgo').onclick = () => {
+    let pl = shuffle(pool());
+    if (!pl.length) return note('Tick at least one chapter and one question source.');
+    if (quiz) { const sc = q => { const r = S.q[q.id]; return !r || !r.n ? -1 : r.c / r.n; }; pl = pl.map(q => [q, sc(q) + Math.random() * 0.15]).sort((a, b) => a[1] - b[1]).map(x => x[0]); }
+    const n = P.n ? Math.min(P.n, pl.length) : pl.length;
+    const list = pl.slice(0, n).map(q => inst(q, quiz ? usedOrig(q) : (Math.random() < 0.5 ? 'orig' : 'fresh')));
+    if (!quiz) shuffle(list);
+    MOCK = { kind, title, list, resp: list.map(() => null), res: list.map(() => null), i: 0, t0: Date.now(), limit: P.timed ? n * 90 : null, each: P.each, done: false };
+    vMockRun();
+  };
+}
+function vMockRun() {
+  const M = MOCK, I = M.list[M.i], last = M.i === M.list.length - 1;
+  app.innerHTML = hdr(M.title, false) + `<div class="prog row"><span class="grow mute">Question ${M.i + 1} of ${M.list.length}</span><span class="timer" id="tm"></span></div>${bar((M.i + 1) / M.list.length)}<div id="slot"></div><div class="row"><button id="pv" ${M.i ? '' : 'disabled'}>‹ Prev</button><span class="grow"></span>${!last ? `<button class="${M.each ? '' : 'pri'}" id="nx">Next ›</button>` : ''}<button id="end" class="${last ? 'pri' : ''}">${M.each ? 'Finish' : 'Finish & mark'}</button></div><p class="mute" id="unans"></p>`;
+  const slot = document.getElementById('slot');
+  if (M.each) {
+    const done = M.res[M.i];
+    if (done) { renderQ(slot, I, { mock: true, prev: done.r }); slot.querySelectorAll('button.opt,input,select').forEach(e => { e.disabled = true; }); showFeedback(slot, I, done.r, done.ok); }
+    else { const hq = renderQ(slot, I, { onDone: ok => { M.res[M.i] = { ok, r: hq.resp }; M.resp[M.i] = hq.resp; const nx = document.getElementById('nx'); if (nx) nx.classList.add('pri'); else document.getElementById('end').classList.add('pri'); cnt(); } }); }
+  } else renderQ(slot, I, { mock: true, prev: M.resp[M.i], onChange: r => { M.resp[M.i] = r; cnt(); } });
+  const cnt = () => { const u = M.list.filter((J, i) => M.each ? !M.res[i] : isEmpty(J, M.resp[i])).length; document.getElementById('unans').textContent = u ? `${u} unanswered` : 'All answered'; };
+  cnt();
+  document.getElementById('pv').onclick = () => { M.i--; vMockRun(); };
+  const nx = document.getElementById('nx'); if (nx) nx.onclick = () => { M.i++; vMockRun(); };
+  document.getElementById('end').onclick = () => ask(M.each ? 'Finish and see the summary?' : 'Finish and mark?', finishMock, 'Finish');
+  clearInterval(TIMER); if (M.limit) { tick(); TIMER = setInterval(tick, 1000); }
+  window.scrollTo(0, 0);
+}
+function tick() {
+  if (!MOCK || MOCK.done || !MOCK.limit) { clearInterval(TIMER); return; }
+  const left = MOCK.limit - Math.floor((Date.now() - MOCK.t0) / 1000); const el = document.getElementById('tm');
+  if (left <= 0) { clearInterval(TIMER); MOCK.timeUp = true; return finishMock(); }
+  if (el) el.textContent = `${Math.floor(left / 60)}:${String(left % 60).padStart(2, '0')} left`;
+}
+function finishMock() {
+  clearInterval(TIMER); const M = MOCK; M.done = true;
+  let s = 0;
+  const res = M.list.map((I, i) => {
+    if (M.each) { const d = M.res[i]; if (d) { if (d.ok) s++; return { I, r: d.r, ok: d.ok }; } record(I.base.id, false); return { I, r: null, ok: false }; }
+    const r = M.resp[i]; const ok = !isEmpty(I, r) && grade(I, r); if (ok) s++; record(I.base.id, ok); return { I, r, ok };
+  });
+  const secs = Math.round((Date.now() - M.t0) / 1000);
+  S.mocks.push({ at: Date.now(), kind: M.kind, n: M.list.length, s, secs }); save();
+  const byCh = {}; res.forEach(x => { const c = x.I.base.ch; byCh[c] = byCh[c] || { n: 0, s: 0 }; byCh[c].n++; if (x.ok) byCh[c].s++; });
+  const pc = Math.round(s / M.list.length * 100);
+  let h = hdr(M.title + ' result', false) + `<div class="card"><h2>${s} / ${M.list.length} (${pc}%)</h2>${M.timeUp ? '<p><b>Time ran out.</b> Unanswered questions are marked wrong.</p>' : ''}<p class="mute">Time taken ${Math.floor(secs / 60)}m ${secs % 60}s${M.limit ? ' of ' + M.limit / 60 + ' min' : ''}. The CIMA pass mark is 70%.</p>${Object.keys(byCh).sort((x, y) => chById(x).n - chById(y).n).map(c => `<div class="row"><span class="grow">Ch ${chById(c).n}. ${esc(chById(c).title)}</span><b>${byCh[c].s}/${byCh[c].n}</b></div>`).join('')}</div>
+  <h2>Answers</h2><p class="mute">Tap a question to see it in full with the worked solution. Wrong ones are now in your wrong-answer queue.</p><div id="rv"></div><div class="row"><button class="pri" onclick="MOCK=null;go('#/')">Home</button><button onclick="MOCK=null;go('#/${M.kind}')">New ${M.kind === 'quiz' ? 'quiz' : 'mock'}</button></div>`;
+  app.innerHTML = h;
+  const rv = document.getElementById('rv');
+  res.forEach((x, i) => {
+    const d = document.createElement('details'); d.className = 'card ansrow ' + (x.ok ? 'okrow' : 'badrow');
+    const stem = plain(x.I.text);
+    d.innerHTML = `<summary><b>${x.ok ? '✓' : '✗'} Q${i + 1}</b> <span class="mute">${esc(x.I.q.src || '')}</span><div class="stem">${esc(stem.length > 150 ? stem.slice(0, 147) + '…' : stem)}</div><div class="aline"><span class="mute">Your answer:</span> ${respText(x.I, x.r)}</div>${x.ok ? '' : `<div class="aline"><span class="mute">Correct:</span> <b>${ansText(x.I)}</b></div>`}</summary><div class="slot"></div>`;
+    rv.appendChild(d);
+    d.addEventListener('toggle', () => { const sl = d.querySelector('.slot'); if (d.open && !sl.innerHTML) { renderQ(sl, x.I, { mock: true, prev: x.r }); sl.querySelectorAll('button.opt,input,select').forEach(e => { e.disabled = true; }); showFeedback(sl, x.I, x.r, x.ok); } });
+  });
+  window.scrollTo(0, 0);
+}
+/* ---------- backup ---------- */
+function enc(o) { return btoa(unescape(encodeURIComponent(JSON.stringify(o)))); }
+function dec(s) { return JSON.parse(decodeURIComponent(escape(atob(s.replace(/\s+/g, ''))))); }
+function merge(inc) {
+  if (!inc || typeof inc !== 'object' || !inc.q) throw new Error('Not a progress code');
+  for (const k in inc.seen || {}) S.seen[k] = S.seen[k] || inc.seen[k];
+  for (const k in inc.q) { const a = S.q[k], b = inc.q[k]; if (!a || (b.n || 0) > (a.n || 0)) S.q[k] = b; }
+  for (const k in inc.pos || {}) S.pos[k] = Math.max(S.pos[k] || 0, inc.pos[k]);
+  const seenAt = new Set(S.mocks.map(m => m.at)); (inc.mocks || []).forEach(m => { if (!seenAt.has(m.at)) S.mocks.push(m); });
+  S.mocks.sort((a, b) => a.at - b.at); save();
+}
+function vBackup() {
+  const code = enc(S);
+  app.innerHTML = hdr('Backup / restore', true) + `<div class="card"><h2>Export</h2><p class="mute">Copy this code somewhere safe (Notes, email to yourself), or save it as a file. Do this before replacing the app with a new version or switching browser.</p><textarea id="ex" readonly>${code}</textarea><div class="row" style="margin-top:8px"><button class="pri" id="cp">Copy code</button><button id="dl">Save as file</button></div><p class="mute" id="cpm"></p></div>
+  <div class="card"><h2>Import</h2><p class="mute">Paste a code or pick a saved file. Import merges: for each question it keeps whichever record has more attempts, so nothing gets wiped.</p><textarea id="im" placeholder="Paste progress code here"></textarea><div class="row" style="margin-top:8px"><button class="pri" id="ib">Import code</button><label class="btn">Import file<input type="file" id="if" accept=".txt,text/plain" class="hide"></label></div><p class="mute" id="imm"></p></div>
+  <div class="card"><h2>Start again</h2><button id="wipe">Erase all progress on this device</button></div>`;
+  document.getElementById('cp').onclick = async () => { const t = document.getElementById('ex'); try { await navigator.clipboard.writeText(code); } catch (e) { t.select(); document.execCommand('copy'); } document.getElementById('cpm').textContent = 'Copied.'; };
+  let framed = true; try { framed = window.self !== window.top; } catch (e) { }
+  if (framed) document.getElementById('dl').classList.add('hide');
+  document.getElementById('dl').onclick = () => { const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([code], { type: 'text/plain' })); a.download = 'cima-f1-progress-' + new Date().toISOString().slice(0, 10) + '.txt'; document.body.appendChild(a); a.click(); a.remove(); };
+  const doImp = s => { try { merge(dec(s)); document.getElementById('imm').textContent = 'Imported and merged.'; } catch (e) { document.getElementById('imm').textContent = 'That code did not work: ' + e.message; } };
+  document.getElementById('ib').onclick = () => doImp(document.getElementById('im').value);
+  document.getElementById('if').onchange = e => { const f = e.target.files[0]; if (!f) return; const rd = new FileReader(); rd.onload = () => doImp(rd.result); rd.readAsText(f); };
+  document.getElementById('wipe').onclick = () => ask('Erase all progress on this device? Export first if unsure.', () => { S = blank(); save(); go('#/'); }, 'Erase');
+}
+function vAbout() {
+  app.innerHTML = hdr('About this app', true) + `<div class="card">${DATA.about || ''}<h3>Coverage so far</h3><p class="mute">${CARDS.length} cards · ${QS.length} questions · ${CH.length} chapters</p></div>`;
+}
+/* ---------- glossary, search and look-up ---------- */
+const GL = (DATA.glossary || []).slice().sort((a, b) => a.t.localeCompare(b.t, 'en', { sensitivity: 'base' }));
+function plain(h) { return String(h || '').replace(/<svg[\s\S]*?<\/svg>/g, ' ').replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/\s+/g, ' ').trim(); }
+const CTXT = {}; CARDS.forEach(c => { CTXT[c.id] = plain([c.title, c.rule, c.body, c.ex && c.ex.given, c.ex && c.ex.steps.join(' '), c.trap].join(' ')).toLowerCase(); });
+const GTXT = GL.map(g => (g.t + ' ' + (g.aka || []).join(' ') + ' ' + plain(g.d)).toLowerCase());
+function cardLoc(id) { const it = ITEM[id]; if (!it) return '#/'; const ch = chById(it.ch); return `#/learn/${ch.id}/${ch.items.indexOf(it)}`; }
+const STOP = new Set('a an and are as at be by for from how in is it of on or the to what when which why with'.split(' '));
+const stems = q => q.toLowerCase().replace(/[^a-z0-9%&\- ]+/g, ' ').split(/\s+/).filter(w => w && !STOP.has(w)).map(w => w.length > 5 ? w.slice(0, Math.max(5, w.length - 3)) : w);
+function glHits(q) {
+  const s = q.toLowerCase().trim(); if (!s) return []; const st = stems(s);
+  return GL.map((g, i) => {
+    const names = [g.t].concat(g.aka || []).map(x => x.toLowerCase());
+    let sc = 0;
+    if (names.includes(s)) sc = 10; else if (names.some(n => n.startsWith(s) || s.startsWith(n))) sc = 6; else if (names.some(n => n.includes(s) || s.includes(n))) sc = 5;
+    else if (st.length && st.every(w => names.some(n => n.includes(w)))) sc = 4; else if (st.length && st.every(w => GTXT[i].includes(w))) sc = 1;
+    return [g, sc];
+  }).filter(x => x[1]).sort((a, b) => b[1] - a[1]).slice(0, 8).map(x => x[0]);
+}
+function cardHits(q, lim = 12) {
+  const st = stems(q); if (!st.length) return [];
+  return CARDS.map(c => { const t = CTXT[c.id]; if (!st.every(w => t.includes(w))) return null; const ti = c.title.toLowerCase(); let sc = st.filter(w => ti.includes(w)).length * 3 + (t.includes(q.toLowerCase()) ? 2 : 0); return [c, sc]; })
+    .filter(Boolean).sort((a, b) => b[1] - a[1]).slice(0, lim).map(x => x[0]);
+}
+const glSlug = s => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+const glBySlug = {}; GL.forEach(g => { glBySlug[glSlug(g.t)] = g; });
+function glEntry(g, open) {
+  const ch = chById(g.ch);
+  return `<details class="gle" ${open ? 'open' : ''}><summary><b>${esc(g.t)}</b>${g.aka && g.aka.length ? ` <span class="mute">(${g.aka.map(esc).join(', ')})</span>` : ''}${ch ? ` <span class="chip">Ch ${ch.n}</span>` : ''}</summary><div class="gld">${g.d}</div>
+  <div class="row" style="margin-top:6px">${(g.see || []).filter(id => ITEM[id]).map(id => `<a class="btn" style="font-size:13px;padding:6px 10px;min-height:0" href="${cardLoc(id)}" onclick="closeLookup()">Card: ${esc(ITEM[id].title)}</a>`).join('')}<button class="ghost" onclick="lookup(${esc(JSON.stringify(g.t))})">Read more ›</button></div></details>`;
+}
+let GQ = '';
+function vGlossary() {
+  app.innerHTML = hdr('Glossary &amp; search', true) + `<div class="card"><input type="text" id="gq" placeholder="Search terms and cards, e.g. disallowable" value="${esc(GQ)}" autocomplete="off"><p class="mute" style="margin:6px 0 0">Works offline. Tip: long-press any word anywhere in the app and tap <b>Look up</b>.</p></div><div id="gr"></div>`;
+  const inp = document.getElementById('gq'), out = document.getElementById('gr');
+  const draw = () => {
+    GQ = inp.value; const q = GQ.trim();
+    if (!q) {
+      let h = `<div class="card"><h2>All terms (${GL.length})</h2>`; let L = '';
+      GL.forEach(g => { const f = g.t[0].toUpperCase(); if (f !== L) { L = f; h += `<h3>${esc(f)}</h3>`; } h += glEntry(g); });
+      out.innerHTML = h + '</div>'; return;
+    }
+    const gh = glHits(q), chs = cardHits(q);
+    let h = `<div class="card"><h2>Glossary</h2>${gh.length ? gh.map((g, i) => glEntry(g, i === 0)).join('') : '<p class="mute">No glossary entry for that.</p>'}</div>`;
+    h += `<div class="card"><h2>Cards that mention it</h2>${chs.length ? `<div class="list">${chs.map(c => `<a href="${cardLoc(c.id)}">Ch ${chById(c.ch).n} · ${esc(c.title)}</a>`).join('')}</div>` : '<p class="mute">No cards mention that.</p>'}</div>`;
+    h += `<div class="row"><button class="pri" onclick="lookup(${esc(JSON.stringify(q))})">Look it up online</button></div>`;
+    out.innerHTML = h;
+  };
+  let t; inp.oninput = () => { clearTimeout(t); t = setTimeout(draw, 150); };
+  draw();
+}
+/* look-up sheet: glossary + cards (offline) and Wikipedia / Wiktionary (online, shown in the app) */
+let LK = null;
+function closeLookup() { if (LK) { LK.remove(); LK = null; } }
+function fetchJSON(url, ms = 8000) {
+  const ac = typeof AbortController !== 'undefined' ? new AbortController() : null; const tm = setTimeout(() => ac && ac.abort(), ms);
+  return fetch(url, ac ? { signal: ac.signal } : {}).then(r => { clearTimeout(tm); if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); });
+}
+function lookup(q) {
+  q = String(q || '').trim().replace(/^[^\w$£%(]+|[^\w%)]+$/g, ''); if (!q) return;
+  closeLookup(); const cs = document.querySelector('.sheet:not(.lk)'); if (cs) cs.remove();
+  LK = document.createElement('div'); LK.className = 'sheet lk';
+  LK.innerHTML = `<div class="inner"><div class="row"><b class="grow">Look up</b><button class="ghost" onclick="closeLookup()">Close</button></div><div class="row"><input type="text" id="lq" class="grow" style="width:auto" value="${esc(q)}" autocomplete="off"><button id="lgo">Go</button></div><div id="lres"></div></div>`;
+  document.body.appendChild(LK);
+  const run = () => { const v = LK.querySelector('#lq').value.trim(); if (v) fillLookup(v); };
+  LK.querySelector('#lgo').onclick = run; LK.querySelector('#lq').onkeydown = e => { if (e.key === 'Enter') run(); };
+  fillLookup(q);
+}
+function fillLookup(q) {
+  const box = LK && LK.querySelector('#lres'); if (!box) return;
+  const gh = glHits(q).slice(0, 3), chs = cardHits(q, 6), eq = encodeURIComponent(q);
+  let h = `<h3>In this app</h3>`;
+  h += gh.length ? gh.map((g, i) => glEntry(g, i === 0)).join('') : `<p class="mute">No glossary entry for “${esc(q)}”.</p>`;
+  if (chs.length) h += `<div class="list">${chs.map(c => `<a href="${cardLoc(c.id)}" onclick="closeLookup()">Card · Ch ${chById(c.ch).n} · ${esc(c.title)}</a>`).join('')}</div>`;
+  h += `<h3>Online</h3><div id="lon">${navigator.onLine === false ? '<p class="mute">You\'re offline. Online explanations appear here when you\'re connected.</p>' : '<p class="mute">Searching…</p>'}</div>
+  <p class="mute" style="margin-top:10px">Outside the app: <a href="https://www.google.com/search?q=${eq}%20meaning%20accounting" target="_blank" rel="noopener">Google</a> · <a href="https://www.investopedia.com/search?q=${eq}" target="_blank" rel="noopener">Investopedia</a> · <a href="https://en.wikipedia.org/w/index.php?search=${eq}" target="_blank" rel="noopener">Wikipedia</a></p>`;
+  box.innerHTML = h;
+  if (navigator.onLine === false) return;
+  const on = box.querySelector('#lon'); const parts = { wiki: null, dict: null }; const paint = () => { if (!LK || !box.isConnected) return; on.innerHTML = (parts.dict || '') + (parts.wiki || '') || '<p class="mute">Searching…</p>'; };
+  const words = q.split(/\s+/);
+  if (words.length <= 2) fetchJSON('https://en.wiktionary.org/api/rest_v1/page/definition/' + encodeURIComponent(words.length === 1 ? q.toLowerCase() : q.toLowerCase().replace(/ /g, '_')))
+    .then(j => { const en = (j.en || []).slice(0, 2); const defs = []; en.forEach(p => (p.definitions || []).slice(0, 2).forEach(d => { const t = plain(d.definition); if (t) defs.push(`<li><i>${esc(p.partOfSpeech || '')}</i> ${esc(t)}</li>`); })); parts.dict = defs.length ? `<div class="box ok" style="color:var(--ink)"><b>Dictionary (Wiktionary)</b><ul style="margin:4px 0;padding-left:18px">${defs.join('')}</ul></div>` : ''; paint(); })
+    .catch(() => { parts.dict = ''; paint(); });
+  const wikiSum = (title, el) => fetchJSON('https://en.wikipedia.org/api/rest_v1/page/summary/' + encodeURIComponent(title.replace(/ /g, '_')))
+    .then(s => { el.innerHTML = `<p>${esc(s.extract || 'No summary available.')}</p><p class="mute"><a href="${esc((s.content_urls && s.content_urls.mobile && s.content_urls.mobile.page) || ('https://en.wikipedia.org/wiki/' + encodeURIComponent(title)))}" target="_blank" rel="noopener">Full article on Wikipedia</a> (opens your browser)</p>`; })
+    .catch(() => { el.innerHTML = '<p class="mute">Couldn\'t load the summary.</p>'; });
+  const searchWiki = term => fetchJSON('https://en.wikipedia.org/w/api.php?action=query&list=search&format=json&origin=*&srlimit=4&srsearch=' + encodeURIComponent(term)).then(j => (j.query && j.query.search) || []);
+  searchWiki(q).then(r => r.length ? r : searchWiki(q + ' accounting')).then(r => {
+    if (!r.length) { parts.wiki = '<p class="mute">Wikipedia has nothing on that.</p>'; paint(); return; }
+    parts.wiki = `<div class="box" style="background:var(--acc2);color:var(--ink)"><b>Wikipedia: ${esc(r[0].title)}</b><div id="wk0"><p class="mute">Loading…</p></div>${r.length > 1 ? `<p class="mute" style="margin-bottom:0">Not the right one? ${r.slice(1).map((x, i) => `<a href="#" data-wt="${esc(x.title)}" class="wt">${esc(x.title)}</a>`).join(' · ')}</p>` : ''}</div>`;
+    paint();
+    const el = on.querySelector('#wk0'); if (el) wikiSum(r[0].title, el);
+    on.querySelectorAll('.wt').forEach(a => a.onclick = e => { e.preventDefault(); const t = a.dataset.wt; on.querySelector('.box b').textContent = 'Wikipedia: ' + t; const k = on.querySelector('#wk0'); k.innerHTML = '<p class="mute">Loading…</p>'; wikiSum(t, k); });
+  }).catch(() => { parts.wiki = '<p class="mute">Couldn\'t reach Wikipedia. Check your connection.</p>'; paint(); });
+}
+/* long-press any word → floating Look up button */
+(function () {
+  const pill = document.createElement('button'); pill.className = 'lkpill hide'; pill.type = 'button'; document.body.appendChild(pill);
+  let st, cur = '';
+  const hide = () => { pill.classList.add('hide'); cur = ''; };
+  document.addEventListener('selectionchange', () => {
+    clearTimeout(st);
+    st = setTimeout(() => {
+      const sel = window.getSelection ? window.getSelection() : null; const s = sel ? String(sel).replace(/\s+/g, ' ').trim() : '';
+      if (s.length >= 2 && s.length <= 60 && /[a-z]/i.test(s)) { cur = s; pill.textContent = '🔎 Look up “' + (s.length > 28 ? s.slice(0, 26) + '…' : s) + '”'; pill.classList.remove('hide'); }
+      else setTimeout(hide, 400);
+    }, 200);
+  });
+  const fire = e => { e.preventDefault(); e.stopPropagation(); const q = cur; if (!q) return; try { window.getSelection().removeAllRanges(); } catch (x) { } hide(); lookup(q); };
+  pill.addEventListener('pointerdown', fire); pill.addEventListener('click', fire);
+})();
+/* tap-to-define: underline glossary terms in cards and solutions */
+const GLRE = (() => {
+  const names = []; GL.forEach(g => [g.t].concat(g.aka || []).forEach(n => { if (n.length >= 3) names.push([n, g]); }));
+  names.sort((a, b) => b[0].length - a[0].length);
+  const map = {}; names.forEach(([n, g]) => { map[n.toLowerCase()] = g; });
+  if (!names.length) return null;
+  const re = new RegExp('\\b(' + names.map(x => x[0].replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|') + ')\\b', 'i');
+  return { re, map };
+})();
+function markTerms(root, max = 6) {
+  if (!GLRE || !root) return;
+  const used = new Set(); let n = 0;
+  const walk = node => {
+    if (n >= max) return;
+    if (node.nodeType === 1) { if (/^(SVG|BUTTON|SELECT|INPUT|TEXTAREA|A|H2|SUMMARY)$/i.test(node.tagName) || node.classList.contains('gl') || node.classList.contains('chip') || node.classList.contains('eq')) return; [...node.childNodes].forEach(walk); return; }
+    if (node.nodeType !== 3) return;
+    const m = node.nodeValue.match(GLRE.re); if (!m) return;
+    const g = GLRE.map[m[1].toLowerCase()]; if (!g || used.has(g.t)) return;
+    used.add(g.t); n++;
+    const after = node.splitText(m.index); after.nodeValue = after.nodeValue.slice(m[1].length);
+    const sp = document.createElement('span'); sp.className = 'gl'; sp.textContent = m[1]; sp.onclick = () => lookup(g.t);
+    node.parentNode.insertBefore(sp, after); walk(after);
+  };
+  walk(root);
+}
+/* ---------- calculator (BIDMAS): inline under questions, and the floating 🧮 button ---------- */
+function calcEval(src) {
+  let s = String(src).replace(/×/g, '*').replace(/÷/g, '/').replace(/,/g, '').replace(/−/g, '-').replace(/(\d+(?:\.\d+)?)%/g, '($1/100)');
+  s = s.replace(/(\d|\))\s*\(/g, '$1*(').replace(/\)\s*(\d)/g, ')*$1');
+  if (!s.trim() || !/^[\d+\-*/().\s^]+$/.test(s)) return null;
+  try { const v = Function('"use strict";return (' + s.replace(/\^/g, '**') + ')')(); return typeof v === 'number' && isFinite(v) ? Math.round(v * 1e9) / 1e9 : null; } catch (e) { return null; }
+}
+const cfmt = v => (v < 0 ? '−' : '') + Math.abs(v).toLocaleString('en-GB', { maximumFractionDigits: 6 });
+function makeCalc(el, onUse) {
+  let ex = '', last = null; const hist = [];
+  const keys = ['C', '⌫', '(', ')', '7', '8', '9', '÷', '4', '5', '6', '×', '1', '2', '3', '−', '0', '.', '^', '+', '%', 'Ans', '='];
+  el.innerHTML = `<div class="cdisp"><div class="cexpr">&nbsp;</div><div class="cres">&nbsp;</div></div><div class="ckeys">${keys.map(k => `<button type="button" class="ck${/[0-9.]/.test(k) ? ' num' : ''}${k === '=' ? ' eqk' : ''}" data-k="${k}">${k}</button>`).join('')}</div>${onUse ? '<button type="button" class="cuse" disabled>Put result in the answer box ↑</button>' : ''}<div class="hist"></div>`;
+  const ee = el.querySelector('.cexpr'), er = el.querySelector('.cres'), eh = el.querySelector('.hist'), use = el.querySelector('.cuse');
+  const show = () => { ee.textContent = ex || ' '; const v = calcEval(ex); er.textContent = v == null ? (ex ? '…' : ' ') : '= ' + cfmt(v); if (use) use.disabled = (v == null && last == null); };
+  el.querySelectorAll('.ck').forEach(b => b.onclick = () => {
+    const k = b.dataset.k;
+    if (k === 'C') ex = ''; else if (k === '⌫') ex = ex.slice(0, -1);
+    else if (k === '=') { const v = calcEval(ex); if (v != null) { hist.unshift(ex + ' = ' + cfmt(v)); eh.innerHTML = hist.slice(0, 4).map(esc).join('<br>'); last = v; ex = String(v); } }
+    else if (k === 'Ans') { if (last != null) ex += String(last); }
+    else ex += k;
+    show();
+  });
+  if (use) use.onclick = () => { const v = calcEval(ex); const r = v != null ? v : last; if (r != null) onUse(r); };
+  show();
+}
+(function () {
+  const btn = document.getElementById('calcbtn'); btn.classList.remove('hide'); let sheet = null;
+  btn.onclick = () => {
+    if (sheet && sheet.isConnected) { sheet.remove(); sheet = null; return; }
+    closeLookup();
+    sheet = document.createElement('div'); sheet.className = 'sheet';
+    sheet.innerHTML = `<div class="inner"><div class="row"><b class="grow">Calculator</b><button class="ghost" id="cx">Close</button></div><div class="calc"></div></div>`;
+    document.body.appendChild(sheet);
+    makeCalc(sheet.querySelector('.calc'));
+    sheet.querySelector('#cx').onclick = () => { sheet.remove(); sheet = null; };
+  };
+})();
+/* ---------- router ---------- */
+function route() {
+  closeLookup(); document.getElementById('calcbtn').classList.remove('hide'); const cs = document.querySelector('.sheet:not(.lk)'); if (cs) cs.remove();
+  if (MOCK && !MOCK.done && !location.hash.startsWith('#/' + MOCK.kind)) { const target = location.hash; history.replaceState(null, '', '#/' + MOCK.kind); ask('Leave the ' + MOCK.title.toLowerCase() + '? It will be abandoned.', () => { MOCK = null; clearInterval(TIMER); location.hash = target; }, 'Leave', 'Stay'); return; }
+  const p = (location.hash || '#/').slice(2).split('/');
+  try {
+    switch (p[0]) {
+      case 'ch': return vChapter(p[1]);
+      case 'learn': return vLearn(p[1], p[2]);
+      case 'practice': return vPractice(p[1]);
+      case 'lo': return vLO(p[1]);
+      case 'wrong': return vWrong();
+      case 'review': return vReview();
+      case 'mock': return vTest('mock');
+      case 'quiz': return vTest('quiz');
+      case 'glossary': return vGlossary();
+      case 'backup': return vBackup();
+      case 'about': return vAbout();
+      default: return vHome();
+    }
+  } catch (e) { app.innerHTML = `<div class="card"><b>Something went wrong.</b><pre style="white-space:pre-wrap">${esc(e.stack || e)}</pre><button onclick="go('#/')">Home</button></div>`; }
+}
+window.addEventListener('hashchange', route);
+route();
+/* offline install: only when served over https as a standalone site (not as a local file or inside a frame) */
+try { if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost') && window.self === window.top) navigator.serviceWorker.register('sw.js').catch(() => { }); } catch (e) { }
+</script>
+</body>
+</html>
