@@ -45,10 +45,16 @@ const chapters = CHAPTERS.map(n => {
   });
   return ch;
 });
+// worked examples (question-and-answer format) live in content/worked.js, keyed by card id
+const WORKED = fs.existsSync(path.join(__dirname, 'content', 'worked.js')) ? require('./content/worked.js') : {};
+const usedW = new Set();
+chapters.forEach(ch => ch.items.forEach(it => { if (it.t === 'c' && WORKED[it.id]) { it.ex = WORKED[it.id]; usedW.add(it.id); } }));
 const glossary = fs.existsSync(path.join(__dirname, 'content', 'glossary.js')) ? require('./content/glossary.js') : [];
 
 // integrity checks
 const ids = new Set(); const errs = [];
+Object.keys(WORKED).forEach(k => { if (!usedW.has(k) && !process.env.CH) errs.push('worked.js: no card ' + k); });
+chapters.forEach(ch => ch.items.forEach(it => { if (it.ex && !it.ex.q) errs.push(it.id + ' worked example not in Q&A format (add to content/worked.js)'); if (it.ex && it.ex.q) it.ex.steps.forEach((st, i) => { if (!st.d || !st.w) errs.push(it.id + ' step ' + (i + 1) + ' needs d and w'); }); }));
 chapters.forEach(ch => ch.items.forEach(it => {
   if (ids.has(it.id)) errs.push('Duplicate id ' + it.id); ids.add(it.id);
   (it.lo || []).forEach(l => { if (!outcomes[l]) errs.push(it.id + ' unknown LO ' + l); });

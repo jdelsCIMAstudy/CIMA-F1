@@ -514,17 +514,6 @@
     "C2c"
    ],
    "title": "Worked: trading profit with tax depreciation",
-   "ex": {
-    "title": "Orbit Co, year 2",
-    "given": "Machinery bought March 20X1 for $80,000. Accounts: 12.5% straight line. Tax: 25% reducing balance. 20X2 PBT $240,000 includes $12,000 exempt interest and $6,000 political donations. Rate 25%.",
-    "steps": [
-     "20X1 allowance: 25% × 80,000 = 20,000 (full year despite the March purchase). TWDV 60,000.",
-     "20X2 allowance: 25% × 60,000 = 15,000. TWDV 45,000.",
-     "Book depreciation 20X2: 80,000 × 12.5% = 10,000.",
-     "TP = 240,000 − 12,000 + 6,000 + 10,000 − 15,000 = 229,000",
-     "Tax = 229,000 × 25% = <b>57,250</b>"
-    ]
-   },
    "trap": "Applying the 25% to cost in year 2. Reducing balance applies to the TWDV brought forward."
   },
   {
@@ -988,14 +977,6 @@
    "title": "Tax rate changes mid-year",
    "rule": "<span class=\"eq\">Tax = TP × (m₁/12 × r₁ + m₂/12 × r₂)\nm₁ + m₂ = 12, counted on the company's own year</span>",
    "body": "<p>Assume profits accrue evenly and time-apportion. The tax year's change date rarely matches the company year end, so count months from the company's start date.</p>",
-   "ex": {
-    "given": "Year ended 30 September 20X2, TP $600,000. Rate 20% up to 31 March 20X2, 22% from 1 April 20X2.",
-    "steps": [
-     "Oct–Mar = 6 months at 20%: 600,000 × 6/12 × 20% = 60,000",
-     "Apr–Sep = 6 months at 22%: 600,000 × 6/12 × 22% = 66,000",
-     "Total = <b>126,000</b>"
-    ]
-   },
    "trap": "Counting months from 1 January. Start from the first month of the company's accounting period."
   },
   {
@@ -1158,17 +1139,7 @@
    ],
    "title": "Expanded pro-forma and a shortcut",
    "rule": "<span class=\"eq\">TP = PBT − E + D + Dep − TDep\n     + accounting loss on disposal\n     − accounting profit on disposal\n     + balancing charge − balancing allowance</span>",
-   "body": "<p>Shortcut for a disposal-year question with no other items: the proceeds cancel out.</p><span class=\"eq\">−(proceeds − CA) + (proceeds − TWDV) = CA − TWDV\n⇒ TP = PBT + CA − TWDV</span>",
-   "ex": {
-    "title": "Orbit Co sells the machine",
-    "given": "Cost 80,000; two years' book depreciation of 10,000 each; TWDV 45,000. Sold 1 Jan 20X3 for 50,000. 20X3 accounting profit 200,000 after the disposal.",
-    "steps": [
-     "CA = 80,000 − 20,000 = 60,000. Accounting loss = 50,000 − 60,000 = (10,000): add back.",
-     "Balancing charge = 50,000 − 45,000 = 5,000: add.",
-     "TP = 200,000 + 10,000 + 5,000 = <b>215,000</b>. Shortcut: 200,000 + 60,000 − 45,000 = 215,000 ✓",
-     "Check: relief 20,000 + 15,000 − 5,000 = 30,000 = cost − proceeds ✓"
-    ]
-   }
+   "body": "<p>Shortcut for a disposal-year question with no other items: the proceeds cancel out.</p><span class=\"eq\">−(proceeds − CA) + (proceeds − TWDV) = CA − TWDV\n⇒ TP = PBT + CA − TWDV</span>"
   },
   {
    "id": "b028",
@@ -1618,14 +1589,6 @@
     "C2c"
    ],
    "title": "Worked: back one year, then forward",
-   "ex": {
-    "given": "Rules: carry back one year, any balance forward. Y1 profit 30,000; Y2 loss (70,000); Y3 profit 20,000; Y4 profit 50,000.",
-    "steps": [
-     "Carry back 30,000 to Y1 → Y1 taxable 0. Left: 40,000.",
-     "Y3: use 20,000 → Y3 taxable 0. Left: 20,000.",
-     "Y4: use the last 20,000 → Y4 taxable <b>30,000</b>."
-    ]
-   },
    "trap": "Keeping some of Y1's profit taxable to \"save\" the loss. Relief must take the whole year's profit."
   },
   {
@@ -1765,14 +1728,6 @@
    ],
    "title": "Terminal losses: carry back LIFO",
    "rule": "<p>When a business ceases, the final loss can be carried back (UK: 3 years). Use the <b>most recent year first</b>, each in full, then move back. Anything left after the limit is lost.</p>",
-   "ex": {
-    "given": "20X1 40,000; 20X2 25,000; 20X3 15,000; 20X4 loss (60,000), trade ceases.",
-    "steps": [
-     "20X3 first: use 15,000 → 0. Left 45,000.",
-     "20X2: use 25,000 → 0. Left 20,000.",
-     "20X1: use 20,000 → revised <b>20,000</b>."
-    ]
-   },
    "trap": "Starting with the oldest year (FIFO). Terminal relief is LIFO."
   },
   {
@@ -1879,17 +1834,6 @@
    "title": "Indexation: index each cost from its own date",
    "rule": "<span class=\"eq\">Indexation = Σ costᵢ × factor(from date of costᵢ to disposal)</span>",
    "body": "<p>Indexation strips out the inflationary part of a gain, so only the real gain is taxed. Purchase costs share the purchase date's factor; an extension uses its own date's factor.</p>",
-   "ex": {
-    "title": "Delta Co building",
-    "given": "Cost 400,000 + legal 8,000. Extension 60,000. Storm repair 15,000. Sold 900,000 less agent 12,000. Factors: purchase→sale 25%; extension→sale 10%. Rate 25%.",
-    "steps": [
-     "Net proceeds = 888,000",
-     "Less cost and legal (408,000) and extension (60,000). Repair ignored.",
-     "Indexation: 408,000 × 25% = 102,000; 60,000 × 10% = 6,000",
-     "Gain = 888,000 − 468,000 − 108,000 = 312,000",
-     "Tax = <b>78,000</b>"
-    ]
-   },
    "trap": "Indexing the purchase price but not the purchase legal fees.",
    "upd": "UK companies: indexation frozen at December 2017. Individuals: abolished in 2008. The exam can still give a factor for a hypothetical country."
   },
@@ -2828,14 +2772,6 @@
    ],
    "title": "Capital losses",
    "rule": "<p>Usually kept separate from trading. Possible reliefs: carry forward against future gains; carry back against earlier gains; offset against same-period trading income. <b>Most countries only allow carry forward against future gains.</b></p>",
-   "ex": {
-    "given": "Capital losses: same year or forward only. Y1 gain 10,000; Y2 loss (15,000); Y3 gain 6,000; Y4 gain 12,000.",
-    "steps": [
-     "Y1 is untouched (a later loss can't go back): taxable 10,000.",
-     "Y3: use 6,000 → 0. Left 9,000.",
-     "Y4: 12,000 − 9,000 = <b>3,000</b>."
-    ]
-   },
    "trap": "Carrying a capital loss back by analogy with trading losses."
   },
   {
@@ -3026,14 +2962,6 @@
    "title": "Rollover relief",
    "rule": "<span class=\"eq\">Taxed now = min(gain, proceeds − amount reinvested)\nDeferred   = gain − taxed now</span>",
    "body": "<p>Reinvest the proceeds in a replacement business asset and the gain is postponed (not exempted) until the replacement is sold.</p>",
-   "ex": {
-    "given": "Asset sold for 250,000 with a gain of 40,000.",
-    "steps": [
-     "Reinvest 260,000: nothing held back → taxed 0, deferred 40,000",
-     "Reinvest 230,000: 20,000 held back → taxed 20,000, deferred 20,000",
-     "Reinvest 200,000: 50,000 held back, capped at the gain → taxed 40,000, deferred 0"
-    ]
-   },
    "trap": "Calling it an exemption. The gain is <b>postponed</b>; it reduces the base cost of the replacement."
   },
   {

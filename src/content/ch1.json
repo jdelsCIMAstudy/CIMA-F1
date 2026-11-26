@@ -213,15 +213,6 @@
    "title": "Incidence: formal v effective",
    "rule": "<p><b>Formal incidence</b>: who is legally required to pay the tax over to the authority.</p><p><b>Effective (actual) incidence</b>: who ends up bearing the economic cost.</p>",
    "body": "<table><tr><th class=\"\">Tax</th><th class=\"\">Formal</th><th class=\"\">Effective</th></tr><tr><td class=\"\">VAT</td><td class=\"\">Retailer</td><td class=\"\">Customer</td></tr><tr><td class=\"\">PAYE</td><td class=\"\">Employer</td><td class=\"\">Employee</td></tr></table>",
-   "ex": {
-    "title": "Read the viewpoint",
-    "given": "A café adds 20% sales tax to a $6 sandwich and pays it to the authority.",
-    "steps": [
-     "From the café's side: it pays the tax over, so it has the <b>formal</b> incidence.",
-     "From the customer's side: the tax is in the price, so they bear the <b>effective</b> incidence.",
-     "Either way, sales tax is <b>indirect</b>."
-    ]
-   },
    "trap": "Exam questions say \"from the shopper's point of view\". Read whose viewpoint is asked before picking formal or effective."
   },
   {
@@ -378,15 +369,6 @@
    "title": "Progressive, proportional, regressive",
    "rule": "<p>Define the <b>effective rate</b> r(Y) = T / Y, tax as a fraction of income.</p><span class=\"eq\">progressive:   r rises as Y rises\nproportional:  r constant\nregressive:    r falls as Y rises</span>",
    "svg": "<svg viewBox=\"0 0 320 190\" role=\"img\" aria-label=\"Effective tax rate against income for the three structures\">\n<line x1=\"40\" y1=\"160\" x2=\"305\" y2=\"160\" stroke=\"currentColor\" stroke-width=\"1.2\"/><line x1=\"40\" y1=\"160\" x2=\"40\" y2=\"15\" stroke=\"currentColor\" stroke-width=\"1.2\"/>\n<text x=\"172\" y=\"182\" font-size=\"11\" text-anchor=\"middle\">Income Y</text>\n<text x=\"14\" y=\"90\" font-size=\"11\" text-anchor=\"middle\" transform=\"rotate(-90 14 90)\">Effective rate T/Y</text>\n<path d=\"M45 135 C120 110 200 70 300 35\" fill=\"none\" stroke=\"#1f7a4d\" stroke-width=\"2.5\"/><text x=\"300\" y=\"30\" font-size=\"11\" text-anchor=\"end\">Progressive ↑</text>\n<line x1=\"45\" y1=\"100\" x2=\"300\" y2=\"100\" stroke=\"#1f5fbf\" stroke-width=\"2.5\" stroke-dasharray=\"7 4\"/><text x=\"300\" y=\"94\" font-size=\"11\" text-anchor=\"end\">Proportional →</text>\n<path d=\"M45 65 C120 90 200 120 300 140\" fill=\"none\" stroke=\"#b42318\" stroke-width=\"2.5\" stroke-dasharray=\"2 4\"/><text x=\"300\" y=\"154\" font-size=\"11\" text-anchor=\"end\">Regressive ↓</text>\n</svg>",
-   "ex": {
-    "title": "Classify it",
-    "given": "A earns $40,000 and pays $4,000. B earns $80,000 and pays $6,400.",
-    "steps": [
-     "r(A) = 4,000 ÷ 40,000 = 10%",
-     "r(B) = 6,400 ÷ 80,000 = 8%",
-     "Rate falls as income rises → <b>regressive</b>, even though B pays more dollars."
-    ]
-   },
    "trap": "Comparing dollar amounts. A regressive tax can still take more dollars from the richer person; only the % matters.",
    "upd": "UK 2026/27: income tax 20% / 40% / 45% (additional rate above £125,140). Employee NI 8% then 2% above £50,270, so NI has a regressive element. Exams give you the rates."
   },
@@ -766,17 +748,7 @@
    ],
    "title": "VAT: output minus input",
    "rule": "<span class=\"eq\">VAT payable = output tax − input tax</span><p><b>Output tax</b>: VAT charged on sales. <b>Input tax</b>: VAT paid on purchases.</p><p>Sum over the chain: each business pays r × (its value added), so total VAT = r × final consumer price. The whole burden lands on the consumer.</p>",
-   "svg": "<svg viewBox=\"0 0 320 170\" role=\"img\" aria-label=\"VAT paid at each stage adds up to VAT on the final price\">\n<text x=\"160\" y=\"14\" font-size=\"11\" text-anchor=\"middle\">VAT paid over at each stage (20%)</text>\n<rect x=\"30\" y=\"120\" width=\"60\" height=\"20\" fill=\"#1f5fbf\"/><text x=\"60\" y=\"155\" font-size=\"10\" text-anchor=\"middle\">Grower</text><text x=\"60\" y=\"114\" font-size=\"10\" text-anchor=\"middle\">200</text>\n<rect x=\"120\" y=\"120\" width=\"60\" height=\"20\" fill=\"#1f5fbf\" opacity=\".35\"/><rect x=\"120\" y=\"90\" width=\"60\" height=\"30\" fill=\"#1f5fbf\"/><text x=\"150\" y=\"155\" font-size=\"10\" text-anchor=\"middle\">Miller</text><text x=\"150\" y=\"84\" font-size=\"10\" text-anchor=\"middle\">500 − 200 = 300</text>\n<rect x=\"210\" y=\"90\" width=\"60\" height=\"50\" fill=\"#1f5fbf\" opacity=\".35\"/><rect x=\"210\" y=\"60\" width=\"60\" height=\"30\" fill=\"#1f5fbf\"/><text x=\"240\" y=\"155\" font-size=\"10\" text-anchor=\"middle\">Baker</text><text x=\"240\" y=\"54\" font-size=\"10\" text-anchor=\"middle\">800 − 500 = 300</text>\n<text x=\"160\" y=\"32\" font-size=\"11\" text-anchor=\"middle\" font-weight=\"600\">200 + 300 + 300 = 800 = 20% × 4,000</text>\n</svg>",
-   "ex": {
-    "title": "Supply chain at 20%",
-    "given": "Grower sells to miller for 1,000 net; miller sells to baker for 2,500; baker sells to consumers for 4,000.",
-    "steps": [
-     "Grower: output 200, input 0 → pays 200",
-     "Miller: output 500, input (200) → pays 300",
-     "Baker: output 800, input (500) → pays 300",
-     "Total 800 = 20% × 4,000. Each business paid only on its own value added."
-    ]
-   }
+   "svg": "<svg viewBox=\"0 0 320 170\" role=\"img\" aria-label=\"VAT paid at each stage adds up to VAT on the final price\">\n<text x=\"160\" y=\"14\" font-size=\"11\" text-anchor=\"middle\">VAT paid over at each stage (20%)</text>\n<rect x=\"30\" y=\"120\" width=\"60\" height=\"20\" fill=\"#1f5fbf\"/><text x=\"60\" y=\"155\" font-size=\"10\" text-anchor=\"middle\">Grower</text><text x=\"60\" y=\"114\" font-size=\"10\" text-anchor=\"middle\">200</text>\n<rect x=\"120\" y=\"120\" width=\"60\" height=\"20\" fill=\"#1f5fbf\" opacity=\".35\"/><rect x=\"120\" y=\"90\" width=\"60\" height=\"30\" fill=\"#1f5fbf\"/><text x=\"150\" y=\"155\" font-size=\"10\" text-anchor=\"middle\">Miller</text><text x=\"150\" y=\"84\" font-size=\"10\" text-anchor=\"middle\">500 − 200 = 300</text>\n<rect x=\"210\" y=\"90\" width=\"60\" height=\"50\" fill=\"#1f5fbf\" opacity=\".35\"/><rect x=\"210\" y=\"60\" width=\"60\" height=\"30\" fill=\"#1f5fbf\"/><text x=\"240\" y=\"155\" font-size=\"10\" text-anchor=\"middle\">Baker</text><text x=\"240\" y=\"54\" font-size=\"10\" text-anchor=\"middle\">800 − 500 = 300</text>\n<text x=\"160\" y=\"32\" font-size=\"11\" text-anchor=\"middle\" font-weight=\"600\">200 + 300 + 300 = 800 = 20% × 4,000</text>\n</svg>"
   },
   {
    "id": "c1-q02",
@@ -946,13 +918,6 @@
    "title": "VAT from a gross price",
    "rule": "<span class=\"eq\">net price given:   VAT = net × r\ngross price given: VAT = gross × r/(1 + r)\n                   at 20%: gross × 20/120 = gross ÷ 6</span>",
    "body": "<p>Dimensional check: gross = net × (1 + r), so net = gross/(1 + r) and VAT = gross − net = gross × r/(1 + r).</p>",
-   "ex": {
-    "given": "A price of $124 includes VAT at 20%.",
-    "steps": [
-     "VAT = 124 × 20/120",
-     "= 124 ÷ 6 = <b>$20.67</b> (net $103.33)"
-    ]
-   },
    "trap": "124 × 20% = 24.80 is wrong: that taxes the tax. (Your book's margin note shows 20.66; it should round to 20.67.)"
   },
   {
@@ -1304,14 +1269,6 @@
    "title": "Tax avoidance v tax evasion",
    "rule": "<table><tr><th class=\"\"></th><th class=\"\">What it is</th><th class=\"\">Main risk</th></tr><tr><td class=\"\">Avoidance</td><td class=\"\">Legal: arranging affairs within the law to pay less</td><td class=\"\">Reputational (\"not paying a fair share\")</td></tr><tr><td class=\"\">Evasion</td><td class=\"\">Illegal: deliberately breaking the law</td><td class=\"\">Prosecution, fines, penalties</td></tr></table>",
    "body": "<p><b>How authorities fight both:</b> deduct at source and use third-party reporting; simplify (fewer reliefs to exploit); audit more; communicate well; build a system seen as fair; review penalties.</p>",
-   "ex": {
-    "title": "Classify",
-    "steps": [
-     "Setting up a subsidiary in a low-tax country → <b>avoidance</b> (legal, but reputational risk).",
-     "Leaving cash sales off the return → <b>evasion</b>.",
-     "Claiming an expense you know is not deductible → <b>evasion</b>."
-    ]
-   },
    "trap": "Avoidance being legal doesn't make it risk-free. Exam answers on its risk point to reputation, not prosecution."
   },
   {
@@ -1412,16 +1369,6 @@
    ],
    "title": "Direct tax on trading income: the identity",
    "rule": "<span class=\"eq\">Taxable profit = Accounting profit\n  − exempt / other-rules income\n  + disallowable expenses\n  + accounting depreciation\n  − tax depreciation</span><p>Then tax = taxable profit × rate. The question always gives the country's rules.</p>",
-   "ex": {
-    "title": "Delta Co",
-    "given": "PBT $450,000 includes $25,000 exempt dividends and $8,000 client entertaining (disallowable). Accounting depreciation $60,000; tax depreciation $72,000. Rate 25%.",
-    "steps": [
-     "450,000 − 25,000 = 425,000",
-     "+ 8,000 entertaining = 433,000",
-     "+ 60,000 depreciation − 72,000 tax depreciation = 421,000",
-     "Tax = 421,000 × 25% = <b>105,250</b>"
-    ]
-   },
    "trap": "Depreciation is <i>swapped</i>, not netted against anything else: add back the book figure, deduct the tax authority's figure."
   },
   {
@@ -1495,16 +1442,6 @@
    "title": "Capital taxes: the gain identity",
    "rule": "<span class=\"eq\">Gain = (proceeds − selling costs)\n     − cost − buying costs − enhancement\n     − indexation (if allowed)</span>",
    "body": "<p>Capital taxes hit gains on disposing of investments and non-current assets. Most countries use historical cost; a few index costs for inflation. Chapter 2 drills this.</p>",
-   "ex": {
-    "title": "Warehouse",
-    "given": "Sold for $900,000 with $18,000 agents' fees. Bought for $500,000 plus $12,000 legal costs; extension $80,000. Indexation factor 0.10 on all allowable costs.",
-    "steps": [
-     "Net proceeds 900,000 − 18,000 = 882,000",
-     "Allowable costs 500,000 + 12,000 + 80,000 = 592,000",
-     "Indexation 10% × 592,000 = 59,200",
-     "Gain = 882,000 − 592,000 − 59,200 = <b>230,800</b>"
-    ]
-   },
    "upd": "UK company indexation was frozen at December 2017 and individuals' was abolished in 2008. Exam questions set in a hypothetical country can still give an indexation factor."
   },
   {

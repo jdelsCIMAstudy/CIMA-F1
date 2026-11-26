@@ -10,6 +10,7 @@ The app is one offline HTML file. The engine (`engine.html`) is fixed. All conte
 - `h.js`: authoring helpers: `C()` card, `Q()` chapter/practice question, `B(n)` Test Yourself bank question (id bNNN), `O(n)` objective kit question (id oNNN), `dd()` drop-down, `T()` table, `P()`, `UL()`
 - `content/chN.js` (or `chN.json`): one chapter, cards `{t:'c'}` and questions `{t:'q'}` in teaching order
 - `content/obj_chN.js`: objective kit questions for chapters 1–3, as `[{after: cardId, items:[...]}]`; build.js inserts each block after that card's existing questions. From Ch4 on, objective questions sit directly in chN.js.
+- `content/worked.js`: every worked example, keyed by card id, in question-and-answer format: `{title, q (full question data, nothing left implied), req (Required), steps:[{d: working, w: why}], pattern}`. build.js puts each into its card and fails if any card has an old-style `ex` or a step without `d` and `w`. Keep the question complete so the steps can stay short. Test Yourself and objective questions are not affected.
 - `content/glossary.js`: `{t, aka[], ch, d, see[cardIds]}`. Terms are underlined in cards automatically.
 - `test_app.py`: Playwright test. Runs 60 variants per question; checks templates, duplicate options, negative answers, self-grading, expected answers (`EXP_*` and `expected_extra.json`); renders every item; tests quiz, mock, glossary, look-up (Wikipedia/Wiktionary mocked), calculator, backup. Coverage: `python3 test_app.py "<bank ranges>" "<objective ranges>"` lists missing ids.
 
